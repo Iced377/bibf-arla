@@ -1,0 +1,18 @@
+# Full-size artwork masters stay local (29 MB). The site and deck copies are committed.
+/art/
+# Build tools
+build/node_modules/
+__pycache__/
+# Vercel link and local env files
+.vercel
+.env*
+# Local Claude settings
+.claude/settings.local.json
+# macOS
+.DS_Store
+node_modules/
+
+# Test harness
+tools/harness/node_modules/
+tools/harness/sims.json
+build/.venv/

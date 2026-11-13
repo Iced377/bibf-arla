@@ -1,0 +1,8 @@
+{
+  "name": "course-harness",
+  "private": true,
+  "type": "module",
+  "description": "Local stand-in for Vercel + Supabase: serves site/, answers /api/live and the live_* RPCs on PGlite (Postgres in WebAssembly).",
+  "scripts": { "start": "node server.mjs" },
+  "dependencies": { "@electric-sql/pglite": "0.2.17" }
+}

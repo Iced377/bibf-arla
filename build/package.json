@@ -1,0 +1,10 @@
+{
+  "name": "bibf-prompt-build",
+  "private": true,
+  "description": "Build scripts for the AI Prompt Engineering course: PowerPoint decks",
+  "dependencies": {
+    "pdfmake": "0.2.20",
+    "pptxgenjs": "4.0.1",
+    "qrcode": "1.5.4"
+  }
+}

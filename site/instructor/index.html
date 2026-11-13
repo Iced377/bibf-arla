@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Prompt Engineering · Instructor</title>
+  <meta name="description" content="AI Prompt Engineering for Business Professionals, BIBF: a one-day hands-on workshop played as a team game.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#/" aria-label="Course home">
+      <span class="brand-mark">AI</span>
+      <span class="brand-name">AI Prompt Engineering <span>for Business Professionals</span></span>
+    </a>
+    <nav class="daynav" id="daynav" aria-label="Rounds"></nav>
+    <a class="progress" href="#/progress" title="Your progress">
+      <span class="progress-track"><span class="progress-bar" id="progressBar"></span></span>
+      <span class="progress-label" id="progressLabel">0%</span>
+    </a>
+    <div class="tools">
+      <button class="toolbtn" id="scoresBtn" type="button">Scores</button>
+      <button class="toolbtn" id="timerBtn" type="button">Timer</button>
+      <div id="timermenu" hidden></div>
+    </div>
+  </header>
+  <div class="instructor-flag">Instructor</div>
+  <main id="app" tabindex="-1"></main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-credit"><strong>Mohamad Abdallah El Izmirli</strong> · BIBF</p>
+      <p class="footer-actions" id="footActions"><a class="linkbtn" href="#/glossary">Glossary</a></p>
+    </div>
+  </footer>
+  <aside id="scores" hidden aria-label="Scores"></aside>
+  <div id="timer" hidden role="timer" aria-live="off"></div>
+  <div id="termpop" hidden role="tooltip"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="../data/course.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/charts.js"></script>
+  <script src="notes.js"></script>
+  <script src="key.js"></script>
+  <script src="../js/live.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+LINE 1 (JARS) STOPPAGE LOG, typed from the handwritten sheet (Line1-night-log-photo.jpg)
+Ghaima Dairy, North Sitra plant
+Shift: night, Tuesday 10 into Wednesday 11 November 2026, 22:00-06:00
+
+No.  Start  End    What happened                                Logged by
+---  -----  -----  -------------------------------------------  -----------
+1    22:35  22:50  Jar infeed jam, cleared                      Ali Hasan
+2    23:40  00:25  Filler nozzle blocked, nozzle head cleaned   Ravi Menon
+3    02:15  02:27  Label printer out of ribbon, ribbon changed  Sami Khalil
+4    02:15  02:27  Ribbon change on labeller (12 min)           Ali Hasan
+5    03:50  04:05  Capper torque fault, reset                   Ravi Menon
+6    05:10  05:18  Metal detector test failed, retested OK      Sami Khalil
+
+Ghaima Dairy is a fictional company created for BIBF training. All names and figures are made up.

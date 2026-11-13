@@ -151,9 +151,9 @@
     if (lab) lab.textContent = pct + "%";
     document.querySelectorAll("[data-navid]").forEach(function (a) { a.classList.toggle("done", !N && !!L.done[a.getAttribute("data-navid")]); });
   }
-  // teams are always Team 1, Team 2 and so on, never renamed. On a solo course (C.solo) each slot is one person: it shows their name
+  // teams take their names from C.teams (Team 1, Team 2 if it has none). On a solo course (C.solo) each slot is one person: it shows their name
   function teamName(i) {
-    var nm = C.solo && LIVE && LIVE.slotName ? LIVE.slotName(i + 1) : "";
+    var nm = C.solo && LIVE && LIVE.slotName ? LIVE.slotName(i + 1) : (!C.solo && C.teams && C.teams[i]) || "";
     return nm || t("teamN", { n: i + 1 });
   }
   // a solo course lists only the slots someone sits in

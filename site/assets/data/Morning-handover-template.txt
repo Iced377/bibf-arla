@@ -1,0 +1,14 @@
+MORNING HANDOVER EMAIL: the headings to use
+
+To: Yusuf Saleh, Morning shift lead, Line 1
+Cc: Noora Al Hashimi, Plant Manager
+Subject: Line 1 handover, night shift [date]
+
+1. The shift in one line
+2. Stoppages (start, end, minutes, what happened)
+3. Total downtime (minutes)
+4. Still open for the morning shift
+5. Safety and quality
+6. Actions (who, by when)
+
+Ghaima Dairy is a fictional company created for BIBF training. All names and figures are made up.

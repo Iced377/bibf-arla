@@ -1,0 +1,12 @@
+BREAKDOWN REPORT: Line 1 filler
+Reported by: Ahmed Darwish, Maintenance supervisor
+Date: Wednesday 11 November 2026, 18:40
+
+Machine: Line 1 filler, Norvell FX-250, serial FX250-0457
+Fault: E14 "nozzle seal leak" after the evening changeover (900 g jars back to 500 g).
+What we saw: product dripping from one nozzle; the filler stopped itself.
+Manual: Norvell-FX-filler-manual.pdf
+
+Request: the fix, and a step-by-step checklist for the night technician.
+
+Ghaima Dairy is a fictional company created for BIBF training. All names and figures are made up.

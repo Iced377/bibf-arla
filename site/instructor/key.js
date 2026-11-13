@@ -2,111 +2,138 @@
    Only the instructor page loads this file, so the answers never reach a participant's phone. why[i] explains option i. */
 window.ASSESSMENT_KEY = {
  "A1": {
-  "answer": 1,
+  "answer": 0,
   "why": [
-   "It names the topic but gives no facts, tone or length, so the tool has to guess them.",
-   "Correct. Goal, facts, tone and a limit: the parts of a brief that let a capable colleague do the job without coming back to you.",
-   "A role changes the tone; it adds no facts and doesn't make the answer more accurate.",
-   "'Good and professional' says nothing about the facts, the reader or the length."
+   "Correct. Turning paper into digital files, with the process unchanged.",
+   "Digitalisation uses digital tools to run a process better; here nothing about the process changed.",
+   "Transformation changes how the business works and creates value.",
+   "Nothing is automated: people still do the same work."
   ]
  },
  "A2": {
-  "answer": 0,
+  "answer": 2,
   "why": [
-   "Correct. Few-shot examples show the voice, length and format, and the tool follows them.",
-   "Examples shape the style. The facts come from the material you give it.",
-   "Thinking mode is a separate setting; examples don't switch it on.",
-   "Examples have nothing to do with web search."
+   "More people collecting it adds variety, not reliability.",
+   "Paper copies mean typing twice, which adds errors.",
+   "Correct. Consistent, timely, shared and trusted data is what decisions can rest on.",
+   "Keeping it long doesn't make it accurate or usable."
   ]
  },
  "A3": {
-  "answer": 2,
+  "answer": 1,
   "why": [
-   "Your memory of the policy may be wrong or incomplete.",
-   "It doesn't know your bank's policy. It will answer from general knowledge and may invent details.",
-   "Correct. The tool reads the real policy, and pointing to the section stops it from missing the part you need.",
-   "The answer is probably not on page 1."
+   "That is planned maintenance on a schedule, whatever the machine's condition.",
+   "Correct. Predicting a failure from the machine's data, before it stops the line.",
+   "That is reactive maintenance.",
+   "Spares help any kind of maintenance; they predict nothing."
   ]
  },
  "A4": {
   "answer": 3,
   "why": [
-   "A typo needs no reasoning; thinking only makes it slower.",
-   "A short translation is quick work without thinking.",
-   "A subject line is a quick task.",
-   "Correct. Several rules applied in order: that is where working the steps out first pays off."
+   "Forecasting predicts a number from past data: classic AI.",
+   "Flagging outliers in data is classic AI.",
+   "Predicting failure from sensor data is classic AI.",
+   "Correct. Writing a new text from notes is what generative AI does."
   ]
  },
  "A5": {
-  "answer": 0,
+  "answer": 1,
   "why": [
-   "Correct. It asks for what it needs instead of guessing, and you see what a good brief needs.",
-   "Length depends on what you ask for. The interview doesn't change it.",
-   "Your answers go to the provider like any other message.",
-   "Projects work without an interview; the interview helps you write their instructions."
+   "It doesn't control machines on its own.",
+   "Correct. Handovers, quotes, manuals, complaints, commentary: reading, writing and comparing documents.",
+   "Measuring needs a lab instrument.",
+   "Driving is not what a language model does."
   ]
  },
  "A6": {
-  "answer": 1,
+  "answer": 2,
   "why": [
-   "Never put a password in a prompt or in instructions.",
-   "Correct. Instructions set the goal, the rules and the output once, for every chat in the project.",
-   "Old chats add noise. Give it the rules and the files it needs.",
-   "A name alone tells it nothing about the job."
+   "It gives no reader, material, shape or limits.",
+   "A role changes the tone; it adds no facts.",
+   "Correct. It says who it's for, what to work from, the shape and the limit.",
+   "'Clearly and professionally' tells it nothing it can act on."
   ]
  },
  "A7": {
-  "answer": 2,
+  "answer": 0,
   "why": [
-   "Tools can invent links, or link to a page that says something else.",
-   "It will usually say yes. Asking it is no check.",
-   "Correct. Read the source yourself: does it exist, and does it say what the memo claims?",
-   "The claim is still unchecked without its source."
+   "Correct. Without the file or the figures, it can only guess them.",
+   "Tone doesn't supply facts.",
+   "A role doesn't supply facts either.",
+   "More words means more room to invent, not less."
   ]
  },
  "A8": {
-  "answer": 0,
+  "answer": 1,
   "why": [
-   "Correct. Extra fees often sit in footnotes and small print. Check them yourself.",
-   "Leaving something out makes a summary shorter.",
-   "Suppliers can't see what you ask your AI tool.",
-   "Footnotes often carry fees and conditions that are part of the price."
+   "Length isn't quality; a long prompt can still be vague.",
+   "Correct. Its questions fill in what it doesn't know about your situation, and letters keep it quick.",
+   "Then you get an answer, not a prompt you can check and reuse.",
+   "A role changes the voice, not what it knows."
   ]
  },
  "A9": {
-  "answer": 3,
+  "answer": 0,
   "why": [
-   "A source you can open is something you can check.",
-   "Showing the steps lets you check the sum.",
-   "Saying it isn't sure is a good sign.",
-   "Correct. A citation you can't find anywhere is the classic sign of an invented source, as in Mata v. Avianca."
+   "Correct. Examples show the voice, length and format, and it follows them.",
+   "For a calculation, give it the figures and the rules.",
+   "News needs web search, not examples.",
+   "Examples help most when there is a style to copy."
   ]
  },
  "A10": {
   "answer": 1,
   "why": [
-   "Few-shot means examples you give it yourself.",
-   "Correct. Instructions planted in a file or web page that the tool may follow: prompt injection.",
-   "A cutoff is the date its training data ends.",
-   "Self-consistency means comparing several answers to the same question."
+   "The same chat tends to agree with itself.",
+   "Correct. A fresh chat doesn't carry the first one's mistakes; give it the files and ask it to check.",
+   "A longer prompt in the same chat isn't an independent check.",
+   "A role doesn't make the check independent."
   ]
  },
  "A11": {
-  "answer": 2,
+  "answer": 3,
   "why": [
-   "Personal data: keep it out of personal accounts. Bahrain's PDPL applies.",
-   "Confidential papers only go into your bank's approved tool, if policy allows.",
-   "Correct. Already public, so it is safe to paste anywhere.",
-   "Personal data about a colleague: keep it out."
+   "Sounding right is no sign of being right.",
+   "Rounding an invented figure keeps it invented.",
+   "Confidence isn't evidence.",
+   "Correct. Every figure must trace back to the source; if it doesn't, it doesn't go out."
   ]
  },
  "A12": {
+  "answer": 0,
+  "why": [
+   "Correct. 1.6 tonnes read as 1.6 kg makes one line look far better than it is, and another look worst.",
+   "Untidiness is the least of it.",
+   "Units don't change the file size.",
+   "AI misreads units too; check the unit of every figure."
+  ]
+ },
+ "A13": {
   "answer": 3,
   "why": [
+   "It is deliberate, not an error.",
+   "Hiding instructions for AI tools is not normal selling.",
+   "It is about manipulation, not personal data.",
+   "Correct. Hidden instructions aimed at the AI: a prompt injection. Ask the tool to quote any such text."
+  ]
+ },
+ "A14": {
+  "answer": 2,
+  "why": [
+   "Commercially confidential: approved tools only.",
+   "Personal data: approved tools only, or take it out.",
+   "Correct. Already public, so it is safe anywhere.",
+   "Unpublished financials stay in approved tools."
+  ]
+ },
+ "A15": {
+  "answer": 2,
+  "why": [
    "Confidence is no sign of accuracy.",
-   "Length and formatting can hide mistakes.",
-   "Two tools can make the same mistake. A difference tells you where to look; agreement proves nothing.",
-   "Correct. You check the key figures and sources yourself, and you are ready to sign it."
+   "Length can hide mistakes.",
+   "Correct. You check it against the facts, and you are ready to sign it.",
+   "Two tools can make the same mistake."
   ]
  }
 };

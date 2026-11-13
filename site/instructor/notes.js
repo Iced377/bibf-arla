@@ -2,331 +2,494 @@
 window.NOTES = {
  "schedule": [
   {
-   "day": "Thursday 12 November 2026"
+   "day": "Day 1 · Wednesday 18 November 2026"
   },
   {
    "time": "08:45",
    "mins": 15,
-   "item": "Room open. Desktops: Edge private window, ChatGPT and Copilot in two tabs on the BIBF accounts (card on each desk). Phones: QR code and class login on the projector.",
+   "item": "Room open. Desktops: Edge private window, Copilot Chat and ChatGPT in two tabs on BIBF's accounts. Phones: QR code and class login on the projector.",
    "offDeck": true
   },
   {
    "time": "09:00",
-   "mins": 25,
-   "item": "Kick-off: opening estimate, rules, sign-in check, outcomes, Najma Bank, the four jobs, pre-course check",
+   "mins": 30,
+   "item": "Kick-off: rules and teams, sign-in, outcomes, Ghaima Dairy, the jobs, pre-course check, quick win",
    "ref": "k0"
   },
   {
-   "time": "09:25",
-   "mins": 30,
-   "item": "Round 1 · What your assistant can do now: warm-up in both tools, theory, 8 quick questions",
+   "time": "09:30",
+   "mins": 20,
+   "item": "Round 1 · From digitisation to transformation: theory, 5 quick questions",
    "ref": "s1"
   },
   {
-   "time": "09:55",
-   "mins": 50,
-   "item": "Round 2 · Brief it like a colleague: theory, your turn in both tools, 6 quick questions, Job 1 Build it, two demos",
+   "time": "09:50",
+   "mins": 35,
+   "item": "Round 2 · Meet your assistant: theory, warm-up in both tools, 9 quick questions",
    "ref": "s2"
   },
   {
-   "time": "10:45",
+   "time": "10:25",
+   "mins": 35,
+   "item": "Job 1 · Production: the night shift's log, the safety poster, one team shows",
+   "ref": "j1"
+  },
+  {
+   "time": "11:00",
    "mins": 15,
    "item": "Break",
    "brk": true
   },
   {
-   "time": "11:00",
-   "mins": 55,
-   "item": "Round 3 · Give it your context: theory, 4 quick questions, Job 2 Organise your notes, two demos, Cowork demo",
+   "time": "11:15",
+   "mins": 20,
+   "item": "Round 3 · Work from files, check before you trust: theory, 7 quick questions",
    "ref": "s3"
   },
   {
-   "time": "11:55",
+   "time": "11:35",
    "mins": 30,
    "item": "Dhuhr and lunch",
    "brk": true
   },
   {
-   "time": "12:25",
-   "mins": 45,
-   "item": "Round 4 · Check before you trust: theory, 7 quick questions, Job 3 Trap in the file, one demo, memo discussion",
+   "time": "12:05",
+   "mins": 35,
+   "item": "Job 2 · Procurement: three quotes, the hidden line, a second opinion",
+   "ref": "j2"
+  },
+  {
+   "time": "12:40",
+   "mins": 30,
+   "item": "Round 4 · AI across the value chain: theory, value chain case clinic on flipcharts",
    "ref": "s4"
   },
   {
    "time": "13:10",
-   "mins": 30,
-   "item": "Round 5 · Make it work every day: theory, Job 4 The morning brief, one demo, schedule and agent demo",
+   "mins": 35,
+   "item": "Job 3 · Maintenance: the manual with two models",
+   "ref": "j3"
+  },
+  {
+   "time": "13:45",
+   "mins": 15,
+   "item": "Day 1 close: scores, one lesson per team, clean up and sign out",
+   "ref": "c1"
+  },
+  {
+   "day": "Day 2 · Thursday 19 November 2026"
+  },
+  {
+   "time": "08:45",
+   "mins": 15,
+   "item": "Room open. Sign in again; phones rejoin their team.",
+   "offDeck": true
+  },
+  {
+   "time": "09:00",
+   "mins": 15,
+   "item": "Day 2 kick-off: recap quiz, today's plan",
+   "ref": "d2"
+  },
+  {
+   "time": "09:15",
+   "mins": 20,
+   "item": "Round 5 · Patterns that save time: theory, 5 quick questions",
    "ref": "s5"
   },
   {
-   "time": "13:40",
-   "mins": 20,
-   "item": "Final: post-course check, quick-fire, leaderboard with the top 3, takeaways, what you built, BIBF evaluation, clean up and sign out",
+   "time": "09:35",
+   "mins": 35,
+   "item": "Job 4 · Planning: October's waste, the chart, a second check",
+   "ref": "j4"
+  },
+  {
+   "time": "10:10",
+   "mins": 35,
+   "item": "Job 5 · Logistics: the complaint, the log and the draft",
+   "ref": "j5"
+  },
+  {
+   "time": "10:45",
+   "mins": 15,
+   "item": "Round 6 · Bringing your team along: theory, 3 quick questions",
+   "ref": "s6"
+  },
+  {
+   "time": "11:00",
+   "mins": 15,
+   "item": "Break",
+   "brk": true
+  },
+  {
+   "time": "11:15",
+   "mins": 35,
+   "item": "Job 6 · Stations: Finance, Regulatory or Lab",
+   "ref": "j6"
+  },
+  {
+   "time": "11:50",
+   "mins": 30,
+   "item": "Dhuhr and lunch",
+   "brk": true
+  },
+  {
+   "time": "12:20",
+   "mins": 35,
+   "item": "My card: walk-through, then everyone's prompts and desk card",
+   "ref": "mc"
+  },
+  {
+   "time": "12:55",
+   "mins": 25,
+   "item": "Team action plans: from the Day 1 map, then 2 to 3 minutes per team",
+   "ref": "ap"
+  },
+  {
+   "time": "13:20",
+   "mins": 40,
+   "item": "Final: post-course check, quick-fire, podium, takeaways, BIBF evaluation, clean up",
    "ref": "f"
   }
  ],
  "scoring": [
-  "No teams: six people, each playing alone on their own phone, one answer per question.",
-  "Fastest right answer: 3 points. Every other right answer: 1 point.",
+  "Four teams: Cream, Butter, Cheese and Laban. Everyone answers on their own phone; the points go to the team.",
+  "Fastest right team: 2 points. Every other team with a right answer: 1 point.",
+  "Read every question aloud before you press Start.",
+  "Job 6: give each team its station on the presentation before Start. Each team sees and answers only its station's questions.",
   "Points are added when you press Reveal. The scoreboard buttons still add or remove points by hand."
  ],
  "general": [
-  "Every round runs the same way: Theory (no phones), then Exercises (quick questions on the phones, one after another), then Try it (the job in ChatGPT or Copilot, then questions on the result).",
-  "Two tools, both on BIBF accounts for the day only: Jobs 1 and 2 are built in ChatGPT, Jobs 3 and 4 in Copilot, and each job has a check in the other tool. The warm-up and Your turn use both.",
-  "Jobs: press Start on the first job question as soon as people begin; its timer covers the job. The other job questions run 60 s each.",
-  "Move block by block with Page Down or the right arrow; a presenter clicker sends the same keys. Page Up or the left arrow goes back. After the last block of a round, the next round opens. The notes tab scrolls to the block you are showing.",
-  "Rhythm for every question: Start, they answer, Reveal, one line from the why, Next.",
-  "The projector shows the presentation tab /instructor/ only. Keep the notes tab /instructor/?notes and the Dashboard on your laptop screen. One presentation tab only.",
-  "Demos: after each job's reveal, people show what they built, two minutes each. Two for Jobs 1 and 2, one each for Jobs 3 and 4, so all six show once. Pick someone new each time.",
-  "The BIBF accounts are BIBF's work accounts, used by the next class too: only the made-up Najma files go in, memory stays off, and at the end everyone deletes their chats and projects in both tools and signs out.",
-  "Running late: skip the warm-up's extra step, shorten theory to the first line of each block, cut questions from the end of a game, and take one demo instead of two. Never cut a job's time first.",
-  "A tool misbehaves on a desktop: do that step in the other tool. A sign-in fails: two people share one desktop.",
-  "Accounts: ChatGPT on BIBF's paid plan (you believe Enterprise, so uploads are not tightly limited) and Microsoft 365 Copilot on BIBF work accounts (up to 20 files in one chat). BIBF's administrators may have switched web search off in Copilot: if so, Job 4 runs in ChatGPT with search on. If ChatGPT stops taking files, paste the text from the Files page (Job 1) or move the step to Copilot (Job 2).",
-  "If phones on the room Wi-Fi show Reconnecting, ask everyone to switch to mobile data.",
-  "Pre- and post-course checks: press Open the check on the phones; students tap the button on their phone. Results appear on the Dashboard."
+  "Every round runs the same way: Theory (no phones), then Exercises (quick questions on the phones). Jobs sit between the rounds.",
+  "Copilot Chat does every job, image and second opinion: it's what Arla staff have. ChatGPT is for comparison only, and probably not approved at Arla.",
+  "The method: paste the pack, answer Copilot's multiple-choice questions, check its prompt has the four parts, run it with the files, then check the result.",
+  "Jobs: press Start on the first job question as soon as people begin; its timer covers the job. The second question runs 60 s.",
+  "The person whose department a job belongs to leads it in their team.",
+  "Move block by block with Page Down or the right arrow; a presenter clicker sends the same keys. The notes tab follows.",
+  "The projector shows the presentation tab /instructor/ only. Keep the notes tab /instructor/?notes and the Dashboard on your laptop screen.",
+  "BIBF's accounts are for the course only: only Ghaima's made-up files go in, and at the end of each day everyone deletes their chats and signs out.",
+  "In the lab test, check which mode BIBF's Copilot opens in, so participants see what they'll have at work.",
+  "Running late: shorten theory to the first line of each block, cut questions from the end of a game, skip the ChatGPT comparison. Never cut a job's time first.",
+  "A tool misbehaves on a desktop: two people share one. Phones on slow Wi-Fi: switch to mobile data.",
+  "Keep the case clinic's flipchart sheets overnight: the action plans start from them."
  ],
  "sections": {
   "k0": {
-   "say": "Open on the estimate before any introductions. Then the rules, the desktop sign-in to ChatGPT and Copilot on the BIBF accounts, the four outcomes, Najma Bank, the four jobs, the takeaways and the pre-course check.",
+   "say": "Rules and teams first, then the sign-in check, the outcomes, Ghaima Dairy, the jobs, the takeaways, the pre-course check, then the quick win (10 minutes).",
    "beats": {
-    "k0-hook": "Press Start (30 s) before any introductions, then Reveal. One line: most of the room already uses one of these tools. Today is about using it well.",
-    "k0-rules": "Read the four rules once. Your laptop shows each code name with the real name. At the final leaderboard you decide whether to press Reveal the real names.",
-    "k0-shape": "Thirty seconds. Every round runs the same way.",
-    "k0-signin": "Check every desktop is signed in to both tools before the first round: ChatGPT in one tab, Copilot in another. Anyone stuck: share a desktop with a neighbour. Say it once: the BIBF accounts are for today only and shared with the next class, and everyone works on the bank's made-up files, so nothing real goes in.",
-    "k0-out": "One minute. These are the four things they can do by 14:00. Point at the last one: every job today is a simulation they build, check and show in class.",
-    "k0-case": "Two minutes. Najma is made up, so every answer is known in advance. Open the case file once to show where everything is.",
-    "k0-jobs": "Thirty seconds per job. The files page has everything; nobody needs to type a long prompt today. Six people, four jobs: after each job two people show what they built (one each for Jobs 3 and 4), so everyone shows once. Jobs 1 and 2 are built in ChatGPT and Jobs 3 and 4 in Copilot; each has a check in the other tool.",
-    "k0-take": "Read the three takeaways once. You come back to them in the final round.",
-    "k0-pre": "Press Open the check on the phones. Twelve questions, about eight minutes. They see no score now."
+    "k0-rules": "Read the four rules once. Teams are mixed on purpose: say that the person whose department a job belongs to leads it.",
+    "k0-shape": "Thirty seconds. Every round runs the same way, and the jobs sit between the rounds.",
+    "k0-signin": "Check every desktop is signed in before Round 1: Copilot Chat in one tab, ChatGPT in another, both on BIBF's accounts. Anyone stuck: share a desktop with a neighbour. Say it once: the accounts are BIBF's and for the course only, and everyone works on Ghaima's made-up files, so nothing real goes in.",
+    "k0-out": "One minute. These are the four things they can do by Thursday at 14:00. Point at the last one: they take their own prompts home.",
+    "k0-case": "Two minutes. Ghaima is made up, so every answer is known in advance and nothing confidential goes in. Open the case file once to show where everything is.",
+    "k0-jobs": "Thirty seconds per day. Every job's files and packs are on the Files page; nobody needs to type a long prompt.",
+    "k0-take": "Read the three takeaways once. You come back to them on Thursday.",
+    "k0-pre": "Press Open the check on the phones. Fifteen questions, about ten minutes. Say it: nobody sees individual scores; it measures the course, not them.",
+    "k0-quick": "Ten minutes, no score. Everyone opens Quick win on the course site, taps their role and pastes the prompt into Copilot Chat. After five minutes ask two people: would you use what came back? What would you change?"
    }
   },
   "s1": {
-   "say": "Warm-up in both tools first, with everyone's own line for a National Day greeting, then what has changed and where it still goes wrong, then eight quick questions. No job in this round.",
+   "say": "Three words with Ghaima examples, data as an asset, two food peers, then five quick questions. Keep it to twenty minutes: the hands-on work is waiting.",
    "beats": {
-    "s1-th": "Warm-up first (7 minutes), then theory. Page Down or the clicker moves one block at a time and the notes tab follows.",
-    "s1-warm": "Seven minutes, no score. Everyone sends the warm-up prompt in ChatGPT, then the same prompt in Copilot. After three minutes ask: which tool drew a chart, which a calculator, which only text? Then the provider's ice breaker: everyone writes their own one line for a National Day greeting. Ask two people to read theirs and the greeting it got. That is the point: wording, tool and plan all change what comes back. The payment is about BD 386.656 a month.",
-    "s1-what": "Two minutes. The old definition still holds: craft the input that gets the output you need. In 2026 the input is more than the words you type, and the output needs a check.",
-    "s1-kpmg": "Ninety seconds. The lesson: the effort went into the brief and the material, and a licensed tax expert still checks every draft. TaxBot is for KPMG's tax agents only.",
-    "s1-new": "Three minutes, one line per card. Dates: ChatGPT's Intelligent UI came with GPT-6 on 7 October 2026, paid plans first. ChatGPT tasks: OpenAI's help page says every plan, Free with up to 3 tasks; the pricing page still says no for Free. Microsoft announced the new Copilot on 25 September 2026: Home (chat with the Cowork agent), Code (builds apps from a description) and Autopilot; Frontier early access first, and Cowork, Code and Autopilot are billed by use. Copilot's scheduled prompts come with a Microsoft 365 Copilot licence. For your own demos: Claude added designs, decks and docs on every plan on 16 September 2026, and Cowork scheduled tasks are on all paid Claude plans.",
-    "s1-wrong": "Two minutes. This is the bridge to Round 4. None of it means don't use it; it means brief it well and check what matters.",
-    "s1-acct": "Ninety seconds. Today's tools are work accounts that belong to BIBF: ChatGPT on BIBF's paid plan (you believe Enterprise) and Microsoft 365 Copilot. Personal accounts: training on chats is often on unless you switch it off, so check the setting. Work accounts: usually off by contract. Bahrain's PDPL applies to customer data whatever the tool.",
-    "s1-gallery": "Two minutes. Most figures come from the banks themselves. Klarna shows both sides: fast savings first, then a step back on quality. No Bahraini bank has published a hard figure yet; Bank ABC and NBB have announced programmes.",
-    "s1-ex": "Phones out. Rhythm: Start, they answer, Reveal, one line from the why, Next.",
-    "s1-guess": "20 s each. From the provider's game (Perplexity, ChatGPT, Poe, Claude, DeepSeek, Gemini, Copilot), with today's tools.",
-    "s1-genai": "25 s each. Both cases are from the provider's list of fourteen. Seven of the fourteen are classic AI: scoring models, anti-money-laundering models, document reading and scripted chatbots.",
-    "s1-safe": "20 s each. A personal account in mind, or one that isn't your bank's, like today's two. The anonymised complaint is the useful one: fine, once nothing identifies the person."
+    "s1-th": "Page Down or the clicker moves one block at a time and the notes tab follows.",
+    "s1-words": "Three minutes. Use the Ghaima examples; ask the room for one of their own for each word.",
+    "s1-data": "Two minutes. Make it concrete: the same stoppage logged twice on paper is a data problem, and Job 1 will show it.",
+    "s1-peers": "Ninety seconds. Two food companies, both on Microsoft Copilot, both investing in skills as much as tools.",
+    "s1-ex": "Phones out. Rhythm: read the question aloud, Start, they answer, Reveal, one line from the why, Next.",
+    "s1-which": "30 s each. Three Ghaima examples.",
+    "s1-useful": "30 s. The point for Job 4: units.",
+    "s1-nestle": "30 s. Press Start, then Reveal."
    }
   },
   "s2": {
-   "say": "The core of the day. Slow down on the brief table. Your turn: everyone briefs one of the slides' practice tasks in both tools (6 minutes). Job 1 needs the full 20 minutes; cut exercise questions before you cut the job.",
+   "say": "The core of the method. Slow down on the four-part brief and 'let AI write your prompt'. Warm-up in both tools (7 minutes), then the exercises.",
    "beats": {
-    "s2-th": "No phones. About 90 seconds per block. The brief table is the one to slow down on. Your turn (6 minutes) comes after the brief makeover.",
-    "s2-types": "One minute. Most work requests are instructional, and that is where the brief matters most.",
-    "s2-write": "Ninety seconds. The last point is the one most people never use.",
-    "s2-brief": "Three minutes: the core of the day. Read each row with its Najma example. Line to repeat: brief it like a capable new colleague who knows nothing about your bank.",
-    "s2-names": "One minute. The provider's slides teach RACE, CRISPE and REACT. They are all versions of the same checklist, and Microsoft's and Google's own guides say the same thing. Learn the five parts and you have them all.",
-    "s2-shots": "Ninety seconds. Zero-shot is where to start. Few-shot is for style and format, which is exactly the captions exercise coming up.",
-    "s2-role": "Ninety seconds. The study: 162 roles, 2,410 factual questions, four model families. Roles change tone; facts change accuracy.",
-    "s2-makeover": "Three minutes in pairs, one point from each pair, then Show how to read it. The 'before' is the provider's own example of an effective prompt.",
-    "s2-turn": "Six minutes, no score. These are the provider's RACE and CRISPE practice tasks and its captions activity, rewritten for Najma with the facts included. Six cards for six people: ask neighbours to pick different ones. After four minutes ask two people: what differed between ChatGPT and Copilot, and which line of the brief did you change? That is the provider's prompt refinement workshop in one go.",
-    "s2-spec": "Ninety seconds. This is Job 1's recipe. Test cases are what make a built tool checkable.",
-    "s2-image": "One minute. SDR, 4W1H, CARE, RAISE and VAST from the slides are versions of this recipe. ChatGPT and Copilot both draw images. The warm-up's extra step used this recipe.",
-    "s2-ex": "Phones out. The brief questions need 45 seconds of reading.",
-    "s2-wins": "45 s each. The second question is the provider's loan email: asking for rates without giving them invites invented rates.",
-    "s2-missing": "30 s each. One addition fixes most of the problem.",
-    "s2-caps": "30 s. This is the provider's captions activity, done as few-shot.",
-    "s2-order": "60 s, then Reveal. This is the loop they run in Job 1.",
-    "s2-try": "Show the files page address. Walk the room. After 4 minutes, ask who tried the weak brief and what it ignored.",
-    "s2-job": "Twenty minutes. Start the first question as soon as people begin, so the timer covers the job. Most weak-brief calculators ignore the maximum, apply the app discount before the cap, or waive the same-day fee for Premier. Copilot's second opinion works from the rules as text, so no upload is needed there. After Reveal, two people show their calculator running case B and say what the full brief changed. Two minutes each.",
-    "s2-result": "The first timer runs 15 minutes for the job. Reveal, read the working, then 60 s for case B."
+    "s2-th": "Slow down on the four-part brief and on 'let AI write your prompt': every job uses them.",
+    "s2-how": "Two minutes. None of this means don't use it: it means brief it well and check what matters.",
+    "s2-frontier": "Ninety seconds. The study is from 2023 with GPT-4, but the shape still holds: great inside the frontier, worse than nothing outside it if you don't check. Exact figures in the sources: 12.2% more tasks, 25.1% faster, quality rated about 40% higher in the working paper.",
+    "s2-tools": "Two minutes. Copilot is the tool they'll use at Arla, so it does every job here. ChatGPT is only for comparison.",
+    "s2-arla": "Ninety seconds. Set expectations: what they see in the lab is what they'll have on Sunday. Copilot inside Word, Excel and PowerPoint needs a Microsoft 365 Copilot licence; most participants don't have one.",
+    "s2-brief": "Three minutes. This is the checklist they use to judge every prompt the AI writes for them. Microsoft's own guide says the same: goal, context, expectations, source.",
+    "s2-let": "Three minutes. This is the method for the two days. The questions with letters keep typing to a minimum. The test step matters: evidence that AI-written prompts beat careful hand-written ones is thin, so you always test.",
+    "s2-rules": "Ninety seconds. One line on each law. The rules apply whatever the tool; in class the files are made up, so nothing real goes in.",
+    "s2-warm": "Seven minutes, no score. Everyone sends the warm-up in Copilot, then the same in ChatGPT, and compares. Ask: which explained it better for a line leader? Which quiz questions would you actually use?",
+    "s2-ex": "Phones out. Read each question aloud, then Start.",
+    "s2-wins": "45 s. Four briefs for the same email.",
+    "s2-missing": "30 s.",
+    "s2-safe": "20 s each. Think of a tool that isn't approved, like a personal account.",
+    "s2-before": "30 s each."
+   }
+  },
+  "j1": {
+   "say": "First job. The person closest to production leads each team. Press Start on the first question as soon as they begin.",
+   "beats": {
+    "j1-try": "Show the Files page. The person closest to production leads each team. Press Start on the first question as soon as they begin.",
+    "j1-job": "Twenty-five minutes. The traps: the 23:40 to 00:25 stoppage runs past midnight (45 minutes, not 15), and the ribbon change at 02:15 is logged twice. Real total: 95 minutes. After Reveal, one team shows its handover and how it caught the double entry. Data check: the log names three operators.",
+    "j1-result": "The first timer covers the job (15 minutes). Then 60 s for the second question."
    }
   },
   "s3": {
-   "say": "Files, projects, the interview and thinking mode, then Job 2 and two people's trackers. The interview takes time: point anyone slow to the ready-made instructions. Then your Cowork demo.",
+   "say": "Files, the interview, EchoLeak, trust and checking, the checking list, then the slips. This round carries ILO 3.",
    "beats": {
-    "s3-th": "No phones. Two minutes per block. Everything here is used in Job 2 straight after.",
-    "s3-files": "Two minutes. File limits differ by plan and change often; teach people to check their own plan's limits rather than quoting numbers.",
-    "s3-proj": "Two minutes. Show where Projects are in ChatGPT; Job 2 uses them. Copilot added projects in its October 2026 update, but a work account may not show them yet. The next class uses the BIBF accounts too: memory should be off in both tools (on Microsoft 365 Copilot, BIBF's administrators may control it).",
-    "s3-interview": "Ninety seconds. This turns the slides' REACT step 'ask for clarification if needed' around: you ask it to ask you. Jobs 2 and 4 both start with an interview.",
-    "s3-tech": "Three minutes. These are the provider's techniques that still pay off: generated knowledge, self-critique, multimodal and chain of thought, in the form you would use them today.",
-    "s3-think": "Ninety seconds. The provider's apples and chocolates examples taught 'think step by step'. Thinking models don't need it, and OpenAI's own guide for them says to avoid chain-of-thought prompts. Show the two menus on the projector. On an Enterprise plan ChatGPT doesn't switch to Thinking by itself, so everyone picks it.",
-    "s3-ex": "Phones out. Four questions, 30 s each.",
-    "s3-quiz": "30 s each. The first two are exactly what Job 2 tests.",
-    "s3-try": "Show the files page. Walk the room. The interview takes 5 to 8 minutes; people who are slow can paste the ready-made instructions.",
-    "s3-job": "Twenty-five minutes. Start the first question as soon as people begin. The traps: note 5 fits two initiatives, note 6 fits none, 12/11 is 12 November (today), and Yusuf's email moves the reopening to 22 January. The one PDF with all eight photos is the quickest upload; if ChatGPT refuses the files, they do the job in Copilot. After Reveal, two people show their tracker: where note 5 went and the new reopening date. Then your demo: Cowork doing the same from a folder on a schedule.",
-    "s3-result": "The first timer runs 20 minutes. Then 60 s each for the other two.",
-    "s3-demo": "Five minutes, on your own laptop. Show a Cowork scheduled task that reads a folder of note photos every morning and updates the tracker file. Point out the instructions are the same ones they just wrote."
+    "s3-th": "This round carries ILO 3. Keep it brisk: Job 2 after lunch puts it into practice.",
+    "s3-files": "Two minutes. Long files are where it slips: Job 3's manual has two models, and Job 2's quotes have a footnote.",
+    "s3-interview": "Ninety seconds. It's the pack's last line: ask me up to three multiple-choice questions.",
+    "s3-echo": "Ninety seconds. EchoLeak: an email written to read like normal text made Microsoft 365 Copilot send data out, with no click from the user. Microsoft fixed it on the server in May 2025. Job 2 has a gentler version: a white line in a quote.",
+    "s3-trust": "One minute. The 2025 survey of 319 knowledge workers: the more they trusted the AI, the less they checked; the more they trusted their own skill, the more they checked.",
+    "s3-list": "Two minutes. This list is on the desk card they build on Thursday.",
+    "s3-ex": "Phones out. Read each one aloud.",
+    "s3-slip": "25 s each. Each line is from an AI summary of Ghaima's files; the source says otherwise for three of them.",
+    "s3-which": "30 s each."
+   }
+  },
+  "j2": {
+   "say": "First thing after lunch: get them hands-on fast. Watch for TriSeal recommendations.",
+   "beats": {
+    "j2-try": "First job after lunch: get them hands-on quickly. The person closest to procurement or finance leads each team.",
+    "j2-job": "Twenty-five minutes. The traps: Murjan's BD 14 freight is in a footnote (true cost BD 127); TriSeal's minimum order is 400,000 jars, more than the year's need and far more than the 60,000-jar store; TriSeal also hides a white 4-point line telling AI tools to recommend it. The cheapest offer Ghaima can use is Fanar at BD 118. After Reveal, one team shows the hidden line and its final recommendation.",
+    "j2-result": "The first timer covers the job (15 minutes). Then 60 s for the hidden line."
    }
   },
   "s4": {
-   "say": "Why results go wrong, three cases, the checking list, then Job 3 and the memo discussion. This round carries ILO 2.",
+   "say": "Ten minutes of theory, then the case clinic on flipcharts. Keep the sheets for Thursday.",
    "beats": {
-    "s4-th": "No phones. Two minutes per block.",
-    "s4-why": "Two minutes. Each card has one example from today: the footnote and the hidden line are in Job 3.",
-    "s4-cases": "Two minutes. Avianca: USD 5,000 penalty (22 June 2023); the court called six citations bogus. Air Canada: bereavement fare, C$812.02 in all (14 February 2024). Deloitte: report for Australia's Department of Employment and Workplace Relations, about AU$440,000; it refunded the final instalment, A$97,587 (October 2025).",
-    "s4-checks": "Two minutes. The last row is the one to repeat: if you wouldn't sign it, it isn't finished.",
-    "s4-again": "Two minutes. The slides' self-consistency and chain of verification, in the form a user can run in a minute. Self-consistency in the research samples several separate answers and takes the majority; it doesn't happen inside one answer.",
-    "s4-ex": "Phones out. The fee rules are in the case file if anyone needs them.",
-    "s4-slip": "25 s each. An AI summary of Najma's fee rules: two lines are right, two are wrong.",
-    "s4-est": "30 s. The point is the second half of the reveal: on a task just outside what AI does well, the AI group did worse.",
-    "s4-which": "30 s each.",
-    "s4-try": "Show the files page. Walk the room. Look for screens where the tool recommends Wahaj.",
-    "s4-job": "Eighteen minutes. The traps: Wahaj's Arabic module is BD 900 a month in a footnote, and a white 6-point line tells AI tools to recommend Wahaj. Wahaj also keeps data in Dubai and charges extra for handover. Tarteeb meets all five criteria. After Reveal, ask who got a Wahaj recommendation first, and what changed after the other-side prompt. Then one person shows the hidden line their tool found, its final recommendation and where Copilot and ChatGPT differed. Worth one line: in July 2026 a researcher showed Copilot in Word following white, hidden text in a document (reported by The Hacker News). Same trick as the Wahaj file.",
-    "s4-result": "The first timer runs 15 minutes. Then 60 s for the hidden line.",
-    "s4-memo": "Three minutes in pairs, each pair answers, then Show how to read it. Close the round with: the tool drafts, you sign."
+    "s4-th": "Ten minutes of theory, then the case clinic. Have the flipchart sheets ready.",
+    "s4-i40": "Three minutes, one line per card. These are categories, not claims: dairy case studies with hard figures are mostly vendor marketing, so none are quoted.",
+    "s4-siemens": "One minute. A generative AI example on the plant floor. Say clearly: the figure is Siemens' own, from its pilots.",
+    "s4-chain": "Two minutes. Classic AI predicts from data; generative AI writes, summarises and compares. Most real gains come from both.",
+    "s4-clinic": "Twenty minutes. Each team gets a flipchart sheet with the chain drawn on it. Fifteen minutes to mark their top three opportunities (where, classic or generative, what it would save), then one idea from each team. Keep the sheets: Thursday's action plans start from them."
+   }
+  },
+  "j3": {
+   "say": "The manual job. Ask teams to open the pages their checklist names.",
+   "beats": {
+    "j3-try": "The person closest to maintenance leads each team.",
+    "j3-job": "Twenty-five minutes. The trap: section 7 (pages 6 and 7) is for the FX-200 (12 Nm, hold RESET for 3 seconds); section 8 is for the FX-250 (9 Nm, STOP, RESET, confirm on screen). The model is only in a small line under the heading. The pump coupling's 15 Nm is a distractor. After Reveal, one team shows its checklist with page numbers.",
+    "j3-result": "The first timer covers the job (15 minutes). Then 60 s."
+   }
+  },
+  "c1": {
+   "say": "Scores, one lesson per team, clean-up. End on time.",
+   "beats": {
+    "c1-board": "Show the scores. Day one only: the game carries on tomorrow.",
+    "c1-lessons": "Five minutes. One lesson from each team, one sentence each. Write them on the whiteboard for tomorrow.",
+    "c1-out": "Walk the room: chats deleted, signed out, private window closed."
+   }
+  },
+  "d2": {
+   "say": "Five recap questions to wake the phones up, then the day's plan.",
+   "beats": {
+    "d2-recap": "20 s each. One from each part of yesterday.",
+    "d2-today": "Thirty seconds."
    }
   },
   "s5": {
-   "say": "Two short blocks, then Job 4 as Fatema. The phone checks use the sample brief. Then show the schedule, and your agent demo if time allows.",
+   "say": "Four patterns, then five questions including the order game.",
    "beats": {
-    "s5-th": "No phones. Two short blocks, then straight into the job.",
-    "s5-sched": "Ninety seconds. OpenAI's help page lists every plan for tasks, Free with up to 3 active tasks; its pricing page still says no for Free, so tell people to check their own. Copilot's scheduled prompts are on by default with a Microsoft 365 Copilot licence (general availability early 2026); the free Copilot Chat doesn't seem to have them. Claude does the same through Cowork on paid plans. Nobody sets up a task on the BIBF accounts: you show one on your laptop after Job 4.",
-    "s5-agent": "Ninety seconds. The provider's ReAct slide (reason, act, observe) describes how agents work inside. Users don't write ReAct prompts any more; they brief an agent. Then the demo: an agent working through a folder of expense claims, on your laptop.",
-    "s5-try": "Show the files page. Everyone answers the interview as Fatema, from her profile on the files page. Walk the room and look at the links people open.",
-    "s5-job": "Twenty minutes. Every brief comes out different, so the phone questions use the sample brief. Item 2 is dated 3 March 2024, item 3's link is about Q3 results, and item 4 is an anonymous forum. Copilot lists its sources under the answer; if the BIBF account has web search switched off, people do the job in ChatGPT with search on. After Reveal, one person shows their brief and opens one link with the room. Then show the schedule on your laptop: the same brief set for Sunday to Thursday at 7:00.",
-    "s5-result": "The first timer runs 15 minutes. Then 60 s each."
+    "s5-th": "Four short blocks, then the exercises.",
+    "s5-example": "Ninety seconds. Few-shot: two or three examples show the style better than any description.",
+    "s5-role": "Ninety seconds. A study of 162 roles found they didn't make answers more accurate.",
+    "s5-critique": "One minute. Two prompts they can reuse anywhere.",
+    "s5-image": "Ninety seconds. The same recipe works in Copilot and ChatGPT. Text inside images can come out garbled: keep words to a minimum.",
+    "s5-ex": "Phones out.",
+    "s5-q": "30 s each.",
+    "s5-order": "60 s."
+   }
+  },
+  "j4": {
+   "say": "The unit trap. Ask who got Line 3 first, and what changed after the second check.",
+   "beats": {
+    "j4-try": "The person closest to planning or supply chain leads each team.",
+    "j4-job": "Twenty-five minutes. The traps: Line 2's week 3 waste is 1.6 with 't' in the unit column (1,600 kg), and Line 1 has no week 4. Read right: Line 1 2.00%, Line 2 2.51%, Line 3 2.20%. Read 1.6 as kg and Line 2 falls to 1.86%, so Line 3 looks worst. After Reveal, one team shows its chart and how it caught the unit.",
+    "j4-result": "The first timer covers the job (15 minutes). Then 60 s."
+   }
+  },
+  "j5": {
+   "say": "The customer job. The draft's apology is the catch.",
+   "beats": {
+    "j5-try": "The person closest to logistics or the warehouse leads each team.",
+    "j5-job": "Twenty-five minutes. The trap: the truck left North Sitra on time at 18:00 on 3 November; it was held at Saudi customs at the King Fahd Causeway for a document check until 11:40 on 5 November. The colleague's draft apologises 'that our truck left our plant late'. Data check: the complaint has the buyer's name and mobile number. After Reveal, one team reads its reply.",
+    "j5-result": "The first timer covers the job (15 minutes). Then 60 s."
+   }
+  },
+  "s6": {
+   "say": "People and change, BCG's figures, five minutes on agents, then three questions. Before the break.",
+   "beats": {
+    "s6-th": "Before the break. Keep agents to five minutes.",
+    "s6-stop": "Two minutes. Ask the room which of these they have seen.",
+    "s6-bcg": "Ninety seconds. BCG surveyed more than 10,600 workers in 11 countries. Training of more than five hours, in person, and a manager who backs it make the difference.",
+    "s6-agents": "Five minutes at most. Most participants can't use agents without a licence, so keep it to what they are and how to brief one.",
+    "s6-ex": "Phones out.",
+    "s6-q": "30 s each."
+   }
+  },
+  "j6": {
+   "say": "Give each team its station on the presentation before you press Start. One minute per station to show.",
+   "beats": {
+    "j6-try": "Before Start, give each team its station on the presentation (tap the team's buttons). A team with the Finance, Regulatory or Lab person takes that station.",
+    "j6-job": "Twenty-five minutes. Finance: the BD 30,000 filler repair is one-off; operating margin 10.0% with it, 12.4% without. Regulatory: Arabic ingredients missing, and the expiry date reads 2027/05/14 instead of 14/05/2027. Lab: batch 1104's salt is 17 g/kg (1.7%, out); 1107's pH is 6.0 (out); 1106's moisture is exactly 58.0% (in). After Reveal, one team per station shows its result in a minute.",
+    "j6-result": "The first question's timer covers the job (15 minutes); the second runs 60 s. Each team sees only its own station's question."
+   }
+  },
+  "mc": {
+   "say": "Walk through My card on the projector (5 minutes), then thirty minutes hands-on. First thing after lunch.",
+   "beats": {
+    "mc-how": "Five minutes on the projector before anyone starts: open My card on the course site and walk through the six steps once. Then thirty minutes. Walk the room; the usual snag is forgetting to check the prompts against the four parts.",
+    "mc-task": "Thirty minutes. The pack holds no company data, so it can go into Arla's Copilot Chat on Sunday. If someone's result goes wrong, the plain card on the page is the fallback."
+   }
+  },
+  "ap": {
+   "say": "Hand back the flipchart sheets. Fifteen minutes to draft, then each team presents.",
+   "beats": {
+    "ap-plan": "Fifteen minutes to draft, then two to three minutes per team. Hand each team its flipchart sheet from yesterday's case clinic."
    }
   },
   "f": {
-   "say": "Post-course check first, then the quick-fire, the leaderboard with the top 3, the takeaways and what they built. Leave five minutes for the BIBF evaluation, the clean-up and the sign-out.",
+   "say": "Post-course check first, then the quick-fire, the podium, the takeaways and what they did. Leave five minutes for the BIBF evaluation and the clean-up.",
    "beats": {
-    "f-post": "Press Open the check on the phones. About eight minutes. Each phone shows that person's score at the start and now (never the answers).",
-    "f-quick": "Two fast ones to settle the leaderboard. 20 s each.",
-    "f-board": "Show the leaderboard on the phones, then the full-screen board. Read the top 3 by code name. Check the real names on your laptop first, then decide whether to press Reveal the real names.",
+    "f-post": "Press Open the check on the phones. About ten minutes. Each phone shows that person's score at the start and now (never the answers).",
+    "f-quick": "Two fast ones to settle the podium. 20 s each.",
+    "f-board": "Show the final board on the phones and the projector. Read the podium from third to first.",
     "f-take": "Read the three takeaways one last time.",
-    "f-built": "One minute. Name who showed each one today.",
+    "f-built": "One minute. Name a team for each.",
     "f-out": "Leave five minutes for the BIBF evaluation. Walk the room to check every desktop is cleaned up and signed out."
    }
   }
  },
  "help": {
-  "s1-warm": [
+  "k0-quick": [
    [
-    "Only text comes back, no visual",
-    "Ask: 'Show it as an interactive chart with sliders.' If it still can't, that is the comparison: note which tool did what."
-   ],
-   [
-    "One tool shows code",
-    "Ask it to show the result instead of the code. If it can't, look at what the other tool made."
+    "Copilot asks a question back",
+    "Answer it in a few words, or say 'just give me your best version'."
    ]
   ],
-  "s2-turn": [
+  "s2-warm": [
    [
-    "Not sure what to write",
-    "Use the five parts as headings, one line each: Goal, Context, Material, What done looks like, Limits."
-   ],
-   [
-    "The two tools give very different answers",
-    "Good: look for the line in the brief that left room to guess, and fix it."
+    "One tool is much slower",
+    "Fine: compare what you have after three minutes."
    ]
   ],
-  "s2-job": [
+  "j1-job": [
    [
-    "The file won't attach",
-    "Open the PDF, select all the text, copy it and paste it into the chat."
+    "The photo won't attach",
+    "Attach Line1-night-log.txt instead, or paste its text."
    ],
    [
-    "Message limit reached",
-    "Switch to the other tool, or work with a neighbour."
+    "It counts 107 minutes",
+    "Ask: 'Are any two entries the same stoppage?'"
    ],
    [
-    "ChatGPT won't take another file",
-    "Paste 'The six rules as text' instead of attaching the PDF."
+    "It reads 23:40 to 00:25 as 15 minutes",
+    "Ask: 'Does any stoppage run past midnight? Recount it.'"
    ],
    [
-    "Copilot and the calculator disagree",
-    "Good: work that case out by hand, one rule at a time. The rules decide."
-   ],
-   [
-    "It shows code instead of a tool",
-    "Ask: 'Show it as an interactive tool here instead of code.'"
-   ],
-   [
-    "Two people get different fees",
-    "Good: ask them to compare their briefs and their calculators."
+    "The poster has garbled words",
+    "Ask for the three words only, larger. Text in images is still a weak spot."
    ]
   ],
-  "s3-job": [
+  "j2-job": [
    [
-    "Can't upload eight files",
-    "Use the PDF with all eight photos on two pages."
-   ],
-   [
-    "No Projects option",
-    "Do it in one chat: paste the ready-made instructions first, then the photos."
-   ],
-   [
-    "ChatGPT won't take the files",
-    "Do the job in Copilot: one chat, the ready-made instructions first, then the PDF or the photos."
-   ],
-   [
-    "It reads 12/11 as 11 December",
-    "Point to the date line in the instructions, then ask it to fix the tracker."
-   ],
-   [
-    "No Excel file back",
-    "Ask for the updated tracker as an Excel file. If it can't, a table in the chat is enough."
-   ],
-   [
-    "The interview runs long",
-    "Answer 'that's enough, write the instructions now', or paste the ready-made ones."
-   ]
-  ],
-  "s4-job": [
-   [
-    "It recommends Wahaj",
-    "Ask: 'Did you count the footnote on the price?' and send the hidden-text prompt."
+    "It recommends TriSeal",
+    "Ask: 'Can we take a minimum order of 400,000 jars with a 60,000-jar store?' Then send 'Anything hidden?'."
    ],
    [
     "It doesn't find the hidden line",
-    "Open the Wahaj PDF, press Ctrl + A: the white line shows up under the handover section."
+    "Open the TriSeal PDF and press Ctrl + A: the white line shows at the bottom."
    ],
    [
-    "One file won't attach",
-    "Attach them one at a time, in two messages."
+    "It misses Murjan's freight",
+    "Ask: 'Read every footnote. Does any add a cost?'"
    ],
    [
-    "ChatGPT won't take the files",
-    "Compare your Copilot table with a neighbour's instead."
+    "A file won't attach",
+    "Attach the files one at a time, in two messages."
    ]
   ],
-  "s5-job": [
+  "j3-job": [
    [
-    "No web search in Copilot",
-    "Do the job in ChatGPT with search switched on (the globe icon). Without search the brief is made up: say so to the room."
+    "It gives 12 Nm",
+    "Ask: 'Which model is section 7 for? Our machine is the FX-250.'"
    ],
    [
-    "It asks something the profile doesn't cover",
-    "Answer the way Fatema would, in a line. The brief only needs the gist."
+    "It can't find the model line",
+    "Open page 6 of the PDF: the model is in the small line under the heading."
+   ]
+  ],
+  "j4-job": [
+   [
+    "Line 3 comes out highest",
+    "Ask: 'What unit is each waste figure in? Check the unit column.'"
    ],
    [
-    "Links open to nothing",
-    "Ask it for the original source of that item, then search for the headline yourself."
+    "It treats Line 1's week 4 as zero",
+    "Ask it to work out Line 1 on the weeks that are there, and to say a week is missing."
+   ],
+   [
+    "The chart has the wrong numbers",
+    "Give it the figures from your second check, line by line."
+   ]
+  ],
+  "j5-job": [
+   [
+    "It apologises for a late dispatch",
+    "Ask: 'What time did the truck leave the plant, according to the log?'"
+   ],
+   [
+    "The reply promises a delivery time",
+    "Ask it to take out anything we can't guarantee, like customs times."
+   ]
+  ],
+  "j6-job": [
+   [
+    "Finance: it calls maintenance a rising trend",
+    "Ask: 'Read the plant notes. Is any of it one-off?'"
+   ],
+   [
+    "Regulatory: the label image won't come out right",
+    "Fine: the table of fixes is what counts. Say so when you show it."
+   ],
+   [
+    "Lab: it fails batch 1106",
+    "Ask: 'Is a value equal to the limit in or out, if the limit says 58.0 or less?'"
+   ],
+   [
+    "Lab: it passes batch 1104",
+    "Ask: 'What unit is 1104's salt in? Convert it to % first.'"
+   ]
+  ],
+  "mc-task": [
+   [
+    "The pack button does nothing",
+    "Pick your role and at least one task first."
+   ],
+   [
+    "The QR code won't scan",
+    "Open the course site on your phone, go to My card and tap the same choices."
+   ],
+   [
+    "The card comes out messy",
+    "Use the plain card on the page; your prompts in the pack are what matter."
+   ],
+   [
+    "It changes the rules",
+    "Ask: 'Put the method back exactly as I gave it.'"
    ]
   ]
  },
  "sources": [
-  "ChatGPT weekly users: 1.2 billion, Sam Altman at OpenAI DevDay, 29 September 2026 (Engadget live blog); 800 million, TechCrunch, 6 October 2025.",
-  "KPMG TaxBot: The Register, 20 August 2025, KPMG wrote 100-page prompt to build agentic TaxBot (theregister.com/2025/08/20/kpmg_giant_prompt_tax_agent).",
-  "ChatGPT GPT-6 and Intelligent UI: paid plans 7 October 2026, Free and Go from 8 October (9to5Mac, 7 October 2026). ChatGPT Scan: release notes, about 1 October 2026, rolling out on iOS.",
-  "Microsoft, Introducing the new Copilot with Home, Code and Autopilot, 25 September 2026 (blogs.microsoft.com): Home with chat and the Cowork agent, Code, Autopilot; Frontier early access first; Cowork, Code and Autopilot billed by use. What's New in Microsoft Copilot, October 2026 (Microsoft Tech Community, 30 October 2026): projects in the Copilot app.",
-  "Copilot scheduled prompts: on by default for Microsoft 365 Copilot licence holders (Microsoft 365 message center MC1189911; general availability early 2026). Copilot file upload: up to 20 files in one conversation, 50 MB each (Microsoft Support, File upload in Microsoft Copilot). Web search in Copilot Chat can be switched off by an organisation's administrator.",
-  "ChatGPT uploads: Free 3 a day, paid plans up to 80 files every 3 hours; projects hold 5 files on Free and 40 on Business, Edu, Pro and Enterprise (OpenAI help: Uploading files; Projects in ChatGPT).",
-  "DeepSeek is based in Hangzhou, China. Its R1 model (20 January 2025) knocked about USD 590 billion off Nvidia's market value on 27 January 2025 (Reuters).",
-  "Copilot in Word and hidden text: a researcher's proof of concept with white, small hidden instructions, disclosed 28 July 2026 (The Hacker News, July 2026).",
-  "Claude: designs, decks and docs on every plan including Free, and Cowork in every conversation for Pro and Max, release notes 16 September 2026 (support.claude.com). Cowork scheduled tasks: all paid plans; help article 'Schedule recurring tasks in Claude Cowork'.",
-  "ChatGPT scheduled tasks: help article 'Scheduled tasks in ChatGPT' (Free and Go 3 active tasks, Plus 5, Business and Edu 10, Pro and Enterprise 15). The pricing page still lists Free as no: check on the day.",
-  "OpenAI, Reasoning best practices: 'Avoid chain-of-thought prompts' (developers.openai.com). Anthropic, Prompting best practices: 'Prefer general instructions over prescriptive steps' (platform.claude.com).",
-  "Microsoft Support, Get started writing prompts in Microsoft 365 Copilot: goal, context, source, expectations. Google Workspace, Prompting guide 101 and writing-effective-prompts: persona, task, context, format.",
-  "Zheng et al., When 'A Helpful Assistant' Is Not Really Helpful: Personas in System Prompts Do Not Improve Performances of Large Language Models, Findings of EMNLP 2024, arXiv 2311.10054 (162 roles, 2,410 questions, 4 model families).",
-  "Research behind the provider's techniques: Wei et al., chain of thought, arXiv 2201.11903 (2022); Wang et al., self-consistency, arXiv 2203.11171 (2022); Yao et al., ReAct, arXiv 2210.03629 (2022); Dhuliawala et al., chain of verification, arXiv 2309.11495 (2023).",
-  "Dell'Acqua et al., Navigating the Jagged Technological Frontier, HBS Working Paper 24-013, 22 September 2023: 758 BCG consultants, 12.2% more tasks, 25.1% faster, more than 40% higher quality; 19 percentage points less likely to be correct outside the frontier.",
-  "Mata v. Avianca, S.D.N.Y.: order of 4 May 2023 (six bogus decisions) and opinion of 22 June 2023 (USD 5,000 penalty).",
-  "Moffatt v. Air Canada, BC Civil Resolution Tribunal, 14 February 2024: C$650.88 damages plus interest and fees, C$812.02 in all (American Bar Association summary).",
-  "Deloitte Australia: report for the Department of Employment and Workplace Relations, about AU$440,000; The Register, 6 October 2025; refund of the final instalment, A$97,587, disclosed at Senate estimates (October 2025).",
-  "Bank cases: JPMorgan LLM Suite, about 200,000 users by May 2025 (American Banker); BBVA, ChatGPT Enterprise for 120,000 staff, about 3 hours a week saved (OpenAI, 2025); Mashreq Newton, about 40% (AGBI, October 2026); ING with McKinsey, 7 weeks, 20% more customers avoided long waits (McKinsey); Klarna, 2.3 million chats in the first month (press release, 27 February 2024) and hiring people again (Entrepreneur, 9 May 2025).",
-  "Provider case list, checked: generative AI in Deloitte UK PairD, Discover, ING, JPMorgan, MUFG and Rocket Mortgage; classic AI in Commonwealth Bank (H2O.ai), Banca Mediolanum (SAS), Federal Bank Feddy, NatWest Marge, Valley Bank, BNY Mellon (Evisort) and Nedbank Enbi. Colonial First State's deal is Azure cloud and AI, with Copilot for 75% of staff.",
-  "Bahrain: Personal Data Protection Law, Law No. 30 of 2018, in force 1 August 2019. National Day holidays 16 and 17 December 2026 (Central Bank of Bahrain).",
-  "Najma Bank, Tarteeb Digital, Wahaj Systems, their people and all their figures are fictional, made for this course. The sample brief's outlets and .example links are invented."
+  "Microsoft Support, Understanding the different Microsoft Copilot experiences (April 2026); Microsoft Learn, Copilot privacy and protections (enterprise data protection in Copilot Chat on work accounts).",
+  "Copilot Chat for users without a licence: file upload and image generation with standard access since July 2025 (MC1117101); fair-use limits extended from 2 and 9 November 2026, numbers not published; Copilot inside Word, Excel, PowerPoint and OneNote removed for unlicensed users in larger tenants in spring 2026 (A Guide to Cloud, April 2026; WindowsForum, November 2026; Purdue IT, April 2026). Check against the Microsoft 365 Message Center on the day.",
+  "Agents for unlicensed users: advanced agents such as Researcher and Analyst need a licence; Agent Builder agents need pay-as-you-go billing set up by IT (Microsoft Q&A; Microsoft Tech Community, 2026).",
+  "Dell'Acqua et al., Navigating the Jagged Technological Frontier, HBS Working Paper 24-013, September 2023: 758 BCG consultants, 12.2% more tasks, 25.1% faster, more than 40% higher quality inside the frontier; 19 percentage points less likely to be correct outside it.",
+  "Lee et al., The Impact of Generative AI on Critical Thinking, Microsoft Research and Carnegie Mellon University (CHI 2025): 319 knowledge workers, 936 examples; confidence in AI associated with less critical thinking, self-confidence with more.",
+  "EchoLeak, CVE-2025-32711: zero-click prompt injection in Microsoft 365 Copilot, disclosed by Aim Security in June 2025, fixed server-side in May 2025 (arXiv 2509.10540; The Hacker News, June 2025).",
+  "BCG, AI at Work 2025: Momentum Builds, but Gaps Remain (26 June 2025): more than 10,600 workers in 11 countries; 79% regular users with more than five hours of training against 67%; in-person training and a coach strongest; frontline positive sentiment 15% to 55% with strong leadership support.",
+  "Nestlé: Copilot Chat for every employee and NesGPT; more than 100,000 regular AI users averaging over 40 prompts a month (annual review, as reported by FoodNavigator, 2025 and 30 April 2026). Danone: Microsoft partnership and AI academy (Food Dive, 2024).",
+  "Siemens, Industrial Copilot for maintenance: about 25% less reactive maintenance time in first pilots, as reported by Siemens (2025).",
+  "Applications of artificial intelligence in the dairy industry: from farm to product development, Computers and Electronics in Agriculture (2025), doi 10.1016/j.compag.2025.110879 (categories only; no vendor figures quoted).",
+  "Zheng et al., Personas in System Prompts Do Not Improve Performances of Large Language Models, Findings of EMNLP 2024 (162 roles).",
+  "Microsoft Support, Write a great prompt in Microsoft 365 Copilot: goal, context, expectations, source.",
+  "Saudi Arabia: Personal Data Protection Law, enforceable from 14 September 2024, enforced by SDAIA (Clyde & Co, September 2024; IAPP, 2025). Bahrain: Personal Data Protection Law, Law No. 30 of 2018, in force 1 August 2019.",
+  "Ghaima Dairy, Norvell Filling Systems, Murjan Glass, TriSeal Packaging, Fanar Glassworks, Sabeel Hypermarkets, their people and all their figures are fictional, made for this course. The KSA label checklist and the lab spec are practice material, not real regulation."
  ]
 };

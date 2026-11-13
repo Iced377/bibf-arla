@@ -1,7 +1,7 @@
 /* Interface words. Course content lives in data/course.js. {name} placeholders are filled by t() in js/app.js. */
 window.UI_STRINGS = {
   brand: "Working Smarter with AI",
-  brandDay: "Ghaima Dairy, two days",
+  brandDay: "for Arla Foods",
   glossary: "Glossary",
   instructorFlag: "Instructor",
   credit: "BIBF",

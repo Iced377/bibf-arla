@@ -445,7 +445,8 @@ window.LiveGame = function (X) {
       var res = results(b.id, i);
       html += '<div class="lv-chips">';
       slots().forEach(function (tm) {
-        var r = res[tm], who = h(teamLabel(tm)) + (r && !SOLO ? " · " + h(r.n) : "");
+        // the projector shows team totals only; the notes view also names who answered fastest
+        var r = res[tm], who = h(teamLabel(tm)) + (r && !SOLO && notesView ? " · " + h(r.n) : "");
         html += r ? '<span class="lv-chip ok">' + who + " · +" + r.pts + "</span>" : '<span class="lv-chip no">' + who + " · 0</span>";
       });
       html += "</div>";
@@ -819,7 +820,7 @@ window.LiveGame = function (X) {
   document.addEventListener("toggle", function (e) { if (e.target.classList && e.target.classList.contains("pl-mates")) matesOpen = e.target.open; }, true);
   function participantTick(first) {
     X.resendChecks();   // a check the server has not confirmed yet is sent again
-    if (first && !/^#\/(play|pre|post|files)/.test(location.hash)) { location.hash = "#/play"; return; }   // the files page stays open on the participants' computers
+    if (first && !/^#\/(play|pre|post|files|start|card)/.test(location.hash)) { location.hash = "#/play"; return; }   // the files, quick win and my card pages stay open on the participants' computers
     // a student who has sent their check goes back to Play as soon as the next game starts
     var cm = location.hash.match(/^#\/(pre|post)/), lq = S.state.q, lb = lq && BEATS[lq.b];
     if (cm && X.getL()[cm[1]] && lb && lb.type !== "assesscue") { location.hash = "#/play"; return; }

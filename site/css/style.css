@@ -1,4 +1,4 @@
-/* AI Prompt Engineering for Business Professionals · BIBF house style: Inter, navy on white */
+/* Working Smarter with AI (Arla Foods via BIBF) · BIBF house style: Inter, navy on white */
 :root {
   --navy: #16306F;
   --ink: #2A3354;
@@ -978,3 +978,33 @@ details.teach[open] > summary { border-radius: 0 var(--radius-s) 0 0; }
 .beat-roundintro details.teach { margin-top: 0; }
 .filecard details.teach { margin: 8px 0 14px; }
 @media (max-width: 640px) { .teach-body p, .teach-body ul.points li { font-size: 16px; } }
+
+/* ---------- stations (Job 6): each team works on one station ---------- */
+.sta-assign { background: var(--tint); border-radius: var(--radius-s); padding: 10px 14px; margin: 0 0 14px; max-width: 980px; }
+.sta-k { font-size: 13px; font-weight: 600; color: var(--soft); text-transform: uppercase; letter-spacing: .04em; margin: 0 0 6px; }
+.sta-team { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin: 4px 0; }
+.sta-team b { min-width: 90px; color: var(--deep); }
+.sta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.sta-grid.n2 { grid-template-columns: 1fr 1fr; }
+.sta-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-s); padding: 14px 16px; }
+.sta-card h3 { margin: 0 0 6px; font-size: 18px; color: var(--navy); }
+.sta-card .opts { grid-template-columns: 1fr; gap: 6px; margin-bottom: 8px; }
+.sta-card .explain { margin-top: 6px; }
+.sta-who { font-size: 13px; font-weight: 500; color: var(--soft); }
+.q-mid { font-size: 18px; font-weight: 600; color: var(--deep); line-height: 1.35; margin: 0 0 10px; }
+@media (max-width: 760px) { .sta-grid { grid-template-columns: 1fr; } }
+
+/* ---------- chips: tap to choose (quick win, my card, stations) ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 14px; }
+.chip { font: inherit; font-size: 15px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+.chip:hover { border-color: var(--navy); }
+.chip.on { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+/* ---------- my card ---------- */
+.cstep { border-top: 1px solid var(--line); padding: 18px 0 6px; max-width: 980px; }
+.cstep h2 { margin: 0 0 6px; font-size: 22px; color: var(--deep); }
+.cstep-n { margin: 0; font-size: 13px; font-weight: 600; color: var(--soft); text-transform: uppercase; letter-spacing: .04em; }
+.qrbox { width: 220px; max-width: 70vw; background: #fff; padding: 8px; border: 1px solid var(--line); border-radius: var(--radius-s); margin: 8px 0 12px; }
+.qrbox svg { display: block; width: 100%; height: auto; }
+.plaincard { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 8px 0 12px; }
+.plaincard h3 { margin: 0 0 6px; font-size: 17px; color: var(--navy); }

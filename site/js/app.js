@@ -23,13 +23,13 @@
   SECTIONS.forEach(function (s) { s.beats.forEach(function (b) { b.section = s.id; BEATS[b.id] = b; }); });
 
   // ---------- state, saved per browser and shared between windows ----------
-  var KEY = "prompt.v1";
+  var KEY = "arla.v1";
   function freshST() { return { teams: C.teams.map(function (n) { return { name: n, score: 0 }; }), ui: {}, timer: null, scoresOpen: false }; }
   var ST = freshST();
   try { var raw = localStorage.getItem(KEY); if (raw) ST = Object.assign(ST, JSON.parse(raw)); } catch (e) { /* storage unavailable */ }
   var ME = Math.random().toString(36).slice(2);
   var bc = null;
-  try { bc = new BroadcastChannel("prompt"); } catch (e) { bc = null; }
+  try { bc = new BroadcastChannel("arla"); } catch (e) { bc = null; }
 
   function save() { try { localStorage.setItem(KEY, JSON.stringify(ST)); } catch (e) { /* ignore */ } }
   function send(msg) { if (NOTESVIEW) return; msg.from = ME; if (bc) { try { bc.postMessage(msg); } catch (e) { /* ignore */ } } }
@@ -114,7 +114,7 @@
   }
 
   // ---------- the learner's own progress: this device only, never shared between windows ----------
-  var LKEY = "prompt.learner";
+  var LKEY = "arla.learner";
   var L = { name: "", done: {}, pre: null, post: null, draft: { pre: {}, post: {} } };
   try { var lraw = localStorage.getItem(LKEY); if (lraw) L = Object.assign(L, JSON.parse(lraw)); } catch (e) { /* storage unavailable */ }
   L.draft = L.draft || { pre: {}, post: {} };
@@ -500,6 +500,27 @@
       return beatShell(b, inner);
     },
 
+    // Job stations: each team works on one station; the presentation gives each team its station, phones show that station's question
+    stations: function (b, u) {
+      var i = u.i || 0, n = b.stations[0].questions.length, sta = LIVE && LIVE.stations ? LIVE.stations() : {};
+      var inner = '<p class="qcount">' + t("questionNofM", { i: i + 1, n: n }) + "</p>";
+      if (EDITION === "instructor" && !u.shown) {
+        inner += '<div class="sta-assign"><p class="sta-k">' + t("staAssign") + "</p>" + C.teams.map(function (tn, k) {
+          return '<div class="sta-team"><b>' + h(teamName(k)) + "</b>" + b.stations.map(function (x) {
+            return '<button type="button" class="chip' + (sta[k + 1] === x.key ? " on" : "") + '" data-lv="sta" data-team="' + (k + 1) + '" data-key="' + h(x.key) + '">' + h(x.title) + "</button>";
+          }).join("") + "</div>";
+        }).join("") + "</div>";
+      }
+      inner += '<div class="sta-grid n' + b.stations.length + '">' + b.stations.map(function (x) {
+        var q = x.questions[i], who = C.teams.map(function (tn, k) { return sta[k + 1] === x.key ? teamName(k) : null; }).filter(Boolean);
+        return '<div class="sta-card"><h3>' + h(x.title) + (who.length ? ' <span class="sta-who">' + h(who.join(", ")) + "</span>" : "") + '</h3><p class="q-mid">' + T(q.q) + "</p>" +
+          options(q.options, q.answer, u.shown) + (u.shown ? '<div class="explain"><p><b>' + LETTERS[q.answer] + ".</b> " + T(q.why) + "</p></div>" : "") + "</div>";
+      }).join("") + "</div>";
+      if (!u.shown) inner += '<button class="btn" type="button" data-act="reveal" data-id="' + b.id + '">' + t("reveal") + "</button>";
+      inner += nav(i, n, "step", b.id);
+      return beatShell(b, inner);
+    },
+
     higherlower: function (b, u) {
       var i = u.i || 0, p = b.pairs[i];
       var higher = p.b.value > p.a.value;
@@ -865,6 +886,102 @@
       }).join("") : "<p>" + t("filesNone") + "</p>") + "</div></section>";
   }
 
+  // ---------- quick win: tap your role, copy a ready prompt (C.quickWin) ----------
+  var startPick = null;
+  function renderStart() {
+    renderNav("start");
+    var qw = C.quickWin || [], pick = qw.filter(function (x) { return x.key === startPick; })[0];
+    app.innerHTML = '<section class="dayhero"><div class="wrap"><h1>' + t2("startTitle") + '</h1><div class="rule"></div><p class="lede">' + t("startLede") + "</p>" +
+      '<p class="sta-k">' + t("startPick") + '</p><div class="chips">' + qw.map(function (x) {
+        return '<button type="button" class="chip' + (x === pick ? " on" : "") + '" data-act="startpick" data-key="' + h(x.key) + '">' + h(x.name) + "</button>";
+      }).join("") + "</div>" +
+      (pick ? promptHTML({ title: pick.title, text: pick.prompt }) + '<p class="hint">' + t("startCopyHint") + "</p>" : "") + "</div></section>";
+  }
+
+  // ---------- my card: taps build a pack the person pastes into Copilot Chat, then takes home on the phone (C.card) ----------
+  // The choices live in this browser and in the link (#/card?r=role&t=0,2&b=beat,beat), so the QR code carries them to the phone.
+  var CARDKEY = "arla.card";
+  var CARD = (function () {
+    var m = (location.hash.match(/^#\/card\?(.*)$/) || [])[1], c = null;
+    if (m) {
+      c = { r: "", t: [], b: [], fromLink: true };
+      m.split("&").forEach(function (kv) {
+        var p = kv.split("="), v = decodeURIComponent(p[1] || "");
+        if (p[0] === "r") c.r = v;
+        if (p[0] === "t") c.t = v ? v.split(",").map(Number) : [];
+        if (p[0] === "b") c.b = v ? v.split(",") : [];
+      });
+    } else { try { c = JSON.parse(localStorage.getItem(CARDKEY) || "null"); } catch (e) { c = null; } }
+    return c || { r: "", t: [], b: [] };
+  })();
+  function saveCard() { try { localStorage.setItem(CARDKEY, JSON.stringify({ r: CARD.r, t: CARD.t, b: CARD.b })); } catch (e) { /* ignore */ } }
+  function cardRole() { return ((C.card && C.card.roles) || []).filter(function (x) { return x.key === CARD.r; })[0] || null; }
+  function takeHomes() {
+    var out = []; SECTIONS.forEach(function (s) { s.beats.forEach(function (b) { if (b.type === "task" && b.takeHome && b.takeHome.prompts && b.takeHome.prompts.length) out.push(b); }); });
+    return out;
+  }
+  function cardLink() {
+    var base = location.href.split("#")[0].replace(/\/instructor\/.*$/, "/");
+    return base + "#/card?r=" + encodeURIComponent(CARD.r) + "&t=" + CARD.t.join(",") + "&b=" + CARD.b.map(encodeURIComponent).join(",");
+  }
+  function cardPack() {
+    var role = cardRole(); if (!role || !CARD.t.length) return "";
+    var tasks = CARD.t.map(function (i) { return role.tasks[i]; }).filter(Boolean);
+    var briefs = takeHomes().filter(function (b) { return CARD.b.indexOf(b.id) >= 0; }).map(function (b) {
+      return b.takeHome.prompts.map(function (p) { return "### " + p.title + "\n" + p.text; }).join("\n\n");
+    });
+    return C.card.instruction.replace("{role}", role.name).replace("{tasks}", tasks.map(function (x) { return "- " + x; }).join("\n"))
+      .replace("{briefs}", briefs.length ? briefs.join("\n\n") : C.card.noBriefs) + "\n\n" + C.card.method;
+  }
+  function qrSVG(text) {
+    if (!window.qrcode) return "";
+    try { var qr = window.qrcode(0, "M"); qr.addData(text); qr.make(); return qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true }); } catch (e) { return ""; }
+  }
+  function plainCardHTML() {
+    return '<div class="plaincard">' + C.card.plain.map(function (x) {
+      return '<div class="card"><h3>' + h(x.title) + '</h3><ul class="points">' + x.items.map(function (li) { return "<li>" + T(li) + "</li>"; }).join("") + "</ul></div>";
+    }).join("") + "</div>";
+  }
+  function renderCard() {
+    renderNav("card");
+    var cd = C.card; if (!cd) { renderHome(); return; }
+    var role = cardRole(), pack = cardPack(), n = 6, step = 0;
+    function head(k, txt) { step++; return '<div class="cstep"><p class="cstep-n">' + t("cardStep", { i: step, n: n }) + "</p><h2>" + h(t(k)) + "</h2>" + (txt ? "<p>" + h(txt) + "</p>" : ""); }
+    var actions = pack ? '<div class="actions"><button class="btn" type="button" data-act="carddl">' + t("cardDownload") + "</button>" +
+      '<button class="btn ghost" type="button" data-act="cardshare">' + t("cardShare") + "</button>" +
+      '<button class="btn ghost" type="button" data-act="copytext" data-label="' + h(t("cardCopyPack")) + '" data-text="' + h(pack) + '">' + t("cardCopyPack") + "</button></div>" : "";
+    var html = '<section class="dayhero"><div class="wrap"><h1>' + t2("cardTitle") + '</h1><div class="rule"></div>';
+    if (CARD.fromLink && pack) html += '<div class="callout"><p>' + t("cardOnPhone") + "</p>" + actions + "</div>";
+    html += '<p class="lede">' + t("cardLede") + "</p>";
+    html += head("cardStep1") + '<div class="chips">' + cd.roles.map(function (x) {
+      return '<button type="button" class="chip' + (x === role ? " on" : "") + '" data-act="cardrole" data-key="' + h(x.key) + '">' + h(x.name) + "</button>";
+    }).join("") + "</div></div>";
+    html += head("cardStep2") + (role ? '<div class="chips">' + role.tasks.map(function (x, i) {
+      return '<button type="button" class="chip' + (CARD.t.indexOf(i) >= 0 ? " on" : "") + '" data-act="cardtask" data-i="' + i + '">' + h(x) + "</button>";
+    }).join("") + "</div>" : '<p class="muted">' + t("cardPickMore") + "</p>") + "</div>";
+    html += head("cardStep3") + '<div class="chips">' + takeHomes().map(function (b) {
+      return '<button type="button" class="chip' + (CARD.b.indexOf(b.id) >= 0 ? " on" : "") + '" data-act="cardbrief" data-key="' + h(b.id) + '">' + h(b.title) + "</button>";
+    }).join("") + "</div></div>";
+    html += head("cardStep4", t("cardStep4Text")) + (pack ? promptHTML({ title: t("cardCopyPack"), text: pack }) : '<p class="muted">' + t("cardPickMore") + "</p>") + "</div>";
+    html += head("cardStep5") + plainCardHTML() + "</div>";
+    html += head("cardStep6", t("cardStep6Text")) + (pack ? '<div class="qrbox">' + qrSVG(cardLink()) + "</div>" + actions : '<p class="muted">' + t("cardPickMore") + "</p>") + "</div>";
+    app.innerHTML = html + "</div></section>";
+  }
+  function cardDownload() {
+    var pack = cardPack(); if (!pack) return;
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([pack], { type: "text/plain;charset=utf-8" }));
+    a.download = C.card.fileName || "My-Copilot-pack.txt";
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    toast(t("cardSaved"));
+  }
+  function cardShare() {
+    var pack = cardPack(); if (!pack) return;
+    if (navigator.share) navigator.share({ title: C.card.shareTitle || t("cardNav"), text: pack }).then(function () { toast(t("cardShared")); }, function () { /* cancelled */ });
+    else copy(pack, t("cardCopyPack"));
+  }
+
   // ---------- glossary page ----------
   function renderGlossary() {
     renderNav("glossary");
@@ -973,6 +1090,12 @@
         commit(id); syncFlips(BEATS[id]); break;
       case "flipall": u.flipped = {}; commit(id); syncFlips(BEATS[id]); break;
       case "copytext": copy(a.getAttribute("data-text"), a.getAttribute("data-label") || t("lblText")); break;
+      case "startpick": startPick = a.getAttribute("data-key"); renderStart(); break;
+      case "cardrole": var rk = a.getAttribute("data-key"); if (CARD.r !== rk) { CARD.r = rk; CARD.t = []; } saveCard(); renderCard(); break;
+      case "cardtask": var ti = +a.getAttribute("data-i"), tp = CARD.t.indexOf(ti); if (tp >= 0) CARD.t.splice(tp, 1); else if (CARD.t.length < 3) CARD.t.push(ti); saveCard(); renderCard(); break;
+      case "cardbrief": var bk = a.getAttribute("data-key"), bp = CARD.b.indexOf(bk); if (bp >= 0) CARD.b.splice(bp, 1); else CARD.b.push(bk); saveCard(); renderCard(); break;
+      case "carddl": cardDownload(); break;
+      case "cardshare": cardShare(); break;
       case "togglenotes": setNotes(!notesOn); break;
       case "casefile": openCase(a.getAttribute("data-sec")); break;
       case "casego": openCase(a.getAttribute("data-sec")); break;
@@ -1093,12 +1216,12 @@
   if (EDITION === "instructor") {
     // the switch for the facilitator notes sits on the Dashboard (never in the footer, which the projector shows)
     var notesOn = true;
-    try { notesOn = localStorage.getItem("prompt.notes") !== "0"; } catch (e) { /* ignore */ }
+    try { notesOn = localStorage.getItem("arla.notes") !== "0"; } catch (e) { /* ignore */ }
     setNotes = function (on) { notesOn = !!on; applyNotes(); };
     var applyNotes = function () {
       document.body.classList.toggle("notes-off", !notesOn);
       document.querySelectorAll('[data-act="togglenotes"]').forEach(function (b) { b.textContent = notesOn ? t("hideNotes") : t("showNotes"); });
-      try { localStorage.setItem("prompt.notes", notesOn ? "1" : "0"); } catch (e) { /* ignore */ }
+      try { localStorage.setItem("arla.notes", notesOn ? "1" : "0"); } catch (e) { /* ignore */ }
     };
     applyNotes();
     document.body.classList.add("instructor");
@@ -1126,12 +1249,14 @@
     var hsh = location.hash || "#/";
     var m;
     var y = hsh === lastRoute ? window.scrollY : 0;
-    if (EDITION === "audience" && LIVE && LIVE.enabled() && !/^#\/(play|pre|post|files)/.test(hsh)) { location.hash = "#/play"; return; }
+    if (EDITION === "audience" && LIVE && LIVE.enabled() && !/^#\/(play|pre|post|files|start|card)/.test(hsh)) { location.hash = "#/play"; return; }
     if (LIVE && LIVE.render(hsh, app)) { /* live play page */ }
     else if ((m = hsh.match(/^#\/s\/([a-z0-9]+)/))) renderSection(m[1]);
     else if (/^#\/scores/.test(hsh)) renderBoard();
     else if (/^#\/glossary/.test(hsh)) renderGlossary();
     else if (/^#\/files/.test(hsh)) renderFiles();
+    else if (/^#\/start/.test(hsh)) renderStart();
+    else if (/^#\/card/.test(hsh)) renderCard();
     else if (/^#\/pre/.test(hsh)) renderCheck("pre");
     else if (/^#\/post/.test(hsh)) renderCheck("post");
     else if (/^#\/progress/.test(hsh)) renderProgress();

@@ -1,7 +1,8 @@
 /* Live play. Every activity is a scored question that the instructor starts from the presentation.
    Start puts the question on every phone and starts the timer. Everyone answers on their own phone, once.
    When time runs out answers lock; Reveal shows the answer and scores it: the team with the fastest right
-   answer gets 3 points, every other team with a right answer gets 1. A solo course (C.solo) has no teams: the server
+   answer gets C.fastPoints (3 unless the course says otherwise), every other team with a right answer gets 1.
+   A stations game (type "stations") gives each team the questions of the station the presentation assigned it. A solo course (C.solo) has no teams: the server
    seats each new player in an empty slot of their own, so a slot is a person and every board shows names.
    /instructor/ is the presentation (it drives); /instructor/?notes is the notes view (it follows).
    app.js calls window.LiveGame(X) once and calls into the object it returns. Data lives in Supabase
@@ -29,23 +30,24 @@ window.LiveGame = function (X) {
   }
   // "1 point", "3 points": the key ending in 1 holds the singular
   function ptsText(k, n) { return t(n === 1 ? k + "1" : k, { n: n }); }
-  var SECS = { estimate: 30, quiz: 30, higherlower: 20, flags: 30, scam: 40, timeline: 90, order: 75 };
+  var SECS = { estimate: 30, quiz: 30, stations: 30, higherlower: 20, flags: 30, scam: 40, timeline: 90, order: 75 };
+  var FAST = C.fastPoints || 3;   // points for the fastest right team; every other right team gets 1
 
   // ---------- small helpers ----------
   var tag = (location.search.match(/[?&]as=(\w+)/) || [])[1] || "";   // lets one browser test several phones
-  var MEKEY = "prompt.live.me" + (tag ? "." + tag : "");
+  var MEKEY = "arla.live.me" + (tag ? "." + tag : "");
   function load(k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } }
   function store(k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* ignore */ } }
   function $(id) { return document.getElementById(id); }
   // A run is one go through the course. Start Over begins the next run; every screen and phone then
   // clears what it saved in this browser (answers, checks, names, scores) and starts as new.
-  var RUNKEY = "prompt.run";
+  var RUNKEY = "arla.run";
   function wipeLocal() {
     try {
       var keys = [];
       for (var k = 0; k < localStorage.length; k++) keys.push(localStorage.key(k));
       keys.forEach(function (key) {
-        if (key === "prompt.v1" || key === "prompt.learner" || key.indexOf("prompt.live.me") === 0) localStorage.removeItem(key);
+        if (key === "arla.v1" || key === "arla.learner" || key.indexOf("arla.live.me") === 0) localStorage.removeItem(key);
       });
     } catch (e) { /* storage unavailable */ }
   }
@@ -55,37 +57,45 @@ window.LiveGame = function (X) {
   function isGame(b) { return !!(b && SECS[b.type]); }
   function countOf(b) {
     if (b.type === "quiz") return b.questions.length;
+    if (b.type === "stations") return b.stations[0].questions.length;
     if (b.type === "higherlower") return b.pairs.length;
     if (b.type === "flags" || b.type === "scam") return b.items.length;
     return 1;
   }
   function secsOf(b) { return b.secs || SECS[b.type] || 30; }
   // a hands-on question can carry its own longer timer
-  function secsAt(b, i) { var q = b.questions && b.questions[i]; return (q && q.secs) || secsOf(b); }
+  function secsAt(b, i) { var q = b.questions ? b.questions[i] : b.stations ? b.stations[0].questions[i] : null; return (q && q.secs) || secsOf(b); }
   function isOrder(b) { return b.type === "timeline" || b.type === "order"; }
   function orderKey(b) {
     var list = b.items || b.steps, order = X.shuffledIdx(list.length, b.id), letterOf = {};
     order.forEach(function (k, j) { letterOf[k] = LETTERS[j]; });
     return list.map(function (x, k) { return letterOf[k]; }).join(",");
   }
-  function correctOf(b, i) {
+  // team: whose answer it is (a stations game has a different right answer for each station)
+  function correctOf(b, i, team) {
     if (b.type === "estimate") return String(b.answer);
     if (b.type === "quiz") return String(b.questions[i].answer);
+    if (b.type === "stations") { var sq = qOf(b, i, team); return sq ? String(sq.answer) : null; }
     if (b.type === "higherlower") { var p = b.pairs[i]; return p.b.value > p.a.value ? "higher" : "lower"; }
     if (b.type === "flags" || b.type === "scam") return b.items[i].verdict;
     if (isOrder(b)) return orderKey(b);
     return null;
   }
   // the choices a phone shows: [value, label]
-  function choicesOf(b, i) {
+  function choicesOf(b, i, team) {
     var letter = function (o, k) { return [String(k), LETTERS[k] + " · " + o]; };
     if (b.type === "estimate") return b.options.map(letter);
     if (b.type === "quiz") return b.questions[i].options.map(letter);
+    if (b.type === "stations") { var sq = qOf(b, i, team); return sq ? sq.options.map(letter) : []; }
     if (b.type === "higherlower") return [["higher", t("higher")], ["lower", t("lower")]];
     if (b.type === "flags") return [["red", t("redFlag")], ["green", t("greenFlag")]];
     if (b.type === "scam") return [["real", t("real")], ["scam", t("scam")]];
     return [];
   }
+  // stations: which station the presentation gave each team ({team number: station key}), and that station's question
+  function staMap() { return (INSTR && drive ? D.sta : S.state.sta) || {}; }
+  function stationFor(b, team) { var k = staMap()[team]; return (b.stations || []).filter(function (x) { return x.key === k; })[0] || null; }
+  function qOf(b, i, team) { var st = stationFor(b, team); return st ? st.questions[i] : null; }
 
   // ---------- connection ----------
   var cfg = null, enabled = false, failures = 0, failWhy = "";
@@ -95,7 +105,7 @@ window.LiveGame = function (X) {
   var drive = INSTR && !notesView;
   if (INSTR) X.setNotes(notesView);
   // what the presentation decides: the live question, revealed questions, results, reset count
-  var D = { q: null, locks: {}, res: {}, auto: null, rn: 0, route: null, rollClosed: false };
+  var D = { q: null, locks: {}, res: {}, auto: null, rn: 0, route: null, rollClosed: false, sta: {} };
 
   var keyIdx = 0;
   function rpc(fn, args, retried) {
@@ -198,15 +208,15 @@ window.LiveGame = function (X) {
     for (var k in S.items) { var it = S.items[k]; if (it.k === "answer" && it.b === beat && it.i === i) out.push(it); }
     return out.sort(function (a, b) { return a.r - b.r; });
   }
-  // per team: its fastest right answer; the fastest team overall gets 3, every other right team 1
+  // per team: its fastest right answer; the fastest team overall gets FAST points, every other right team 1
   function results(beat, i) {
-    var b = BEATS[beat], right = correctOf(b, i), best = {};
+    var b = BEATS[beat], best = {};
     answers(beat, i).forEach(function (a) {
-      if (a.d.c !== right || best[a.t]) return;
+      if (a.d.c !== correctOf(b, i, a.t) || best[a.t]) return;
       best[a.t] = { n: a.d.n, r: a.r };
     });
     var teams = Object.keys(best).sort(function (x, y) { return best[x].r - best[y].r; }), out = {};
-    teams.forEach(function (tm, k) { out[tm] = { n: best[tm].n, pts: k === 0 ? 3 : 1 }; });
+    teams.forEach(function (tm, k) { out[tm] = { n: best[tm].n, pts: k === 0 ? FAST : 1 }; });
     return out;
   }
   function locked(beat, i) { var st = INSTR && drive ? D : S.state; return !!(st.locks && st.locks[beat + ":" + i]); }
@@ -248,13 +258,13 @@ window.LiveGame = function (X) {
       var pp = P[sc.slice(sc.lastIndexOf(":") + 1)]; if (pp) pp.cells[it.b + ":" + it.i] = it;
     }
     played.forEach(function (pq) {
-      var right = pq.done ? correctOf(BEATS[pq.b], pq.i) : null, first = {};
+      var first = {};
       list.forEach(function (p) {
         var a = p.cells[pq.k]; if (!a) return;
         p.ans++;
-        if (pq.done && a.d.c === right) { p.right++; if (!first[a.t] || a.r < first[a.t].r) first[a.t] = { p: p, r: a.r }; }
+        if (pq.done && a.d.c === correctOf(BEATS[pq.b], pq.i, a.t)) { p.right++; if (!first[a.t] || a.r < first[a.t].r) first[a.t] = { p: p, r: a.r }; }
       });
-      Object.keys(first).sort(function (x, y) { return first[x].r - first[y].r; }).forEach(function (tm, k) { first[tm].p.won += k === 0 ? 3 : 1; });
+      Object.keys(first).sort(function (x, y) { return first[x].r - first[y].r; }).forEach(function (tm, k) { first[tm].p.won += k === 0 ? FAST : 1; });
     });
     list.sort(function (a, b) { return b.right - a.right || b.won - a.won || b.ans - a.ans || a.name.localeCompare(b.name); });
     return { played: played, list: list };
@@ -308,7 +318,7 @@ window.LiveGame = function (X) {
   }
   function pushNow() {
     if (leaving) return;
-    var state = { run: S.run, st: X.getST(), what: pushWhat, route: D.route, q: D.q, locks: D.locks, res: D.res, auto: D.auto, top: D.top, rn: D.rn, rollClosed: D.rollClosed, reveal: !!D.reveal, skew: S.offset, ts: Date.now() };
+    var state = { run: S.run, st: X.getST(), what: pushWhat, route: D.route, q: D.q, locks: D.locks, res: D.res, auto: D.auto, top: D.top, rn: D.rn, rollClosed: D.rollClosed, reveal: !!D.reveal, sta: D.sta, skew: S.offset, ts: Date.now() };
     pushWhat = undefined;
     lastSent = JSON.stringify([D.res, D.auto, D.top]);
     admin("state", { state: state }).then(function (r) {
@@ -329,7 +339,7 @@ window.LiveGame = function (X) {
     if (drive) {
       if (!adopted) {
         adopted = true;
-        D.q = st.q || null; D.locks = st.locks || {}; D.rn = st.rn || 0; D.rollClosed = !!st.rollClosed; D.reveal = !!st.reveal;
+        D.q = st.q || null; D.locks = st.locks || {}; D.rn = st.rn || 0; D.rollClosed = !!st.rollClosed; D.reveal = !!st.reveal; D.sta = st.sta || {};
         if (st.st && st.st.teams) { X.setST(st.st); X.applyState(null); }
         D.route = location.hash || "#/";
       }
@@ -356,7 +366,7 @@ window.LiveGame = function (X) {
       if (copy.timer && copy.timer.endsAt) copy.timer.endsAt = copy.timer.endsAt + (st.skew || 0) - S.offset;
       X.setST(copy);
     }
-    D.q = st.q || null; D.locks = st.locks || {};
+    D.q = st.q || null; D.locks = st.locks || {}; D.sta = st.sta || {};
     var personal = /^#\/(pre|post|progress|class|live|glossary)/.test(location.hash);
     if (st.route && st.route !== lastRoute && !personal) {
       lastRoute = st.route;
@@ -427,7 +437,7 @@ window.LiveGame = function (X) {
       var left = q.paused ? (q.left || 0) : Math.ceil((q.ends - serverNow()) / 1000);
       html += '<span class="lv-st big">' + (q.paused ? t("lvPausedLeft", { s: mmss(left), n: got, m: people }) : left > 0 ? t("lvLiveLeft", { s: mmss(left), n: got, m: people }) : t("lvTimeUpCount", { n: got, m: people })) + "</span>";
     } else {
-      var right = correctOf(b, i), nRight = answers(b.id, i).filter(function (a) { return a.d.c === right; }).length;
+      var nRight = answers(b.id, i).filter(function (a) { return a.d.c === correctOf(b, i, a.t); }).length;
       html += '<span class="lv-st">' + t("lvRightCount", { r: nRight, n: got }) + "</span>";
     }
     html += "</div>";
@@ -544,9 +554,9 @@ window.LiveGame = function (X) {
   var FIELDS = [["fTitle", "Course title", QA.title || ""], ["fProg", "Programme", QA.programme || ""],
     ["fCode", "Course code", QA.code || ""], ["fDates", "Course date", QA.dates || ""], ["fVenue", "Venue", QA.venue || ""], ["fInstr", "Instructor", C.instructor || ""]];
   function fieldVals() {
-    var saved = load("prompt.sheet") || {}, out = {};
+    var saved = load("arla.sheet") || {}, out = {};
     FIELDS.forEach(function (f) { var el = $(f[0]); out[f[0]] = el ? el.value : (saved[f[0]] != null ? saved[f[0]] : f[2]); });
-    store("prompt.sheet", out);
+    store("arla.sheet", out);
     return out;
   }
   function resultsTable(ds, withTimes) {
@@ -715,7 +725,7 @@ window.LiveGame = function (X) {
       cols.map(function (c) { return '<th class="pc" title="' + h(c.title + " · " + (c.i + 1)) + '">' + (played.indexOf(c) + 1) + "</th>"; }).join("") + "</tr></thead><tbody>";
     function cellsHTML(p) {
       return cols.map(function (c) {
-        var a = p.cells[c.k], cls = !a ? "no" : !c.done ? "in" : a.d.c === correctOf(BEATS[c.b], c.i) ? "ok" : "bad";
+        var a = p.cells[c.k], cls = !a ? "no" : !c.done ? "in" : a.d.c === correctOf(BEATS[c.b], c.i, p.team) ? "ok" : "bad";
         return '<td class="pc ' + cls + '">' + (cls === "ok" ? "✓" : cls === "bad" ? "✗" : cls === "in" ? "●" : "·") + "</td>";
       }).join("");
     }
@@ -736,7 +746,7 @@ window.LiveGame = function (X) {
       ms.forEach(function (p) {
         html += "<tr" + (p.id === best ? ' class="best"' : "") + "><td>" + (p.id === best ? "★ " : "") + h(p.name) + "</td><td>" + p.ans + "/" + played.length + "</td><td>" + p.right + "</td><td>" + p.won + "</td>" +
           cols.map(function (c) {
-            var a = p.cells[c.k], cls = !a ? "no" : !c.done ? "in" : a.d.c === correctOf(BEATS[c.b], c.i) ? "ok" : "bad";
+            var a = p.cells[c.k], cls = !a ? "no" : !c.done ? "in" : a.d.c === correctOf(BEATS[c.b], c.i, p.team) ? "ok" : "bad";
             return '<td class="pc ' + cls + '">' + (cls === "ok" ? "✓" : cls === "bad" ? "✗" : cls === "in" ? "●" : "·") + "</td>";
           }).join("") + "</tr>";
       });
@@ -915,8 +925,8 @@ window.LiveGame = function (X) {
     html += stemHTML(b, i, done);
     if (isOrder(b)) html += orderHTML(b, mine, open);
     else {
-      var right = correctOf(b, i);
-      html += '<div class="pl-opts">' + choicesOf(b, i).map(function (o) {
+      var right = correctOf(b, i, me.team);
+      html += '<div class="pl-opts">' + choicesOf(b, i, me.team).map(function (o) {
         var cls = mine && mine.d.c === o[0] ? " sel" : "";
         if (done) cls += o[0] === right ? " right" : (mine && mine.d.c === o[0] ? " wrong" : "");
         return '<button class="pl-opt' + cls + '" type="button" data-lv="answer" data-c="' + h(o[0]) + '"' + (open ? "" : " disabled") + ">" + T(o[1]) + "</button>";
@@ -932,6 +942,11 @@ window.LiveGame = function (X) {
   function stemHTML(b, i, done) {
     if (b.type === "estimate") return '<p class="pl-q">' + T(b.question) + "</p>" + phoneChart(b.chart, done) + caseLinkPhone();
     if (b.type === "quiz") return (i === 0 && b.intro ? '<p class="pl-prompt">' + T(b.intro) + "</p>" : "") + '<p class="pl-q">' + T(b.questions[i].q) + "</p>" + phoneChart(b.questions[i].chart, done) + caseLinkPhone();
+    if (b.type === "stations") {
+      var stn = stationFor(b, me.team), sq = stn && stn.questions[i];
+      if (!sq) return '<p class="pl-q">' + t("lvNoStation") + "</p>";
+      return '<p class="pl-prompt">' + t("lvStation", { x: h(stn.title) }) + '</p><p class="pl-q">' + T(sq.q) + "</p>" + phoneChart(sq.chart, done) + caseLinkPhone();
+    }
     if (b.type === "higherlower") { var p = b.pairs[i]; return '<div class="pl-hl"><p>' + T(p.a.label) + " <b>" + h(p.a.show) + "</b></p><p>" + T(p.b.label) + " <b>?</b></p></div>"; }
     if (b.type === "flags") return '<p class="pl-q">' + T(b.items[i].text) + "</p>";
     if (b.type === "scam") {
@@ -958,13 +973,13 @@ window.LiveGame = function (X) {
       if (S.state.q && S.state.q.paused) return '<p class="hint">' + t("lvPausedHint") + "</p>";
       return left > 0 ? '<p class="hint">' + ts("lvOneEach") + "</p>" : '<p class="pl-result no">' + t("lvYouNone") + "</p>";
     }
-    var right = correctOf(b, i), ok = !!(mine && mine.d.c === right);
+    var right = correctOf(b, i, me.team), ok = !!(mine && mine.d.c === right);
     var pts = ((S.state.res || {})[b.id + ":" + i] || {})[me.team] || 0;
     var fast = null;
     answers(b.id, i).some(function (a) { if (a.t === me.team && a.d.c === right) { fast = a.d.n; return true; } return false; });
     var html = '<p class="pl-result ' + (ok ? "ok" : "no") + '">' + (ok ? t("lvYouRight") : mine ? t("lvWrong") : t("lvYouNone")) + "</p>";
     if (isOrder(b)) html += '<p class="pl-fact">' + t("lvRightOrder", { x: h(right.split(",").join(" ")) }) + "</p>";
-    if (SOLO) { if (pts) html += '<p class="pl-team">' + ptsText("lvSoloGot", pts) + (pts === 3 ? " · " + t("lvSoloFastest") : "") + "</p>"; }
+    if (SOLO) { if (pts) html += '<p class="pl-team">' + ptsText("lvSoloGot", pts) + (pts === FAST ? " · " + t("lvSoloFastest") : "") + "</p>"; }
     else html += '<p class="pl-team">' + t("lvTeamGot", { n: pts }) + (fast && pts ? " · " + t("lvTeamFastest", { name: h(fast) }) : "") + "</p>";
     return html;
   }
@@ -1053,6 +1068,7 @@ window.LiveGame = function (X) {
       case "osend": if (q) sendAnswer((orderPick[q.b] || []).join(",")); return;
       // presentation
       case "start": start(id); return;
+      case "sta": if (INSTR && drive) { var stTeam = +a.getAttribute("data-team"), stKey = a.getAttribute("data-key"); D.sta = Object.assign({}, D.sta); if (D.sta[stTeam] === stKey) delete D.sta[stTeam]; else D.sta[stTeam] = stKey; pushSoon(null); X.applyState(null); refreshPanels(); } return;
       case "roll": D.rollClosed = !D.rollClosed; pushSoon(null); renderLivePage(null, true); return;
       case "names": D.reveal = !D.reveal; pushSoon(null); X.renderScores(); X.refreshTeamViews(); refreshPanels(); return;
       case "attfill":
@@ -1132,7 +1148,9 @@ window.LiveGame = function (X) {
       if (!enabled) return "";
       return INSTR ? '<a href="#/live" class="' + (active === "live" ? "on" : "") + '">' + t("lvNav") + "</a>"
         : '<a href="#/play" class="play-link ' + (active === "play" ? "on" : "") + '">' + t("lvPlay") + "</a>" +
-          '<a href="#/files" class="' + (active === "files" ? "on" : "") + '">' + t("lvFilesNav") + "</a>";
+          '<a href="#/files" class="' + (active === "files" ? "on" : "") + '">' + t("lvFilesNav") + "</a>" +
+          (C.quickWin ? '<a href="#/start" class="' + (active === "start" ? "on" : "") + '">' + t("startNav") + "</a>" : "") +
+          (C.card ? '<a href="#/card" class="' + (active === "card" ? "on" : "") + '">' + t("cardNav") + "</a>" : "");
     },
     check: function (which, name, answers) {
       if (!enabled) return Promise.resolve(null);
@@ -1141,6 +1159,8 @@ window.LiveGame = function (X) {
     },
     top3: function () { return enabled ? top3() : []; },
     podium: function (big) { return enabled ? podiumHTML(top3(), !big) : ""; },
+    // stations: {team number: station key} as the presentation set it
+    stations: function () { return enabled ? staMap() : {}; },
     myName: function () { return enabled && me ? me.name : null; },
     slotName: function (n) { return enabled ? shownName(n) : ""; }
   };

@@ -397,6 +397,12 @@ function build(edition) {
         calloutBox(a, null, q.why, ya + oh + 0.25, "good", 15);
       });
     },
+    // stations (Job 6): each station's questions, drawn as a quiz titled with the station
+    stations(b) {
+      b.stations.forEach((st, k) => {
+        BLOCK.quiz(Object.assign({}, b, { title: b.title + " · " + st.title, questions: st.questions, intro: k === 0 ? b.intro : "" }));
+      });
+    },
     chart(b) {
       const s = content(twoTone(b.title), beatNote(b)), y0 = introAt(s, b);
       if (b.charts) {

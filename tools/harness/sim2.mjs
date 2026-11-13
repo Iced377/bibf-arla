@@ -3,7 +3,7 @@ import fs from "node:fs";
 import vm from "node:vm";
 const BASE = process.env.BASE || "http://localhost:4183";
 const N = +(process.env.N || 22);
-const ROOM = "prompt";
+const ROOM = "arla";
 const ctx = { window: {} }; vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(new URL("../../site/data/course.js", import.meta.url), "utf8"), ctx);
 const C = ctx.window.COURSE, BEATS = {};

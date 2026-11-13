@@ -334,7 +334,7 @@ notify pgrst, 'reload schema';
 
 // Creates the room with a fresh token if it does not exist yet, and records the schema version.
 export function roomSQL(room, version) {
-  const id = String(room).replace(/[^a-z0-9_-]/gi, "").slice(0, 40) || "prompt";
+  const id = String(room).replace(/[^a-z0-9_-]/gi, "").slice(0, 40) || "arla";
   return `
 insert into live.rooms(id, token) values ('${id}', replace(gen_random_uuid()::text || gen_random_uuid()::text, '-', ''))
   on conflict (id) do nothing;

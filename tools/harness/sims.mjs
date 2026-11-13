@@ -5,7 +5,7 @@
 //   node sims.mjs answer <beat> <item> c1 c2 c3 c4 c5 c6   each sends a choice for the live question ("-" = no answer)
 import fs from "node:fs";
 import vm from "node:vm";
-const ROOM = "prompt";
+const ROOM = "arla";
 const B = "http://localhost:4183/rest/v1/rpc/";
 const p = (f, a) => fetch(B + f, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(a) }).then((r) => r.json());
 const F = new URL("./sims.json", import.meta.url);

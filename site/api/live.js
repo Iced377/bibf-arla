@@ -4,7 +4,7 @@
 import pg from "pg";
 import { SCHEMA, SCHEMA_VERSION, roomSQL } from "./_schema.js";
 
-const ROOM = (process.env.LIVE_ROOM || "prompt").replace(/[^a-z0-9_-]/gi, "") || "prompt";
+const ROOM = (process.env.LIVE_ROOM || "arla").replace(/[^a-z0-9_-]/gi, "") || "arla";
 
 function credentials(req) {
   const [scheme, encoded] = String(req.headers.authorization || "").split(" ");

@@ -11,7 +11,7 @@ const SITE = fileURLToPath(new URL("../../site", import.meta.url));
 const PORT = +(process.env.PORT || 4183);
 const db = new PGlite();
 await db.exec(SCHEMA);
-const ROOM = "prompt";
+const ROOM = "arla";
 await db.exec(roomSQL(ROOM, SCHEMA_VERSION));
 const token = (await db.query("select token from live.rooms where id = $1", [ROOM])).rows[0].token;
 let calls = 0, slow = 0;

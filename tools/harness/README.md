@@ -8,5 +8,5 @@ node server.mjs                      # http://localhost:4183  (fresh, empty data
 ```
 - Presentation: http://localhost:4183/instructor/ · Notes: http://localhost:4183/instructor/?notes · Phone: http://localhost:4183/#/play
 - `node sims.mjs join|pre|post|answer …` adds five simulated students (see the top of the file). `node sim2.mjs` runs 22 bots that answer whatever is started (load test).
-- Tabs in one browser share localStorage: clear `prompt.*` keys between scenarios, and remember that changing only the `#hash` does not reload the page.
+- Tabs in one browser share localStorage: clear `arla.*` keys between scenarios, and remember that changing only the `#hash` does not reload the page.
 - Restarting the server starts a new empty database but the browser still remembers the old run number: clear storage too.

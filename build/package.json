@@ -1,5 +1,5 @@
 {
-  "name": "bibf-prompt-build",
+  "name": "bibf-arla-build",
   "private": true,
   "description": "Build scripts for the AI Prompt Engineering course: PowerPoint decks",
   "dependencies": {

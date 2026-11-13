@@ -1082,7 +1082,7 @@
       case "hide": u.shown = false; u.owners = false; commit(id); refreshBeat(id); break;
       case "owners": u.owners = true; commit(id); refreshBeat(id); break;
       case "step":
-        var b = BEATS[id], len = (b.questions || b.pairs || b.items).length;
+        var b = BEATS[id], len = (b.questions || b.pairs || b.items || (b.stations && b.stations[0].questions)).length;
         u.i = Math.min(len - 1, Math.max(0, (u.i || 0) + (+a.getAttribute("data-dir")))); u.shown = false;
         commit(id); refreshBeat(id); break;
       case "flip":

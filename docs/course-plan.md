@@ -26,7 +26,7 @@ Arla wants people to use AI in their day-to-day work, save time and work more ef
 ## The case company: Ghaima Dairy (made up)
 The company on one page goes in the case file:
 - **Products:** spreadable cheese in glass jars, processed cheese slices and triangles, cooking cream.
-- **Sites:** a plant in Bahrain (two filling lines: Line 1, jars; Line 2, slices) and a warehouse in Bahrain; KSA sales and logistics, with a team in Dammam.
+- **Sites:** a plant in Bahrain (three filling lines: Line 1, jars; Line 2, slices; Line 3, cream) and a warehouse in Bahrain; KSA sales and logistics, with a team in Dammam.
 - **Customers:** retailers across the GCC (made-up names).
 - **Departments in the course:** Production, Procurement, Maintenance, Planning, Logistics, Finance, Regulatory, Lab.
 

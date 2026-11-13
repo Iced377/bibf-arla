@@ -278,13 +278,21 @@ window.LiveGame = function (X) {
     }
     return (pf || perf()).list.filter(function (p) { return p.right > 0; }).slice(0, 3).map(function (p) { return { n: p.name, t: p.team, r: p.right }; });
   }
+  // with teams, the projector and the phones show the top 3 teams and their points; individuals stay on the Dashboard
+  // ties on points go to the team with more right answers, then to table order
+  function teamTop3() {
+    var rights = {}; perf().list.forEach(function (p) { rights[p.team] = (rights[p.team] || 0) + p.right; });
+    return slots().map(function (n) { return { n: teamLabel(n), t: n, s: X.scoreOf(n - 1), r: rights[n] || 0, team: 1 }; }).filter(function (x) { return x.s > 0; })
+      .sort(function (a, b) { return b.s - a.s || b.r - a.r || a.t - b.t; }).slice(0, 3);
+  }
+  function publicTop3() { return SOLO ? top3() : teamTop3(); }
   // the top 3 on a podium: 2nd, 1st, 3rd
   function podiumHTML(top, small) {
     if (!top || !top.length) return "";
     var slots = [top[1], top[0], top[2]], place = [2, 1, 3];
     return '<div class="podium' + (small ? " small" : "") + '">' + slots.map(function (x, k) {
       if (!x) return '<div class="pd pd-' + place[k] + ' empty"></div>';
-      return '<div class="pd pd-' + place[k] + '"><span class="pd-name">' + h(SOLO && x.t ? shownName(x.t) || x.n : x.n) + '</span><span class="pd-team">' + (SOLO ? ptsText("lvPtsN", x.s) : h(teamLabel(x.t)) + " · " + t("lvRightN", { n: x.r })) +
+      return '<div class="pd pd-' + place[k] + '"><span class="pd-name">' + h(SOLO && x.t && !x.team ? shownName(x.t) || x.n : x.n) + '</span><span class="pd-team">' + (SOLO || x.team ? ptsText("lvPtsN", x.s) : h(teamLabel(x.t)) + " · " + t("lvRightN", { n: x.r })) +
         '</span><div class="pd-step"><b>' + place[k] + "</b></div></div>";
     }).join("") + "</div>";
   }
@@ -343,7 +351,7 @@ window.LiveGame = function (X) {
         if (st.st && st.st.teams) { X.setST(st.st); X.applyState(null); }
         D.route = location.hash || "#/";
       }
-      var c = computeRes(); D.res = c.res; D.auto = c.auto; D.top = top3();
+      var c = computeRes(); D.res = c.res; D.auto = c.auto; D.top = publicTop3();
       if (JSON.stringify([D.res, D.auto, D.top]) !== lastSent) pushSoon("teams");
     } else if (stateChanged && st.ts) {
       followState(st);
@@ -1159,7 +1167,7 @@ window.LiveGame = function (X) {
         .then(function (r) { return r; }, function () { X.toast(t("lvNotSent")); return null; });
     },
     top3: function () { return enabled ? top3() : []; },
-    podium: function (big) { return enabled ? podiumHTML(top3(), !big) : ""; },
+    podium: function (big) { return enabled ? podiumHTML(publicTop3(), !big) : ""; },
     // stations: {team number: station key} as the presentation set it
     stations: function () { return enabled ? staMap() : {}; },
     myName: function () { return enabled && me ? me.name : null; },

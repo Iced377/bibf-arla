@@ -461,7 +461,7 @@ SECTIONS.append({
                "Copilot inside Word, Excel, PowerPoint and Outlook needs the licence. Chat, files and images come with Copilot Chat on a work account."),
              q("Since when has Saudi Arabia's Personal Data Protection Law been enforced?",
                ["September 2024", "January 2020", "It isn't yet", "March 2026"], 0,
-               "14 September 2024, when the grace period ended. SDAIA enforces it.")]},
+               "14 September 2024, when the grace period ended. The Saudi Data and AI Authority (SDAIA) enforces it.")]},
     ]})
 
 # ======== Job 1 · Production
@@ -550,12 +550,12 @@ SECTIONS.append({
         {"id": note("s3-slip", "25 s each. Each line is from an AI summary of Ghaima's files; the source says otherwise for three of them."),
          "type": "flags", "secs": 25, "title": "Spot the slip",
          "intro": "Red flag: the AI got it wrong. Green flag: it matches the source.",
-         "items": [{"text": "AI: 'Line 2 wasted 1.6 kg in week 3.' The workbook's unit column for that row says t.", "verdict": "red",
-                    "rule": "1.6 tonnes is 1,600 kg. One row in a different unit changes the whole picture."},
+         "items": [{"text": "AI: 'The Dammam warehouse holds 3.2 kg of cooking cream.' The stock sheet's unit column for that row says t.", "verdict": "red",
+                    "rule": "3.2 tonnes is 3,200 kg. One row in a different unit changes the whole picture."},
                    {"text": "AI: 'The delivery was due on 4 November.' The PO says 04/11/2026, day first.", "verdict": "green",
                     "rule": "Day first: 4 November. Right."},
-                   {"text": "AI: 'Murjan Glass costs BD 113 per 1,000 jars.' The quote's footnote adds BD 14 for freight.", "verdict": "red",
-                    "rule": "BD 127 with freight. The footnote is part of the price."},
+                   {"text": "AI: 'The cleaning contractor charges BD 450 a month.' The contract's footnote adds BD 60 a month for weekend call-outs.", "verdict": "red",
+                    "rule": "BD 510 a month. The footnote is part of the price."},
                    {"text": "AI: 'Downtime from 23:40 to 00:25 was 15 minutes.'", "verdict": "red",
                     "rule": "45 minutes. It runs past midnight."}]},
         {"id": note("s3-which", "30 s each."),
@@ -987,9 +987,9 @@ SECTIONS.append({
     "title": "Your prompts", "titleAccent": "and your desk card",
     "lede": "Pick your role and your weekly tasks, let Copilot write your prompts and your desk card, test one, and take the pack home on your phone.",
     "beats": [
-        {"id": note("mc-how", "Five minutes on the projector before anyone starts: open My card on the course site and walk through the six steps once. "
+        {"id": note("mc-how", "Five minutes on the projector before anyone starts: open My card on the course site and walk through the four steps once. "
                               "Then thirty minutes. Walk the room; the usual snag is forgetting to check the prompts against the four parts."),
-         "type": "flow", "title": "Six steps",
+         "type": "flow", "title": "Four steps",
          "steps": [P("Tap", "Your role, two or three weekly tasks, and the take-home briefs to keep."),
                    P("Paste", "Copy your pack into Copilot Chat and answer its questions with letters."),
                    P("Check and test", "Check each prompt it writes. Test one on the tricky case it gives you."),
@@ -1253,7 +1253,7 @@ ASSESS = [
       "Every figure must trace back to the source; if it doesn't, it doesn't go out."]),
     ("T3", "A waste table mixes rows in kg with one row in tonnes. What's the risk?",
      ["The wrong line looks worst", "The table looks untidy", "The file is too large", "None, if the AI reads it"], 0,
-     ["1.6 tonnes read as 1.6 kg makes one line look far better than it is, and another look worst.",
+     ["2.4 tonnes read as 2.4 kg makes one line look far better than it is, and another look worst.",
       "Untidiness is the least of it.",
       "Units don't change the file size.",
       "AI misreads units too; check the unit of every figure."]),
@@ -1293,7 +1293,7 @@ COURSE = {
     "program": "BIBF · for Arla Foods",
     "when": "Wednesday 18 and Thursday 19 November 2026 · BIBF · 09:00 to 14:00",
     "instructor": "Mohamad Abdallah El Izmirli", "fileTag": "BIBF-Arla", "joinUrl": "https://bibf-arla.vercel.app",
-    "qa": {"title": "Working Smarter with AI", "programme": "BIBF", "code": "To be confirmed", "dates": "18 and 19 November 2026", "venue": "BIBF (room to be confirmed)",
+    "qa": {"title": "Working Smarter with AI", "programme": "BIBF", "code": "CLS-TBC · TBC", "dates": "18 and 19 November 2026", "venue": "BIBF (room to be confirmed)",
            "hours": "09:00 to 14:00", "days": {"1": "Wednesday 18 November 2026", "2": "Thursday 19 November 2026"}},
     "lede": "A two-day, hands-on course. You visit the departments of a made-up dairy company, let Copilot Chat write your prompts, "
             "check what comes back, and leave with your own prompts and desk card for your weekly work.",

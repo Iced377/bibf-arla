@@ -275,7 +275,7 @@ window.UI_STRINGS = {
   lvRightCol: "Right",
   lvWonCol: "Won for team",
   lvRightN: "{n} right",
-  lvTop3: "Top scorers",
+  lvTop3: "Podium",
   lvTeamRate: "{p}% answered",
   lvLiveNow: "live question: {a} of {b} answered",
   lvMyCheck: "Your check: {a} at the start, {b} now, out of {n}",

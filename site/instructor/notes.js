@@ -334,7 +334,7 @@ window.NOTES = {
   "mc": {
    "say": "Walk through My card on the projector (5 minutes), then thirty minutes hands-on. First thing after lunch.",
    "beats": {
-    "mc-how": "Five minutes on the projector before anyone starts: open My card on the course site and walk through the six steps once. Then thirty minutes. Walk the room; the usual snag is forgetting to check the prompts against the four parts.",
+    "mc-how": "Five minutes on the projector before anyone starts: open My card on the course site and walk through the four steps once. Then thirty minutes. Walk the room; the usual snag is forgetting to check the prompts against the four parts.",
     "mc-task": "Thirty minutes. The pack holds no company data, so it can go into Arla's Copilot Chat on Sunday. If someone's result goes wrong, the plain card on the page is the fallback."
    }
   },

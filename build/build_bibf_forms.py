@@ -2,7 +2,7 @@
   outputs/bibf/<class code> - Lesson Plan.docx              one table per day (BIBF asks to copy the table per day)
   outputs/bibf/<class code> - Pre and Post Assessment.docx  the questions with the ILO table and the answers ticked
 Templates: build/templates/ (BIBF's blank forms, as sent for the previous BIBF course; the header fields are refilled
-from course.js qa). The ILO names are BIBF's official ones for COM1247.
+from course.js qa). The three ILOs are drafts until BIBF confirms which apply.
 Usage (from the project root): DOCX_SKILL=<docx skill> build/.venv/bin/python build/build_bibf_forms.py
 """
 import json
@@ -77,39 +77,63 @@ MERGE = os.path.join(SKILL, "scripts", "merge_runs.py")
 QA = COURSE["qa"]
 CLS = QA["code"].split(" · ")[0]
 CODE = QA["code"].split(" · ")[-1]
-# BIBF's two ILOs for COM1247, and the assessment topics that test each one (course.js assessment topics T1 to T4)
-ILOS = [("ILO 1: Apply key prompt engineering concepts that generate accurate and relevant outputs from AI tools.", ["T1", "T2"]),
-        ("ILO 2: Evaluate AI-generated responses for business decision-making.", ["T3", "T4"])]
+# The three draft ILOs (until BIBF confirms which apply), and the assessment topics that test each one (course.js topics T1 to T3)
+ILOS = [("ILO 1: Explain how digital transformation and data change the way a dairy business works, and where AI fits along its value chain.", ["T1"]),
+        ("ILO 2: Apply Microsoft Copilot to everyday tasks (drafting, summarising, analysing and comparing) using clear briefs and the right material.", ["T2"]),
+        ("ILO 3: Evaluate AI-generated outputs for accuracy, completeness and confidentiality before they are used or sent.", ["T3"])]
 DAYS = [
-    {"n": 1, "ilos": [ILOS[0][0] + " (Rounds 1, 2, 3 and 5)", ILOS[1][0] + " (Round 4, and a check in every job)"],
-     "topics": ["Understand prompt engineering concepts: what prompt engineering means today, what AI assistants can do in 2026 (read files and photos, build tools, remember projects, run on a schedule, act as agents), why they can still be confidently wrong, work and personal accounts, generative and classic AI in banking",
-                "Design effective prompts for AI tools: kinds of prompts, the five-part brief (goal, context, material, what done looks like, limits), RACE, CRISPE, REACT and Microsoft's and Google's versions, zero-shot and few-shot, instructions and roles, a spec for something the AI builds, image prompts",
-                "Give the AI context: working with files and photos, projects and their instructions, memory, asking the AI to interview you first, thinking mode, listing the factors first, self-critique",
-                "Evaluate AI-generated responses: invented facts, old information, agreeing with the user, number slips, missed small print, prompt injection; three real cases; the checking list; self-consistency and chain of verification in practice",
-                "Improve AI-generated outputs: run, check, improve the brief and run again in every job; scheduled tasks and how to brief an agent"],
-     "activities": ["Ice breaker question and pre-course assessment on participants' phones",
-                    "Each round opens with a short lecture on the course site, with examples from the case company: Najma Bank, a fictional Bahraini retail bank",
-                    "Exercises after each lecture: individual quizzes on phones (which brief wins, what's missing, safe to hand over, spot the slip) and discussions in pairs; the same brief sent to ChatGPT and Copilot and the answers compared",
-                    "Four hands-on simulations in ChatGPT and Copilot on the lab PCs, on the AI accounts BIBF provides for the session, each with a cross-check in the other tool, each checked through questions answered from the participants' own results and shown to the class by one or two participants: build a fee calculator from the bank's fee rules; turn eight photos of meeting notes into an updated tracker; compare two supplier proposals with a hidden fee and a hidden instruction; build a daily news brief for the bank's Head of Digital",
-                    "Instructor demonstrations of what the lab account can't do: a scheduled AI task that updates a tracker from a folder of photos, a scheduled news brief, and an agent working through a folder of files",
-                    "Post-course assessment, final leaderboard, review of what each participant built, and course evaluation"],
-     "time": ["Kick-off: 25 min", "Round 1: 30 min", "Round 2: 50 min", "Round 3: 55 min", "Round 4: 45 min", "Round 5: 30 min", "Final: 20 min",
-              "Breaks: 45 min (15 min break, 30 min Dhuhr and lunch)", "Total: 5 hours"],
-     "assess": ["Pre-course assessment: %d questions, 6 for ILO 1 and 6 for ILO 2" % len(COURSE["assessment"]["questions"]),
-                "In-class quizzes on phones with immediate feedback",
-                "Four hands-on simulations checked through questions answered from the participants' own AI results, and shown to the class",
-                "Post-course assessment: the same questions as at the start"]},
+    {"n": 1, "ilos": [ILOS[0][0] + " (Rounds 1 and 4, and the value chain case clinic)", ILOS[1][0] + " (Round 2, the quick win and Jobs 1 to 3)",
+                      ILOS[2][0] + " (Round 3, and a check in every job)"],
+     "topics": ["Digital transformation in a dairy business: digitisation, digitalisation and digital transformation; data as an asset from the plant floor to decisions; food-industry peers using Microsoft Copilot",
+                "How generative AI works and why it can be confidently wrong; the jagged frontier; Copilot Chat and ChatGPT; what participants have at work (Copilot Chat, and Microsoft 365 Copilot for licensed users)",
+                "Briefing Copilot like a colleague: the four-part brief; letting AI write the prompt from an information pack, with multiple-choice questions; the data rules and the Saudi and Bahraini personal data laws",
+                "Working from files and checking before trusting: what AI misses in long files, hidden instructions (prompt injection, the EchoLeak case), trust and checking, the checking list, a second opinion from a fresh chat",
+                "AI across the dairy value chain: Industry 4.0 (sensors, predictive maintenance, traceability, demand forecasting, camera checks); classic and generative AI along the chain"],
+     "activities": ["Pre-course assessment on participants' phones; a quick win: a ready prompt for each participant's own role, run in Copilot Chat",
+                    "Short lectures on the course site with examples from the case company, Ghaima Dairy, a fictional GCC dairy maker",
+                    "Team quizzes on phones after each lecture (which word fits, which brief wins, what's missing, safe to hand over, spot the slip); a warm-up comparing Copilot Chat and ChatGPT",
+                    "Three hands-on jobs in Copilot Chat on the lab PCs, each from one department of the case company, each with a hidden catch checked through questions on the phones and shown to the class: "
+                    "a night shift's stoppage log into a handover and a safety poster (Production); three supplier quotes with a footnote fee, a minimum order and a hidden instruction (Procurement); "
+                    "a fix and checklist from a manual covering two machine models (Maintenance)",
+                    "Value chain case clinic: each team maps AI opportunities on a flipchart, kept for Day 2's action plans"],
+     "time": ["Kick-off and quick win: 30 min", "Round 1: 20 min", "Round 2: 35 min", "Job 1: 35 min", "Round 3: 20 min", "Job 2: 35 min",
+              "Round 4 and case clinic: 30 min", "Job 3: 35 min", "Day 1 close: 15 min", "Breaks: 45 min (15 min break, 30 min Dhuhr and lunch)", "Total: 5 hours"],
+     "assess": ["Pre-course assessment: %d questions, 5 for each ILO" % len(COURSE["assessment"]["questions"]),
+                "In-class team quizzes on phones with immediate feedback",
+                "Three hands-on jobs checked through questions answered from the participants' own AI results, and shown to the class"]},
+    {"n": 2, "ilos": [ILOS[1][0] + " (Round 5, Jobs 4 to 6, and each participant's own prompts and desk card)",
+                      ILOS[2][0] + " (Round 6, and a check in every job)",
+                      ILOS[0][0] + " (Team action plans, built on Day 1's value chain map)"],
+     "topics": ["Patterns that save time: examples to copy a style (few-shot), what a role does and doesn't do, the interview with multiple-choice questions, self-critique, the recipe for images",
+                "Analysing figures and replying to customers with Copilot: units, missing data, checking a draft against the records",
+                "Bringing your team along: why people stop using AI, what keeps them going (training and manager support), agents and what needs a licence",
+                "Turning the course into daily practice: reusable prompts for each participant's weekly tasks, a personal desk card with an if-then plan, and a team action plan"],
+     "activities": ["Recap quiz on phones",
+                    "Short lectures and team quizzes on phones",
+                    "Three hands-on jobs in Copilot Chat: a month's production and waste figures into a commentary and a chart, with a unit slip and a missing week (Planning); "
+                    "a customer complaint, the delivery log and a colleague's draft reply (Logistics); a choice of stations: month-end commentary with a one-off cost (Finance), "
+                    "a draft export label against a practice checklist (Regulatory), or batch QC results against a practice spec (Lab)",
+                    "My card: each participant picks their role and weekly tasks on the course site, has Copilot write reusable prompts and a desk card, tests a prompt on a tricky case, and takes the pack home on their phone",
+                    "Team action plans presented to the class; post-course assessment, final team leaderboard, and course evaluation"],
+     "time": ["Day 2 kick-off: 15 min", "Round 5: 20 min", "Job 4: 35 min", "Job 5: 35 min", "Round 6: 15 min", "Job 6: 35 min",
+              "My card: 35 min", "Team action plans: 25 min", "Final: 40 min", "Breaks: 45 min (15 min break, 30 min Dhuhr and lunch)", "Total: 5 hours"],
+     "assess": ["In-class team quizzes on phones with immediate feedback",
+                "Three hands-on jobs checked through questions answered from the participants' own AI results, and shown to the class",
+                "Each participant's reusable prompts tested on a tricky case",
+                "Post-course assessment: the same %d questions as at the start" % len(COURSE["assessment"]["questions"])]},
 ]
-DIFFERENTIATION = ("Every job has a step-by-step guide with Windows shortcuts on the course site and a Copy button for each prompt, so nobody types a long prompt. "
-                   "Each job has an extra step for participants who finish early, and a shorter path (ready-made instructions) for those who need it. "
-                   "Everyone works on the AI accounts BIBF provides; anyone stuck shares a PC with a neighbour. With six participants, each one shows their work at least once. Key terms are defined in the course site's glossary.")
+DIFFERENTIATION = ("Every job has a step-by-step guide with Windows shortcuts on the course site and a Copy button for each pack and prompt, so nobody types a long prompt: "
+                   "participants paste an information pack and answer the AI's questions with a letter. Teams mix functions, seniority and locations, and the team member "
+                   "closest to each job's department leads it. Each job has an extra step for those who finish early. In Job 6 each team picks the station closest to its "
+                   "members' work. Key terms are defined in the course site's glossary.")
 ADJUST = {1: "The pre-course assessment results are reviewed during the first break; Rounds 3 and 4 give more time to the topics with the lowest scores. "
-             "If the room runs late, theory is shortened and quiz questions are dropped before any job time is cut."}
+             "If the room runs late, theory is shortened and quiz questions are dropped before any job time is cut.",
+          2: "Day 2 opens with a recap quiz on Day 1; topics with weak recap answers are revisited in Round 5. The team action plans start from the opportunities each team mapped on Day 1."}
 ONLINE = "Not applicable: the course is delivered in person. The quizzes and the pre- and post-course assessments run on participants' phones through the course site."
-REMARKS = ("Participants need lab PCs with Microsoft Edge that reach ChatGPT and Microsoft Copilot and allow file uploads and downloads, "
-           "and Wi-Fi for their phones; the instructor needs a projector input for a laptop. Participants sign in to ChatGPT and Copilot with the accounts BIBF provides for the session "
-           "only, in a private window, and delete their chats and sign out at the end. All case files are fictional. Course files and quizzes are on the course site, "
-           "with a class login given in class.")
+REMARKS = ("Participants need lab PCs with Microsoft Edge that reach Microsoft Copilot Chat and ChatGPT and allow file uploads and downloads, and Wi-Fi for their phones; "
+           "the instructor needs a projector input for a laptop, and each team a flipchart sheet for Day 1's case clinic, kept for Day 2. Participants sign in with the accounts "
+           "BIBF provides for the session only, in a private window, and delete their chats and sign out at the end of each day. All case files are fictional. "
+           "Course files and quizzes are on the course site, with a class login given in class. The course is delivered for Arla Foods; participants come from Bahrain and Saudi Arabia.")
 DROP = "@@DROP@@"
 
 
@@ -236,6 +260,7 @@ def assessment():
         repl[qi] = set_text(paras[qi], q["q"])
         opts = [i for i in range(qi + 1, stop) if "□" in texts[i]]
         numpr = re.search(r"<w:numPr>.*?</w:numPr>", paras[opts[0]], re.S).group(0)
+        ppr = re.search(r"<w:pPr>.*?</w:pPr>", paras[opts[0]], re.S).group(0)
         for j, oi in enumerate(opts):
             if j >= len(q["options"]):
                 repl[oi] = ""
@@ -243,6 +268,8 @@ def assessment():
             p = paras[oi]
             if "<w:numPr>" not in p:  # the template's last option lost its numbering
                 p = p.replace("<w:pPr>", "<w:pPr>" + numpr, 1)
+            # every option takes the first option's paragraph style (the template's closing paragraph is centred and grey)
+            p = re.sub(r"<w:pPr>.*?</w:pPr>", lambda m: ppr, p, count=1, flags=re.S)
             repl[oi] = option_paragraph(p, q["options"][j], j == ans)
     out = []
     pos = 0

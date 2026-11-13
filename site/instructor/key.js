@@ -103,7 +103,7 @@ window.ASSESSMENT_KEY = {
  "A12": {
   "answer": 0,
   "why": [
-   "Correct. 1.6 tonnes read as 1.6 kg makes one line look far better than it is, and another look worst.",
+   "Correct. 2.4 tonnes read as 2.4 kg makes one line look far better than it is, and another look worst.",
    "Untidiness is the least of it.",
    "Units don't change the file size.",
    "AI misreads units too; check the unit of every figure."

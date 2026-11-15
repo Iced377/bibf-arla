@@ -78,7 +78,7 @@ The team member whose department it is leads the job.
 - The other stations stay on the site for anyone who finishes early.
 
 ## Quick win (Day 1, 09:20, 10 minutes)
-Each person taps their role, copies a ready prompt and pastes it into Copilot Chat. There are no files and no company data, and they get something useful straight away. One prompt per role group:
+Each person finds their role's ready prompt on the Files page, under Quick win, copies it and pastes it into Copilot Chat. There are no files, and they get something useful straight away. One prompt per role group:
 - **Production Line Leaders, Operations Team Leader:** a five-minute toolbox talk on safe changeovers, five points in plain English, with one question to ask the team.
 - **Senior Operations Lead:** an agenda and a one-page template for a 20-minute daily production meeting.
 - **Finance Lead and Finance Analyst:** gross margin and contribution margin explained in five lines with a dairy example, for non-finance managers.
@@ -96,18 +96,18 @@ Each person taps their role, copies a ready prompt and pastes it into Copilot Ch
 | Time | Min | Block | Content |
 |---|---|---|---|
 | 08:45 | 15 | Room open | Copilot Chat and ChatGPT open in a private window with BIBF's accounts; scan the QR code, join with a first name, pick your team |
-| 09:00 | 20 | Kick-off | How the two days run; meet Ghaima Dairy; teams; the pre-course check (15 questions; nobody sees individual scores) |
-| 09:20 | 10 | Quick win | Tap your role, paste the ready prompt, get something useful for your own job |
-| 09:30 | 20 | Round 1 · From digitisation to transformation | **Theory (12):** digitisation, digitalisation and transformation; data as an asset, from the plant floor to decisions; peers (Nestlé gives every employee Copilot Chat; Danone's AI academy with Microsoft). **Exercises (6)** |
-| 09:50 | 35 | Round 2 · Meet your assistant | **Theory (15):** how generative AI works and why it can sound sure while making things up; the jagged frontier (Dell'Acqua et al.); Copilot and ChatGPT; what you'll have at Arla; brief it like a colleague; let AI write your prompt; the data rules (Saudi and Bahrain personal data laws, one line each). **Warm-up (7):** the same request in Copilot and ChatGPT. **Exercises (8)** |
-| 10:25 | 35 | Job 1 · Production | Shift handover, safety poster |
-| 11:00 | 15 | Break | |
-| 11:15 | 20 | Round 3 · Work from files, check before you trust | **Theory (12):** attachments, what tools miss; "interview me first"; hidden instructions (EchoLeak, 2025); trust and checking (Microsoft and Carnegie Mellon, 2025); the checking list; a second opinion from a fresh chat. **Exercises (6)** |
-| 11:35 | 30 | Dhuhr and lunch | |
-| 12:05 | 35 | Job 2 · Procurement | Three quotes and the hidden line |
-| 12:40 | 30 | Round 4 · AI across the value chain | **Theory (10):** Industry 4.0 in dairy by category (sensors, predictive maintenance, traceability, demand forecasting, camera-based quality checks), with named examples only where sourced (Siemens' maintenance copilot, figures as Siemens reports them); classic and generative AI along the chain. **Case clinic (20):** each team marks its top three opportunities on a flipchart chain, kept for Day 2, and shares one |
-| 13:10 | 35 | Job 3 · Maintenance | The manual with two models |
-| 13:45 | 15 | Day 1 close | Team scores; one lesson from each team; take-home cards; Day 2 preview; delete chats, sign out |
+| 09:00 | 20 | Kick-off | How the two days run; a warm-up question on the phones (no points) to check every phone works; meet Ghaima Dairy; teams; the pre-course check (15 questions; nobody sees individual scores) |
+| 09:20 | 10 | Quick win | Copy your role's ready prompt from the Files page, paste it into Copilot Chat, get something useful for your own job |
+| 09:30 | 25 | Round 1 · From digitisation to transformation | **Theory (17):** digitisation, digitalisation and transformation; **the data-sources board (8):** teams take turns to name where Ghaima's data comes from, the top eight ranked by how often new data arrives, each tile tagged structured, semi-structured or unstructured, with a bonus for outside data; four ways to describe data and the knowledge pyramid (from BIBF's Sales and Marketing Data Analysis course); data as an asset; peers (Nestlé gives every employee Copilot Chat; Danone's AI academy with Microsoft). **Exercises (8)** |
+| 09:55 | 35 | Round 2 · Meet your assistant | **Theory (15):** how generative AI works and why it can sound sure while making things up; the jagged frontier (Dell'Acqua et al.); Copilot and ChatGPT; what you'll have at Arla; brief it like a colleague; let AI write your prompt; the data rules (Saudi and Bahrain personal data laws, one line each). **Warm-up (7):** the same request in Copilot and ChatGPT. **Exercises (8)** |
+| 10:30 | 35 | Job 1 · Production | Shift handover, safety poster |
+| 11:05 | 15 | Break | |
+| 11:20 | 20 | Round 3 · Work from files, check before you trust | **Theory (12):** attachments, what tools miss; "interview me first"; hidden instructions (EchoLeak, 2025); trust and checking (Microsoft and Carnegie Mellon, 2025); the checking list; a second opinion from a fresh chat. **Exercises (6)** |
+| 11:40 | 30 | Dhuhr and lunch | |
+| 12:10 | 35 | Job 2 · Procurement | Three quotes and the hidden line |
+| 12:45 | 30 | Round 4 · AI across the value chain | **Theory (10):** Industry 4.0 in dairy by category (sensors, predictive maintenance, traceability, demand forecasting, camera-based quality checks), with named examples only where sourced (Siemens' maintenance copilot, figures as Siemens reports them); classic and generative AI along the chain. **Case clinic (20):** each team marks its top three opportunities on a flipchart chain, kept for Day 2, and shares one |
+| 13:15 | 35 | Job 3 · Maintenance | The manual with two models |
+| 13:50 | 10 | Day 1 close | Team scores; one lesson from each team; take-home cards; Day 2 preview; delete chats, sign out |
 
 ### Day 2 · Thursday 19 November
 | Time | Min | Block | Content |
@@ -254,8 +254,10 @@ All made up; every figure is checked by asserts in `build/build_data.py`.
 2. **Scoring:** fastest right answer 2 points, other right answers 1; team totals only on the projector.
 3. **Job 6 stations:** each team taps its station on a phone, and phones show that team only its own station's questions.
 4. **My card page:** tap lists, the pack builder, a QR code with the choices in the link, Download (.txt) and Share. Nothing stored on the server.
-5. **Quick win page:** tap your role, copy the ready prompt.
-6. **Take-home cards** on every job, which the engine already supports.
+5. **Quick win:** the ten role prompts sit on the Files page with Copy buttons (no separate page).
+6. **Warm-up question:** a practice question (`practice: true`) that plays like any other but scores nothing, to check every phone after joining.
+7. **Data-sources board** (`topboard`): hidden tiles in rank order; the presentation reveals a tile and gives its points to the team that named it, × takes them back, Reveal the rest shows the summary.
+8. **Take-home cards** on every job, which the engine already supports.
 
 ## Hosting
 A new Vercel project, `bibf-arla`, in team "Abed's projects", with root `site/`, connected to this repo, plus its own Supabase store from the Marketplace. Abed sets the logins (`SITE_USER`/`SITE_PASSWORD`, `INSTRUCTOR_USER`/`INSTRUCTOR_PASSWORD`).

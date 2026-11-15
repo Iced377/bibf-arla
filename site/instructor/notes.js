@@ -13,66 +13,66 @@ window.NOTES = {
   {
    "time": "09:00",
    "mins": 30,
-   "item": "Kick-off: rules and teams, sign-in, outcomes, Ghaima Dairy, the jobs, pre-course check, quick win",
+   "item": "Kick-off: rules and teams, a warm-up question to check the phones, sign-in, outcomes, Ghaima Dairy, the jobs, pre-course check, quick win",
    "ref": "k0"
   },
   {
    "time": "09:30",
-   "mins": 20,
-   "item": "Round 1 · From digitisation to transformation: theory, 5 quick questions",
+   "mins": 25,
+   "item": "Round 1 · From digitisation to transformation: theory, the data-sources board, 6 quick questions",
    "ref": "s1"
   },
   {
-   "time": "09:50",
+   "time": "09:55",
    "mins": 35,
    "item": "Round 2 · Meet your assistant: theory, warm-up in both tools, 9 quick questions",
    "ref": "s2"
   },
   {
-   "time": "10:25",
+   "time": "10:30",
    "mins": 35,
    "item": "Job 1 · Production: the night shift's log, the safety poster, one team shows",
    "ref": "j1"
   },
   {
-   "time": "11:00",
+   "time": "11:05",
    "mins": 15,
    "item": "Break",
    "brk": true
   },
   {
-   "time": "11:15",
+   "time": "11:20",
    "mins": 20,
    "item": "Round 3 · Work from files, check before you trust: theory, 7 quick questions",
    "ref": "s3"
   },
   {
-   "time": "11:35",
+   "time": "11:40",
    "mins": 30,
    "item": "Dhuhr and lunch",
    "brk": true
   },
   {
-   "time": "12:05",
+   "time": "12:10",
    "mins": 35,
    "item": "Job 2 · Procurement: three quotes, the hidden line, a second opinion",
    "ref": "j2"
   },
   {
-   "time": "12:40",
+   "time": "12:45",
    "mins": 30,
    "item": "Round 4 · AI across the value chain: theory, value chain case clinic on flipcharts",
    "ref": "s4"
   },
   {
-   "time": "13:10",
+   "time": "13:15",
    "mins": 35,
    "item": "Job 3 · Maintenance: the manual with two models",
    "ref": "j3"
   },
   {
-   "time": "13:45",
-   "mins": 15,
+   "time": "13:50",
+   "mins": 10,
    "item": "Day 1 close: scores, one lesson per team, clean up and sign out",
    "ref": "c1"
   },
@@ -157,7 +157,9 @@ window.NOTES = {
   "Fastest right team: 2 points. Every other team with a right answer: 1 point.",
   "Read every question aloud before you press Start.",
   "Job 6: give each team its station on the presentation before Start. Each team sees and answers only its station's questions.",
-  "Points are added when you press Reveal. The scoreboard buttons still add or remove points by hand."
+  "Points are added when you press Reveal. The scoreboard buttons still add or remove points by hand.",
+  "The warm-up question in the kick-off scores nothing: it only checks that every phone works.",
+  "Round 1's data-sources board: click a tile when a team names it, then that team's name; its points go to the team. The × takes them back."
  ],
  "general": [
   "Every round runs the same way: Theory (no phones), then Exercises (quick questions on the phones). Jobs sit between the rounds.",
@@ -175,9 +177,10 @@ window.NOTES = {
  ],
  "sections": {
   "k0": {
-   "say": "Rules and teams first, then the sign-in check, the outcomes, Ghaima Dairy, the jobs, the takeaways, the pre-course check, then the quick win (10 minutes).",
+   "say": "Rules and teams first, then the warm-up question (no points) to check every phone, then the sign-in check, the outcomes, Ghaima Dairy, the jobs, the takeaways, the pre-course check, then the quick win (10 minutes).",
    "beats": {
     "k0-rules": "Read the four rules once. Teams are mixed on purpose: say that the person whose department a job belongs to leads it.",
+    "k0-teaser": "No points: it checks every phone. Press Start once the Dashboard shows everyone joined. Anyone whose phone shows nothing: check they're signed in as student and have joined a team. Reveal, then one line: the tools spread fast; using them well takes practice.",
     "k0-shape": "Thirty seconds. Every round runs the same way, and the jobs sit between the rounds.",
     "k0-signin": "Check every desktop is signed in before Round 1: Copilot Chat in one tab, ChatGPT in another, both on BIBF's accounts. Anyone stuck: share a desktop with a neighbour. Say it once: the accounts are BIBF's and for the course only, and everyone works on Ghaima's made-up files, so nothing real goes in.",
     "k0-out": "One minute. These are the four things they can do by Thursday at 14:00. Point at the last one: they take their own prompts home.",
@@ -185,18 +188,22 @@ window.NOTES = {
     "k0-jobs": "Thirty seconds per day. Every job's files and packs are on the Files page; nobody needs to type a long prompt.",
     "k0-take": "Read the three takeaways once. You come back to them on Thursday.",
     "k0-pre": "Press Open the check on the phones. Fifteen questions, about ten minutes. Say it: nobody sees individual scores; it measures the course, not them.",
-    "k0-quick": "Ten minutes, no score. Everyone opens Quick win on the course site, taps their role and pastes the prompt into Copilot Chat. After five minutes ask two people: would you use what came back? What would you change?"
+    "k0-quick": "Ten minutes, no score. Everyone finds their role's prompt on the Files page, under Quick win, and pastes it into Copilot Chat. After five minutes ask two people: would you use what came back? What would you change?"
    }
   },
   "s1": {
-   "say": "Three words with Ghaima examples, data as an asset, two food peers, then five quick questions. Keep it to twenty minutes: the hands-on work is waiting.",
+   "say": "Three words with Ghaima examples, the data-sources board (eight minutes, team turns), four ways to describe data, the pyramid, data as an asset, two food peers, then six quick questions. Keep it to twenty-five minutes: the hands-on work is waiting.",
    "beats": {
-    "s1-th": "Page Down or the clicker moves one block at a time and the notes tab follows.",
+    "s1-th": "Page Down or the clicker moves one block at a time and the notes tab follows. The board is the only activity: phones stay down.",
     "s1-words": "Three minutes. Use the Ghaima examples; ask the room for one of their own for each word.",
-    "s1-data": "Two minutes. Make it concrete: the same stoppage logged twice on paper is a data problem, and Job 1 will show it.",
+    "s1-board": "Eight minutes, no phones. One minute: each team lists every source of data it can think of at a dairy. Then teams take turns, Cream, Butter, Cheese, Laban, one source per turn, two rounds. On the board: click the tile, then the team's name, and its points go to that team. Not on the board: next team. Then Reveal the rest and read the summary. Accept close answers. 1 sensors: machines, IoT, temperature or pressure probes, flow meters, scales, checkweighers. 2 cameras: vision systems, label or cap checks, photos, CCTV. 3 emails: WhatsApp, Teams chats, phone calls, messages. 4 machine logs: alarms, stoppages, downtime, PLC, SCADA, the line's own records. 5 scans: barcodes, the warehouse system, stock, pallets, GPS, trucks. 6 lab: QC, tests, quality results. 7 orders: sales, invoices, customers, the ERP, SAP, delivery notes. 8 documents: specs, manuals, quotes, contracts, the paper shift log, SOPs. Bonus: anything from outside Ghaima, such as market prices, weather, retailers' sales data, reviews, social media or new rules.",
+    "s1-describe": "Two minutes. Point back at the colours on the board: those were the Structure row. Read the MIT Sloan line slowly: that unstructured share is exactly what generative AI can now read.",
+    "s1-pyramid": "Ninety seconds. Read it bottom up with the fill-weight example. Most dashboards stop at information; the aim is a decision.",
+    "s1-data": "Ninety seconds. Make it concrete: the same stoppage logged twice on paper is a data problem, and Job 1 will show it.",
     "s1-peers": "Ninety seconds. Two food companies, both on Microsoft Copilot, both investing in skills as much as tools.",
     "s1-ex": "Phones out. Rhythm: read the question aloud, Start, they answer, Reveal, one line from the why, Next.",
     "s1-which": "30 s each. Three Ghaima examples.",
+    "s1-kind": "30 s. The bridge to Job 1: Copilot reads exactly this kind of data.",
     "s1-useful": "30 s. The point for Job 4: units.",
     "s1-nestle": "30 s. Press Start, then Reveal."
    }
@@ -477,6 +484,9 @@ window.NOTES = {
   ]
  },
  "sources": [
+  "Reuters, ChatGPT sets record for fastest-growing user base (1 February 2023), citing a UBS analyst note: an estimated 100 million monthly active users in January 2023, two months after launch; TikTok about nine months, Instagram about two and a half years (Sensor Tower). Kick-off warm-up question.",
+  "Tam Harbert, Tapping the power of unstructured data, MIT Sloan Ideas Made to Matter (2021): 80% to 90% of an organisation's data is unstructured, according to multiple analyst estimates. Round 1, Four ways to describe data.",
+  "Round 1's four ways to describe data and the knowledge pyramid follow BIBF's Sales and Marketing Data Analysis course. Ghaima's data-sources board uses made-up figures, checked against the case files (Line 1 about 85,000 kg a week in 500 g jars; Line 2 about 246,000 kg a month).",
   "Microsoft Support, Understanding the different Microsoft Copilot experiences (April 2026); Microsoft Learn, Copilot privacy and protections (enterprise data protection in Copilot Chat on work accounts).",
   "Copilot Chat for users without a licence: file upload and image generation with standard access since July 2025 (MC1117101); fair-use limits extended from 2 and 9 November 2026, numbers not published; Copilot inside Word, Excel, PowerPoint and OneNote removed for unlicensed users in larger tenants in spring 2026 (A Guide to Cloud, April 2026; WindowsForum, November 2026; Purdue IT, April 2026). Check against the Microsoft 365 Message Center on the day.",
   "Agents for unlicensed users: advanced agents such as Researcher and Analyst need a licence; Agent Builder agents need pay-as-you-go billing set up by IT (Microsoft Q&A; Microsoft Tech Community, 2026).",

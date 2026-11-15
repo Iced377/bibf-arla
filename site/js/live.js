@@ -216,7 +216,7 @@ window.LiveGame = function (X) {
       best[a.t] = { n: a.d.n, r: a.r };
     });
     var teams = Object.keys(best).sort(function (x, y) { return best[x].r - best[y].r; }), out = {};
-    teams.forEach(function (tm, k) { out[tm] = { n: best[tm].n, pts: k === 0 ? FAST : 1 }; });
+    teams.forEach(function (tm, k) { out[tm] = { n: best[tm].n, pts: b && b.practice ? 0 : k === 0 ? FAST : 1 }; });
     return out;
   }
   function locked(beat, i) { var st = INSTR && drive ? D : S.state; return !!(st.locks && st.locks[beat + ":" + i]); }
@@ -224,7 +224,7 @@ window.LiveGame = function (X) {
     var res = {}, auto = []; for (var n = 0; n < TEAMS; n++) auto.push(0);
     Object.keys(D.locks).forEach(function (key) {
       var p = key.lastIndexOf(":"), beat = key.slice(0, p), i = +key.slice(p + 1);
-      if (!isGame(BEATS[beat])) return;
+      if (!isGame(BEATS[beat]) || BEATS[beat].practice) return;   // a practice question (the set-up check) scores nothing
       var r = results(beat, i), pts = {};
       Object.keys(r).forEach(function (tm) { pts[tm] = r[tm].pts; if (auto[tm - 1] != null) auto[tm - 1] += r[tm].pts; });
       res[key] = pts;
@@ -258,6 +258,7 @@ window.LiveGame = function (X) {
       var pp = P[sc.slice(sc.lastIndexOf(":") + 1)]; if (pp) pp.cells[it.b + ":" + it.i] = it;
     }
     played.forEach(function (pq) {
+      if (BEATS[pq.b] && BEATS[pq.b].practice) return;
       var first = {};
       list.forEach(function (p) {
         var a = p.cells[pq.k]; if (!a) return;
@@ -455,7 +456,7 @@ window.LiveGame = function (X) {
       slots().forEach(function (tm) {
         // the projector shows team totals only; the notes view also names who answered fastest
         var r = res[tm], who = h(teamLabel(tm)) + (r && !SOLO && notesView ? " · " + h(r.n) : "");
-        html += r ? '<span class="lv-chip ok">' + who + " · +" + r.pts + "</span>" : '<span class="lv-chip no">' + who + " · 0</span>";
+        html += r ? '<span class="lv-chip ok">' + who + (b.practice ? " · ✓" : " · +" + r.pts) + "</span>" : '<span class="lv-chip no">' + who + (b.practice ? "" : " · 0") + "</span>";
       });
       html += "</div>";
     }
@@ -988,6 +989,7 @@ window.LiveGame = function (X) {
     answers(b.id, i).some(function (a) { if (a.t === me.team && a.d.c === right) { fast = a.d.n; return true; } return false; });
     var html = '<p class="pl-result ' + (ok ? "ok" : "no") + '">' + (ok ? t("lvYouRight") : mine ? t("lvWrong") : t("lvYouNone")) + "</p>";
     if (isOrder(b)) html += '<p class="pl-fact">' + t("lvRightOrder", { x: h(right.split(",").join(" ")) }) + "</p>";
+    if (b.practice) return html + '<p class="pl-team">' + t("lvPractice") + "</p>";
     if (SOLO) { if (pts) html += '<p class="pl-team">' + ptsText("lvSoloGot", pts) + (pts === FAST ? " · " + t("lvSoloFastest") : "") + "</p>"; }
     else html += '<p class="pl-team">' + t("lvTeamGot", { n: pts }) + (fast && pts ? " · " + t("lvTeamFastest", { name: h(fast) }) : "") + "</p>";
     return html;

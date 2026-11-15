@@ -79,6 +79,27 @@ window.COURSE = {
      ]
     },
     {
+     "id": "k0-teaser",
+     "type": "quiz",
+     "practice": true,
+     "secs": 30,
+     "title": "Warm-up question (no points)",
+     "intro": "No points. It checks that your phone is set up.",
+     "questions": [
+      {
+       "q": "ChatGPT launched at the end of November 2022. About how long did it take to reach 100 million users?",
+       "options": [
+        "About two weeks",
+        "About two months",
+        "About nine months",
+        "About two and a half years"
+       ],
+       "answer": 1,
+       "why": "About two months, by an analyst estimate (UBS, reported by Reuters, February 2023): the fastest-growing consumer app on record at the time. TikTok took about nine months and Instagram about two and a half years. The tools spread fast; using them well takes practice, which is what these two days are for."
+      }
+     ]
+    },
+    {
      "id": "k0-shape",
      "type": "flow",
      "title": "How the two days run",
@@ -250,19 +271,56 @@ window.COURSE = {
      "type": "task",
      "title": "Quick win · Something useful for your own job",
      "steps": [
-      "On the course site, open Quick win and tap your role.",
-      "Click Copy, paste the prompt into Copilot Chat and send it.",
+      "On the Files page, under Quick win, find the prompt for your role and click Copy.",
+      "Paste it into Copilot Chat and send it.",
       "Read what comes back. Would you use it at work? What would you change?",
       "Tell your team in one sentence."
      ],
-     "note": "Nothing confidential goes in: the quick-win prompts hold no company data.",
+     "prompts": [
+      {
+       "title": "Production Line Leader, Operations Team Leader · A toolbox talk",
+       "text": "Write a five-minute toolbox talk for my team on safe changeovers on a food filling line. Five points in plain English, one sentence each. End with one question I can ask the team to check they understood."
+      },
+      {
+       "title": "Senior Operations Lead · A daily meeting",
+       "text": "Give me an agenda and a one-page template for a 20-minute daily production meeting in a food plant: safety, yesterday's output, quality, today's plan and actions. Keep each item to one line."
+      },
+      {
+       "title": "Finance Lead or Analyst · Margins in five lines",
+       "text": "Explain the difference between gross margin and contribution margin in five lines, with a simple example from a dairy product, for managers who don't work in finance."
+      },
+      {
+       "title": "Mechanical Team Lead · A maintenance checklist",
+       "text": "Write a weekly preventive maintenance checklist for a glass-jar filling machine, as a table with three columns: check, how, and what good looks like. Put safety and lockout first."
+      },
+      {
+       "title": "Supply Chain Excellence · OTIF in plain English",
+       "text": "Explain OTIF (on time, in full) in plain English for team leaders, with a one-line example, and give three practical ways a food plant can improve it."
+      },
+      {
+       "title": "Warehouse Team Lead · FEFO for new staff",
+       "text": "Write a one-page instruction for new warehouse staff on FEFO (first expiry, first out) for chilled dairy products. Numbered steps, plain English, and the three most common mistakes to avoid."
+      },
+      {
+       "title": "Production & Material Planning · A plan-change email",
+       "text": "Write a short, polite email template I can use to tell the sales team that this week's production plan has changed. Leave three blanks in [brackets] for what changed, why, and what it means for their customers."
+      },
+      {
+       "title": "Customer Logistics · Delay notices",
+       "text": "Write five short, polite message templates for telling a retail customer that a delivery will be late, for five different reasons. Each under 50 words, with [brackets] for the order number and the new time."
+      },
+      {
+       "title": "Regulatory & Trade Policy · A briefing note",
+       "text": "Give me a one-page template for a briefing note that summarises a new regulation for senior management: what changed, who it affects, the deadline, what we must do, and the open questions."
+      },
+      {
+       "title": "Lab Supervisor · An audit checklist",
+       "text": "Write a one-page checklist for preparing a food quality lab for an internal audit: documents, equipment and calibration, samples and records, people and training. Tick boxes, one line each."
+      }
+     ],
      "guide": [
       [
-       "On the course site, open Quick win (top of the page).",
-       ""
-      ],
-      [
-       "Tap your role. Click Copy.",
+       "On the Files page, under Quick win, find the prompt for your role. Click Copy.",
        ""
       ],
       [
@@ -270,20 +328,23 @@ window.COURSE = {
        "Ctrl + V, Enter"
       ],
       [
-       "Read what comes back. Would you use it at work?",
+       "Read what comes back. Would you use it at work? What would you change?",
+       ""
+      ],
+      [
+       "Tell your team in one sentence.",
        ""
       ]
      ],
      "explain": [
       "The quick win comes before any theory, on purpose. In ten minutes, with no score, you get something useful for your own job and a first feel for Copilot Chat.",
       [
-       "On the course site, open Quick win and tap your role: Warehouse Team Lead, Lab Supervisor, Finance Lead or Analyst, and so on.",
-       "Click Copy, paste the prompt into Copilot Chat and send it.",
+       "On the Files page, under Quick win, find the prompt for your role: Warehouse Team Lead, Lab Supervisor, Finance Lead or Analyst, and so on. Click Copy.",
+       "Paste it into Copilot Chat and send it.",
        "Read what comes back. Would you use it at work? What would you change?",
        "Tell your team in one sentence."
       ],
       "Each prompt is already a small brief: it says who the result is for, the shape and the length. What it can't know is your plant, your team or your products, so the answer stays general. What you'd change is exactly what the information pack adds from Round 2 on.",
-      "Nothing confidential goes in: the quick-win prompts hold no company data, so the same prompt works in Copilot Chat at Arla.",
       {
        "box": "tip",
        "text": "If Copilot asks you a question back, answer it in a few words, or say 'just give me your best version'."
@@ -293,7 +354,7 @@ window.COURSE = {
    ],
    "explain": [
     "Welcome. For two days your team visits the departments of Ghaima Dairy, a made-up dairy maker in Bahrain. In each one you do a real kind of job with Copilot Chat, check what comes back, and answer questions on your phone as you go.",
-    "This kick-off sets everything up: the rules and your four teams, Cream, Butter, Cheese and Laban, a sign-in check, what you'll be able to do by Thursday, Ghaima and its jobs, and a short pre-course check. It ends with a quick win: a ready-made prompt for your own role.",
+    "This kick-off sets everything up: the rules and your four teams, Cream, Butter, Cheese and Laban, a warm-up question on your phone that scores nothing and only checks your phone works, a sign-in check, what you'll be able to do by Thursday, Ghaima and its jobs, and a short pre-course check. It ends with a quick win: a ready-made prompt for your own role.",
     "What to watch: be signed in to both tools before Round 1. Teams are mixed on purpose, so in each job the person closest to that department's work leads. If your desktop gives you trouble, share with a neighbour and keep going."
    ]
   },
@@ -301,20 +362,20 @@ window.COURSE = {
    "id": "s1",
    "num": "1",
    "nav": "Transformation",
-   "mins": 20,
+   "mins": 25,
    "time": "09:30",
    "brief": "How digital transformation and data change a dairy business (ILO 1)",
    "title": "From digitisation",
    "titleAccent": "to transformation",
-   "lede": "Three words that get mixed up, why data is worth looking after, and what other food companies are already doing.",
+   "lede": "Three words that get mixed up, where a dairy's data really comes from, how to describe it, and what other food companies are already doing.",
    "beats": [
     {
      "id": "s1-th",
      "type": "part",
      "kind": "theory",
      "title": "Theory",
-     "text": "Three words, data as an asset, and what peers are doing.",
-     "mins": 12
+     "text": "Three words, a guessing board on where Ghaima's data comes from, how to describe data, and what peers are doing.",
+     "mins": 17
     },
     {
      "id": "s1-words",
@@ -354,14 +415,189 @@ window.COURSE = {
      ]
     },
     {
+     "id": "s1-board",
+     "type": "topboard",
+     "title": "Where does Ghaima's data come from?",
+     "intro": "Ghaima's top eight sources of data, ranked by how often new data arrives. Teams take turns to name one. If it's on the board, your team takes the points on the tile.",
+     "kinds": {
+      "structured": "Structured",
+      "semi": "Semi-structured",
+      "unstructured": "Unstructured",
+      "outside": "From outside"
+     },
+     "answers": [
+      {
+       "key": "sensors",
+       "text": "Sensors on the lines",
+       "detail": "Temperature, pressure, flow and fill weight on all three lines",
+       "freq": "Every second · about 2 million readings a day",
+       "kind": "semi",
+       "pts": 2
+      },
+      {
+       "key": "cameras",
+       "text": "Camera checks",
+       "detail": "Labels, caps and fill levels photographed on Lines 1 and 2",
+       "freq": "Every jar and pack · about 60,000 images a day",
+       "kind": "unstructured",
+       "pts": 2
+      },
+      {
+       "key": "messages",
+       "text": "Emails, chats and calls",
+       "detail": "Customers, suppliers, transporters and colleagues",
+       "freq": "All day · about 5,000 messages a day",
+       "kind": "unstructured",
+       "pts": 2
+      },
+      {
+       "key": "alarms",
+       "text": "Machine alarms and logs",
+       "detail": "Stops, faults, changeovers and cleaning cycles",
+       "freq": "Every few minutes · about 1,500 events a day",
+       "kind": "semi",
+       "pts": 2
+      },
+      {
+       "key": "scans",
+       "text": "Warehouse and truck scans",
+       "detail": "Pallet barcodes, stock moves and truck locations",
+       "freq": "Every pallet · about 1,000 scans a day",
+       "kind": "structured",
+       "pts": 1
+      },
+      {
+       "key": "lab",
+       "text": "Lab results",
+       "detail": "pH, salt, fat and moisture for every batch",
+       "freq": "Every batch · about 300 results a day",
+       "kind": "structured",
+       "pts": 1
+      },
+      {
+       "key": "orders",
+       "text": "Orders and invoices",
+       "detail": "Customer orders, delivery notes and invoices in the company's system",
+       "freq": "Every order · about 120 a day",
+       "kind": "structured",
+       "pts": 1
+      },
+      {
+       "key": "docs",
+       "text": "Documents",
+       "detail": "Specs, manuals, supplier quotes, contracts and the paper shift log",
+       "freq": "Every week · about 40 new ones",
+       "kind": "unstructured",
+       "pts": 1
+      },
+      {
+       "key": "outside",
+       "text": "Data from outside",
+       "detail": "Market prices, weather, retailers' sales reports, reviews and new rules",
+       "freq": "Not Ghaima's own, but Ghaima uses it",
+       "kind": "outside",
+       "pts": 1,
+       "bonus": true
+      }
+     ],
+     "summary": "Orders and invoices, the data most people picture first, come seventh. Count the records: the three structured sources make up fewer than 1 in 1,000 of what Ghaima records each day. Most of it is sensor readings, images and messages.",
+     "source": "Ghaima Dairy's figures are made up for this course, in the range of a plant its size.",
+     "explain": [
+      "Ask people where a company's data comes from and most say orders, invoices and customer records: neat tables in a system. That's real data, but it's a small part of it. This board shows how much more there is.",
+      "The board lists Ghaima's top eight sources, ranked by how often new data arrives, from every second down to every week. Each team names one source per turn. Name one that's on the board and your team takes the points on the tile: the sources people forget are worth more than the obvious ones. Anything from outside Ghaima counts as a bonus.",
+      [
+       "The colour of each tile is its kind of data: [[structured|structured]], [[semistructured|semi-structured]] or [[unstructured|unstructured]]. The next block explains the three.",
+       "Look at where the neat tables land, and how small their share is when you count the records."
+      ],
+      "Why it matters for this course: AI can read the kinds of data that never fitted in a spreadsheet, such as messages, photos and documents. That widens what you can ask it to help with.",
+      {
+       "box": "tip",
+       "text": "The figures on the board are made up for Ghaima, in the range of a plant its size. The order, though, is typical of a food plant: machines and messages produce far more data than orders do."
+      }
+     ]
+    },
+    {
+     "id": "s1-describe",
+     "type": "table",
+     "title": "Four ways to describe data",
+     "cols": [
+      "Describe it by",
+      "The choices",
+      "At Ghaima Dairy"
+     ],
+     "rows": [
+      [
+       "Structure",
+       "[[structured|Structured]] (fixed rows and columns), [[semistructured|semi-structured]] (tagged records such as machine logs) or [[unstructured|unstructured]] (free text, images, voice)",
+       "An order in the system; a filler's alarm log; a customer's complaint email"
+      ],
+      [
+       "Form",
+       "Quantitative (numbers) or qualitative (words and categories)",
+       "A fill weight of 497 g; an operator's note, 'nozzle sticking'"
+      ],
+      [
+       "Source",
+       "Captured on purpose, or exhaust: a by-product of another process",
+       "The lab's QC tests; the stop times a filler records anyway"
+      ],
+      [
+       "Producer",
+       "Primary (your own) or secondary (someone else's, inside or outside the company)",
+       "Ghaima's own sensor readings; market prices, weather, a retailer's sales report"
+      ]
+     ],
+     "note": "Analysts estimate that 80 to 90% of the data a company holds is unstructured (MIT Sloan, 2021). Classic reports read the structured part. Generative AI can also read the rest: text, documents and images.",
+     "explain": [
+      "The same piece of data can be described in four ways. You don't need to remember the labels; they help you see what you're holding before you hand it to AI.",
+      [
+       "**Structure.** [[structured|Structured]] data sits in fixed rows and columns, like an order in the system. [[semistructured|Semi-structured]] data has tags but no fixed table, like a filler's alarm log: a time, a code and a value on each line. [[unstructured|Unstructured]] data is free text, images and voice, like a customer's complaint email.",
+       "**Form.** Numbers, such as a fill weight of 497 g, or words and categories, such as an operator's note that the nozzle is sticking.",
+       "**Source.** Captured on purpose, like the lab's QC tests, or exhaust: a by-product of another process, like the stop times a filler records anyway.",
+       "**Producer.** Primary data is your own, like Ghaima's sensor readings. Secondary data is someone else's, inside or outside the company, like market prices or a retailer's sales report."
+      ],
+      "Analysts estimate that 80 to 90% of the data a company holds is unstructured (MIT Sloan, 2021). Classic reports read the structured part. Generative AI can also read the rest, which is why it matters for a dairy."
+     ]
+    },
+    {
+     "id": "s1-pyramid",
+     "type": "pyramid",
+     "title": "From data to decisions",
+     "levels": [
+      {
+       "title": "Wisdom",
+       "text": "A decision: check the filler setting after every changeover, and add it to the changeover checklist."
+      },
+      {
+       "title": "Knowledge",
+       "text": "A pattern that explains it: fill weight runs low for twenty minutes after each changeover."
+      },
+      {
+       "title": "Information",
+       "text": "Data organised to answer a question: Line 1's average fill weight hour by hour, against the 500 g target."
+      },
+      {
+       "title": "Data",
+       "text": "Raw records, such as one sensor reading: 'Line 1 filler, 02:14, fill weight 491 g'."
+      }
+     ],
+     "note": "Each step up answers more questions and adds value. AI can help at every step; the decision at the top stays with a person.",
+     "explain": [
+      "Data on its own doesn't decide anything. The pyramid shows how it gains value as it answers more questions.",
+      [
+       "**Data.** Raw records, such as one sensor reading: Line 1 filler, 02:14, fill weight 491 g.",
+       "**Information.** Data organised to answer a question: Line 1's average fill weight hour by hour, against the 500 g target.",
+       "**Knowledge.** A pattern that explains it: fill weight runs low for twenty minutes after each changeover.",
+       "**Wisdom.** A decision: check the filler setting after every changeover, and add it to the changeover checklist."
+      ],
+      "Most dashboards stop at information. The aim is the decision at the top. AI can help at every step, but the decision stays with a person."
+     ]
+    },
+    {
      "id": "s1-data",
      "type": "points",
      "title": "Data as an asset, from the plant floor to decisions",
      "items": [
-      {
-       "title": "Where it lives.",
-       "text": "Line sensors and fillers, the lab's results, the warehouse system, the delivery log, finance's month-end."
-      },
       {
        "title": "What makes it useful.",
        "text": "Consistent units and names, recorded on time, shared with whoever needs it, and trusted because someone checks it."
@@ -376,9 +612,8 @@ window.COURSE = {
       }
      ],
      "explain": [
-      "Data is an asset, like a machine or a building: it's only worth something if it's looked after.",
+      "Data is an asset, like a machine or a building: it's only worth something if it's looked after. The board showed where it comes from; this is what keeps it worth having.",
       [
-       "**Where it lives.** Line sensors and fillers, the lab's results, the warehouse system, the delivery log, finance's month-end.",
        "**What makes it useful.** Consistent units and names, recorded on time, shared with whoever needs it, and trusted because someone checks it.",
        "**What spoils it.** Paper that is typed in twice, kg in one row and tonnes in the next, a missing week nobody notices.",
        "**Why AI cares.** AI works on whatever you give it. Messy data in, confident nonsense out."
@@ -465,6 +700,25 @@ window.COURSE = {
      ]
     },
     {
+     "id": "s1-kind",
+     "type": "quiz",
+     "secs": 30,
+     "title": "Which kind of data?",
+     "questions": [
+      {
+       "q": "The night shift's handwritten stoppage log, photographed on a phone. Which kind of data is it?",
+       "options": [
+        "Structured",
+        "Semi-structured",
+        "Unstructured",
+        "Metadata"
+       ],
+       "answer": 2,
+       "why": "[[unstructured|Unstructured]]: a photo of handwriting, with no fixed rows and columns. Job 1 asks Copilot to read exactly this."
+      }
+     ]
+    },
+    {
      "id": "s1-useful",
      "type": "quiz",
      "secs": 30,
@@ -501,8 +755,8 @@ window.COURSE = {
     }
    ],
    "explain": [
-    "Before we open the tools, this round gives you the bigger picture: three words people mix up, why data is worth looking after, and what two other food companies are already doing with AI.",
-    "It runs as about twelve minutes of theory with phones down, then five quick questions on your phone.",
+    "Before we open the tools, this round gives you the bigger picture: three words people mix up, where a dairy's data really comes from, how to describe data, why it's worth looking after, and what two other food companies are already doing with AI.",
+    "It runs as about seventeen minutes with phones down, including a guessing board where the teams take turns to name Ghaima's sources of data, then six quick questions on your phone.",
     "What to watch: the part on data. Messy data, like the same stoppage typed in twice or kg in one row and tonnes in the next, comes back in the jobs. AI works on whatever you give it."
    ]
   },
@@ -511,7 +765,7 @@ window.COURSE = {
    "num": "2",
    "nav": "Your assistant",
    "mins": 35,
-   "time": "09:50",
+   "time": "09:55",
    "brief": "Apply Copilot with clear briefs (ILO 2)",
    "title": "Meet",
    "titleAccent": "your assistant",
@@ -961,7 +1215,7 @@ window.COURSE = {
    "num": "J1",
    "nav": "Job 1 · Production",
    "mins": 35,
-   "time": "10:25",
+   "time": "10:30",
    "title": "Job 1",
    "titleAccent": "Production",
    "lede": "Last night's stoppage log for Line 1 has to become a clear handover for the morning shift, and a safety poster for the line.",
@@ -1121,7 +1375,7 @@ window.COURSE = {
    "num": "3",
    "nav": "Check it",
    "mins": 20,
-   "time": "11:15",
+   "time": "11:20",
    "brief": "Evaluate outputs before they are used or sent (ILO 3)",
    "title": "Work from files,",
    "titleAccent": "check before you trust",
@@ -1397,7 +1651,7 @@ window.COURSE = {
    "num": "J2",
    "nav": "Job 2 · Procurement",
    "mins": 35,
-   "time": "12:05",
+   "time": "12:10",
    "title": "Job 2",
    "titleAccent": "Procurement",
    "lede": "Three quotes for the glass jars Line 1 fills. One has its freight in a footnote, one has a minimum order too big for the store, and one is hiding something.",
@@ -1566,7 +1820,7 @@ window.COURSE = {
    "num": "4",
    "nav": "The value chain",
    "mins": 30,
-   "time": "12:40",
+   "time": "12:45",
    "brief": "Where AI fits along a dairy value chain (ILO 1)",
    "title": "AI across",
    "titleAccent": "the value chain",
@@ -1759,7 +2013,7 @@ window.COURSE = {
    "num": "J3",
    "nav": "Job 3 · Maintenance",
    "mins": 35,
-   "time": "13:10",
+   "time": "13:15",
    "title": "Job 3",
    "titleAccent": "Maintenance",
    "lede": "Line 1's filler shows a fault after the changeover. The fix is in a 12-page manual that covers two models.",
@@ -1905,8 +2159,8 @@ window.COURSE = {
    "id": "c1",
    "num": "C1",
    "nav": "Day 1 close",
-   "mins": 15,
-   "time": "13:45",
+   "mins": 10,
+   "time": "13:50",
    "title": "End of",
    "titleAccent": "day one",
    "lede": "Team scores, one lesson from each team, and what comes on Thursday.",
@@ -3712,68 +3966,6 @@ window.COURSE = {
    }
   ]
  },
- "quickWin": [
-  {
-   "key": "line",
-   "name": "Production Line Leader, Operations Team Leader",
-   "title": "A toolbox talk",
-   "prompt": "Write a five-minute toolbox talk for my team on safe changeovers on a food filling line. Five points in plain English, one sentence each. End with one question I can ask the team to check they understood."
-  },
-  {
-   "key": "ops",
-   "name": "Senior Operations Lead",
-   "title": "A daily meeting",
-   "prompt": "Give me an agenda and a one-page template for a 20-minute daily production meeting in a food plant: safety, yesterday's output, quality, today's plan and actions. Keep each item to one line."
-  },
-  {
-   "key": "finance",
-   "name": "Finance Lead or Analyst",
-   "title": "Margins in five lines",
-   "prompt": "Explain the difference between gross margin and contribution margin in five lines, with a simple example from a dairy product, for managers who don't work in finance."
-  },
-  {
-   "key": "maint",
-   "name": "Mechanical Team Lead",
-   "title": "A maintenance checklist",
-   "prompt": "Write a weekly preventive maintenance checklist for a glass-jar filling machine, as a table with three columns: check, how, and what good looks like. Put safety and lockout first."
-  },
-  {
-   "key": "scx",
-   "name": "Supply Chain Excellence",
-   "title": "OTIF in plain English",
-   "prompt": "Explain OTIF (on time, in full) in plain English for team leaders, with a one-line example, and give three practical ways a food plant can improve it."
-  },
-  {
-   "key": "wh",
-   "name": "Warehouse Team Lead",
-   "title": "FEFO for new staff",
-   "prompt": "Write a one-page instruction for new warehouse staff on FEFO (first expiry, first out) for chilled dairy products. Numbered steps, plain English, and the three most common mistakes to avoid."
-  },
-  {
-   "key": "plan",
-   "name": "Production & Material Planning",
-   "title": "A plan-change email",
-   "prompt": "Write a short, polite email template I can use to tell the sales team that this week's production plan has changed. Leave three blanks in [brackets] for what changed, why, and what it means for their customers."
-  },
-  {
-   "key": "cust",
-   "name": "Customer Logistics",
-   "title": "Delay notices",
-   "prompt": "Write five short, polite message templates for telling a retail customer that a delivery will be late, for five different reasons. Each under 50 words, with [brackets] for the order number and the new time."
-  },
-  {
-   "key": "reg",
-   "name": "Regulatory & Trade Policy",
-   "title": "A briefing note",
-   "prompt": "Give me a one-page template for a briefing note that summarises a new regulation for senior management: what changed, who it affects, the deadline, what we must do, and the open questions."
-  },
-  {
-   "key": "lab",
-   "name": "Lab Supervisor",
-   "title": "An audit checklist",
-   "prompt": "Write a one-page checklist for preparing a food quality lab for an internal audit: documents, equipment and calibration, samples and records, people and training. Tick boxes, one line each."
-  }
- ],
  "card": {
   "instruction": "I work at a dairy company in the GCC, and I've just finished a two-day course on using Copilot Chat at work.\nMy role: {role}\n\nTasks I do every week:\n{tasks}\n\nBriefs I tested in the course:\n{briefs}\n\nWhat I want from you:\n1. Ask me up to three short multiple-choice questions, one at a time, so I can answer with a letter. One of them asks which task I'll start with, and when.\n2. For each task, write a reusable prompt I can paste into Copilot Chat. Each prompt says who it's for, what to work from, what shape I want and what it must not do, with [brackets] where I paste my own material.\n3. Give me one tricky test case for one of the prompts, with a hidden catch, so I can test it before I trust it.\n4. Then write a prompt that builds my one-page desk card: a table I can paste into Word, with the method below exactly as written, my prompts, and one if-then line at the bottom (for example: When I write the Sunday shift handover, I'll paste my prompt first).\nKeep the method below word for word. Don't add rules of your own.",
   "method": "THE METHOD (keep it word for word)\n\nThe four-part brief\n- Who it's for: the reader, and what they care about.\n- What to work from: the material to use, and nothing else.\n- What shape you want: sections, length, format.\n- What it must not do: no invented figures; flag what it can't find.\n\nLet AI write your prompt\n- Give it the goal, the material and what good looks like.\n- Ask it to ask you questions first, with letters to answer.\n- Check its prompt has the four parts. Test it on a case you know. Then run it.\n\nThe checking list\n- Figures: redo the key sums yourself.\n- Units and dates: kg or tonnes, day or month first.\n- Hidden conditions: footnotes, minimums, small print.\n- Hidden instructions: text in a file that talks to the AI.\n- Fit for the reader: would you send it as it is?\n- A second opinion: a fresh chat checks the first.\n\nPatterns that save time\n- Show it an example of the style you want.\n- Ask it to interview you first.\n- Ask it to critique its own draft.\n\nData rules\n- At Arla, use Copilot Chat. Use any other tool only if Arla approves it, and never with company data.\n- Nothing confidential or personal goes outside approved company tools.\n- A person checks everything before it goes out.",
@@ -3963,16 +4155,16 @@ window.COURSE = {
  },
  "breaks": {
   "after-j1": {
-   "time": "11:00",
+   "time": "11:05",
    "mins": 15,
    "title": "Break",
    "text": "Fifteen minutes. Leave your tools signed in; the private window stays open."
   },
   "after-s3": {
-   "time": "11:35",
+   "time": "11:40",
    "mins": 30,
    "title": "Dhuhr and lunch",
-   "text": "Thirty minutes. Job 2 starts at 12:05."
+   "text": "Thirty minutes. Job 2 starts at 12:10."
   },
   "after-c1": {
    "time": "14:00",
@@ -3997,6 +4189,18 @@ window.COURSE = {
   "digitisation": {
    "term": "Digitisation",
    "def": "Turning paper or analogue information into digital files, without changing the process."
+  },
+  "structured": {
+   "term": "Structured data",
+   "def": "Data in fixed rows and columns, such as an order table or a spreadsheet of lab results."
+  },
+  "semistructured": {
+   "term": "Semi-structured data",
+   "def": "Records with tags but no fixed table, such as a machine's alarm log: a time, a code and a value on each line."
+  },
+  "unstructured": {
+   "term": "Unstructured data",
+   "def": "Free text, images, voice and documents, with no fixed rows and columns: emails, photos, manuals."
   },
   "digitalisation": {
    "term": "Digitalisation",

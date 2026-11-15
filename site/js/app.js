@@ -768,6 +768,31 @@
     },
 
     // a pyramid, top level first, with what each level means beside it
+    // a guessing board: hidden tiles in rank order; teams name an answer, the presentation reveals the tile and gives its points to that team
+    topboard: function (b, u) {
+      var open = u.open || {}, got = u.got || {}, instr = EDITION === "instructor";
+      var pts = function (n) { return t(n === 1 ? "lvPtsN1" : "lvPtsN", { n: n }); };
+      var tiles = b.answers.map(function (a, k) {
+        var rank = '<span class="tb-rank">' + (a.bonus ? "+" : k + 1) + "</span>";
+        if (!open[a.key]) return '<button type="button" class="tb-tile' + (a.bonus ? " bonus" : "") + '" data-act="tbopen" data-id="' + b.id + '" data-key="' + a.key + '">' + rank +
+          '<span class="tb-hidden">' + (a.bonus ? h(t("tbBonus")) : "") + '</span><span class="tb-pts">' + pts(a.pts) + "</span></button>";
+        var who = got[a.key] != null ? '<span class="tb-got">' + h(teamName(got[a.key])) + " · +" + a.pts +
+          (instr ? ' <button type="button" class="tb-undo" data-act="tbaward" data-id="' + b.id + '" data-key="' + a.key + '" data-team="-1" aria-label="' + h(t("tbUndo")) + '">×</button>' : "") + "</span>" : "";
+        var award = instr && got[a.key] == null && !u.rest ? '<span class="tb-award">' + C.teams.map(function (tn, i) {
+          return '<button type="button" class="chip" data-act="tbaward" data-id="' + b.id + '" data-key="' + a.key + '" data-team="' + i + '">' + h(teamName(i)) + "</button>";
+        }).join("") + "</span>" : "";
+        return '<div class="tb-tile on k-' + a.kind + (a.bonus ? " bonus" : "") + '">' + rank + '<span class="tb-body"><b>' + T(a.text) + "</b>" +
+          (a.detail ? '<span class="tb-detail">' + T(a.detail) + "</span>" : "") + (a.freq ? '<span class="tb-freq">' + T(a.freq) + "</span>" : "") + "</span>" +
+          '<span class="tb-side"><span class="tb-kind k-' + a.kind + '">' + h(b.kinds[a.kind]) + '</span><span class="tb-pts">' + pts(a.pts) + "</span></span>" + who + award + "</div>";
+      }).join("");
+      var all = b.answers.every(function (a) { return open[a.key]; });
+      var inner = '<div class="tb-board" style="grid-template-rows:repeat(' + Math.ceil(b.answers.length / 2) + ',auto)">' + tiles + "</div>";
+      if (all && b.summary) inner += '<div class="callout"><p>' + T(b.summary) + "</p></div>";
+      inner += '<div class="actions">' + (all ? "" : '<button class="btn" type="button" data-act="tbrest" data-id="' + b.id + '">' + t("tbRest") + "</button>") +
+        (instr ? '<button class="btn ghost small" type="button" data-act="tbreset" data-id="' + b.id + '">' + t("tbReset") + "</button>" : "") + "</div>";
+      return beatShell(b, inner + (b.source ? '<p class="src">' + h(b.source) + "</p>" : ""));
+    },
+
     pyramid: function (b) {
       var n = b.levels.length, wd = function (i) { return 34 + 66 * i / Math.max(1, n - 1); };
       var inner = '<div class="pyr">' + b.levels.map(function (l, i) {
@@ -1089,6 +1114,23 @@
         u.flipped = u.flipped || {}; var k = a.getAttribute("data-key"); u.flipped[k] = !u.flipped[k];
         commit(id); syncFlips(BEATS[id]); break;
       case "flipall": u.flipped = {}; commit(id); syncFlips(BEATS[id]); break;
+      case "tbopen": u.open = u.open || {}; u.open[a.getAttribute("data-key")] = true; commit(id); refreshBeat(id); break;
+      case "tbrest": u.open = {}; u.rest = true; BEATS[id].answers.forEach(function (x) { u.open[x.key] = true; }); commit(id); refreshBeat(id); break;
+      case "tbaward":
+        // the tile's points go to the team that named it; the same team again, or ×, takes them back
+        var tk = a.getAttribute("data-key"), tt = +a.getAttribute("data-team"), tans = BEATS[id].answers.filter(function (x) { return x.key === tk; })[0];
+        u.got = u.got || {};
+        var prev = u.got[tk];
+        if (prev != null && ST.teams[prev]) ST.teams[prev].score = Math.max(0, ST.teams[prev].score - tans.pts);
+        if (prev === tt || tt < 0 || !ST.teams[tt]) delete u.got[tk];
+        else { u.got[tk] = tt; ST.teams[tt].score += tans.pts; }
+        commit("teams"); refreshBeat(id); renderScores(); refreshTeamViews(); break;
+      case "tbreset":
+        Object.keys(u.got || {}).forEach(function (k2) {
+          var ta = BEATS[id].answers.filter(function (x) { return x.key === k2; })[0], tm2 = u.got[k2];
+          if (ta && ST.teams[tm2]) ST.teams[tm2].score = Math.max(0, ST.teams[tm2].score - ta.pts);
+        });
+        u.open = {}; u.got = {}; u.rest = false; commit("teams"); refreshBeat(id); renderScores(); refreshTeamViews(); break;
       case "copytext": copy(a.getAttribute("data-text"), a.getAttribute("data-label") || t("lblText")); break;
       case "startpick": startPick = a.getAttribute("data-key"); renderStart(); break;
       case "cardrole": var rk = a.getAttribute("data-key"); if (CARD.r !== rk) { CARD.r = rk; CARD.t = []; } saveCard(); renderCard(); break;

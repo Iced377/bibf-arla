@@ -127,7 +127,7 @@ S6C_PACK = pack("recommend which batches of Ghaima Spread can be released, from 
 WARM_PROMPT = ("Explain OEE (overall equipment effectiveness) to a new line leader on a cheese-jar filling line. "
                "Use one worked example with simple numbers, then give me three quick questions to check I understood.")
 
-# ---------------------------------------------------------------- quick win: one ready prompt per role group (#/start)
+# ---------------------------------------------------------------- quick win: one ready prompt per role group, on the Files page under Quick win
 QUICK_WIN = [
     {"key": "line", "name": "Production Line Leader, Operations Team Leader", "title": "A toolbox talk",
      "prompt": "Write a five-minute toolbox talk for my team on safe changeovers on a food filling line. Five points in plain English, one sentence each. "
@@ -254,6 +254,15 @@ SECTIONS.append({
                    P("Speed counts, a little", "Each question is read aloud. The team with the fastest right answer gets 2 points; every other team with a right answer gets 1."),
                    P("A department per job", "Each job comes from one of Ghaima's departments. The person in your team closest to that work leads it."),
                    P("Two days, one game", "Scores carry over to Thursday. The final podium is on Thursday afternoon.")]},
+        {"id": note("k0-teaser", "No points: it checks every phone. Press Start once the Dashboard shows everyone joined. Anyone whose phone shows nothing: "
+                                 "check they're signed in as student and have joined a team. Reveal, then one line: the tools spread fast; using them well takes practice."),
+         "type": "quiz", "practice": True, "secs": 30, "title": "Warm-up question (no points)",
+         "intro": "No points. It checks that your phone is set up.",
+         "questions": [
+             q("ChatGPT launched at the end of November 2022. About how long did it take to reach 100 million users?",
+               ["About two weeks", "About two months", "About nine months", "About two and a half years"], 1,
+               "About two months, by an analyst estimate (UBS, reported by Reuters, February 2023): the fastest-growing consumer app on record at the time. "
+               "TikTok took about nine months and Instagram about two and a half years. The tools spread fast; using them well takes practice, which is what these two days are for.")]},
         {"id": note("k0-shape", "Thirty seconds. Every round runs the same way, and the jobs sit between the rounds."),
          "type": "flow", "title": "How the two days run",
          "steps": [P("Theory", "The ideas, short, with examples from the dairy. Phones down."),
@@ -289,25 +298,25 @@ SECTIONS.append({
         {"id": note("k0-pre", "Press Open the check on the phones. Fifteen questions, about ten minutes. Say it: nobody sees individual scores; it measures the course, not them."),
          "type": "assesscue", "which": "pre", "title": "Pre-course check", "mins": 10,
          "intro": "Fifteen questions on your own phone, about ten minutes. Nobody sees your answers. You see your score on Thursday, next to your new one."},
-        {"id": note("k0-quick", "Ten minutes, no score. Everyone opens Quick win on the course site, taps their role and pastes the prompt into Copilot Chat. "
+        {"id": note("k0-quick", "Ten minutes, no score. Everyone finds their role's prompt on the Files page, under Quick win, and pastes it into Copilot Chat. "
                                 "After five minutes ask two people: would you use what came back? What would you change?"),
          "type": "task", "title": "Quick win · Something useful for your own job",
-         "steps": ["On the course site, open Quick win and tap your role.",
-                   "Click Copy, paste the prompt into Copilot Chat and send it.",
+         "steps": ["On the Files page, under Quick win, find the prompt for your role and click Copy.",
+                   "Paste it into Copilot Chat and send it.",
                    "Read what comes back. Would you use it at work? What would you change?",
                    "Tell your team in one sentence."],
-         "note": "Nothing confidential goes in: the quick-win prompts hold no company data."},
+         "prompts": [{"title": x["name"] + " · " + x["title"], "text": x["prompt"]} for x in QUICK_WIN]},
     ]})
 
 # ======== Round 1 · From digitisation to transformation
 SECTIONS.append({
-    "id": "s1", "num": "1", "nav": "Transformation", "mins": 20, "time": "09:30",
+    "id": "s1", "num": "1", "nav": "Transformation", "mins": 25, "time": "09:30",
     "brief": "How digital transformation and data change a dairy business (ILO 1)",
     "title": "From digitisation", "titleAccent": "to transformation",
-    "lede": "Three words that get mixed up, why data is worth looking after, and what other food companies are already doing.",
+    "lede": "Three words that get mixed up, where a dairy's data really comes from, how to describe it, and what other food companies are already doing.",
     "beats": [
-        part("s1-th", "theory", "Theory", "Three words, data as an asset, and what peers are doing.", 12,
-             "Page Down or the clicker moves one block at a time and the notes tab follows."),
+        part("s1-th", "theory", "Theory", "Three words, a guessing board on where Ghaima's data comes from, how to describe data, and what peers are doing.", 17,
+             "Page Down or the clicker moves one block at a time and the notes tab follows. The board is the only activity: phones stay down."),
         {"id": note("s1-words", "Three minutes. Use the Ghaima examples; ask the room for one of their own for each word."),
          "type": "table", "title": "Three words, three different things",
          "cols": ["", "What it means", "At Ghaima Dairy"],
@@ -315,10 +324,62 @@ SECTIONS.append({
                   ["[[digitalisation|Digitalisation]]", "Using digital tools to run an existing process better", "Filler stoppages flow to a dashboard by themselves, so the shift lead sees them live"],
                   ["[[transformation|Digital transformation]]", "Changing how the business works and creates value", "Selling direct to cafés through an app, with production planned on their orders"]],
          "note": "Most companies need all three. Transformation is about people and ways of working as much as technology."},
-        {"id": note("s1-data", "Two minutes. Make it concrete: the same stoppage logged twice on paper is a data problem, and Job 1 will show it."),
+        {"id": note("s1-board", "Eight minutes, no phones. One minute: each team lists every source of data it can think of at a dairy. Then teams take turns, "
+                                "Cream, Butter, Cheese, Laban, one source per turn, two rounds. On the board: click the tile, then the team's name, and its points go "
+                                "to that team. Not on the board: next team. Then Reveal the rest and read the summary. "
+                                "Accept close answers. 1 sensors: machines, IoT, temperature or pressure probes, flow meters, scales, checkweighers. "
+                                "2 cameras: vision systems, label or cap checks, photos, CCTV. 3 emails: WhatsApp, Teams chats, phone calls, messages. "
+                                "4 machine logs: alarms, stoppages, downtime, PLC, SCADA, the line's own records. 5 scans: barcodes, the warehouse system, "
+                                "stock, pallets, GPS, trucks. 6 lab: QC, tests, quality results. 7 orders: sales, invoices, customers, the ERP, SAP, delivery notes. "
+                                "8 documents: specs, manuals, quotes, contracts, the paper shift log, SOPs. "
+                                "Bonus: anything from outside Ghaima, such as market prices, weather, retailers' sales data, reviews, social media or new rules."),
+         "type": "topboard", "title": "Where does Ghaima's data come from?",
+         "intro": "Ghaima's top eight sources of data, ranked by how often new data arrives. Teams take turns to name one. "
+                  "If it's on the board, your team takes the points on the tile.",
+         "kinds": {"structured": "Structured", "semi": "Semi-structured", "unstructured": "Unstructured", "outside": "From outside"},
+         "answers": [
+             {"key": "sensors", "text": "Sensors on the lines", "detail": "Temperature, pressure, flow and fill weight on all three lines",
+              "freq": "Every second · about 2 million readings a day", "kind": "semi", "pts": 2},
+             {"key": "cameras", "text": "Camera checks", "detail": "Labels, caps and fill levels photographed on Lines 1 and 2",
+              "freq": "Every jar and pack · about 60,000 images a day", "kind": "unstructured", "pts": 2},
+             {"key": "messages", "text": "Emails, chats and calls", "detail": "Customers, suppliers, transporters and colleagues",
+              "freq": "All day · about 5,000 messages a day", "kind": "unstructured", "pts": 2},
+             {"key": "alarms", "text": "Machine alarms and logs", "detail": "Stops, faults, changeovers and cleaning cycles",
+              "freq": "Every few minutes · about 1,500 events a day", "kind": "semi", "pts": 2},
+             {"key": "scans", "text": "Warehouse and truck scans", "detail": "Pallet barcodes, stock moves and truck locations",
+              "freq": "Every pallet · about 1,000 scans a day", "kind": "structured", "pts": 1},
+             {"key": "lab", "text": "Lab results", "detail": "pH, salt, fat and moisture for every batch",
+              "freq": "Every batch · about 300 results a day", "kind": "structured", "pts": 1},
+             {"key": "orders", "text": "Orders and invoices", "detail": "Customer orders, delivery notes and invoices in the company's system",
+              "freq": "Every order · about 120 a day", "kind": "structured", "pts": 1},
+             {"key": "docs", "text": "Documents", "detail": "Specs, manuals, supplier quotes, contracts and the paper shift log",
+              "freq": "Every week · about 40 new ones", "kind": "unstructured", "pts": 1},
+             {"key": "outside", "text": "Data from outside", "detail": "Market prices, weather, retailers' sales reports, reviews and new rules",
+              "freq": "Not Ghaima's own, but Ghaima uses it", "kind": "outside", "pts": 1, "bonus": True}],
+         "summary": "Orders and invoices, the data most people picture first, come seventh. Count the records: the three structured sources make up fewer than "
+                    "1 in 1,000 of what Ghaima records each day. Most of it is sensor readings, images and messages.",
+         "source": "Ghaima Dairy's figures are made up for this course, in the range of a plant its size."},
+        {"id": note("s1-describe", "Two minutes. Point back at the colours on the board: those were the Structure row. Read the MIT Sloan line slowly: "
+                                   "that unstructured share is exactly what generative AI can now read."),
+         "type": "table", "title": "Four ways to describe data",
+         "cols": ["Describe it by", "The choices", "At Ghaima Dairy"],
+         "rows": [["Structure", "[[structured|Structured]] (fixed rows and columns), [[semistructured|semi-structured]] (tagged records such as machine logs) "
+                                "or [[unstructured|unstructured]] (free text, images, voice)", "An order in the system; a filler's alarm log; a customer's complaint email"],
+                  ["Form", "Quantitative (numbers) or qualitative (words and categories)", "A fill weight of 497 g; an operator's note, 'nozzle sticking'"],
+                  ["Source", "Captured on purpose, or exhaust: a by-product of another process", "The lab's QC tests; the stop times a filler records anyway"],
+                  ["Producer", "Primary (your own) or secondary (someone else's, inside or outside the company)", "Ghaima's own sensor readings; market prices, weather, a retailer's sales report"]],
+         "note": "Analysts estimate that 80 to 90% of the data a company holds is unstructured (MIT Sloan, 2021). Classic reports read the structured part. "
+                 "Generative AI can also read the rest: text, documents and images."},
+        {"id": note("s1-pyramid", "Ninety seconds. Read it bottom up with the fill-weight example. Most dashboards stop at information; the aim is a decision."),
+         "type": "pyramid", "title": "From data to decisions",
+         "levels": [P("Wisdom", "A decision: check the filler setting after every changeover, and add it to the changeover checklist."),
+                    P("Knowledge", "A pattern that explains it: fill weight runs low for twenty minutes after each changeover."),
+                    P("Information", "Data organised to answer a question: Line 1's average fill weight hour by hour, against the 500 g target."),
+                    P("Data", "Raw records, such as one sensor reading: 'Line 1 filler, 02:14, fill weight 491 g'.")],
+         "note": "Each step up answers more questions and adds value. AI can help at every step; the decision at the top stays with a person."},
+        {"id": note("s1-data", "Ninety seconds. Make it concrete: the same stoppage logged twice on paper is a data problem, and Job 1 will show it."),
          "type": "points", "title": "Data as an asset, from the plant floor to decisions",
-         "items": [P("Where it lives.", "Line sensors and fillers, the lab's results, the warehouse system, the delivery log, finance's month-end."),
-                   P("What makes it useful.", "Consistent units and names, recorded on time, shared with whoever needs it, and trusted because someone checks it."),
+         "items": [P("What makes it useful.", "Consistent units and names, recorded on time, shared with whoever needs it, and trusted because someone checks it."),
                    P("What spoils it.", "Paper that is typed in twice, kg in one row and tonnes in the next, a missing week nobody notices."),
                    P("Why AI cares.", "AI works on whatever you give it. Messy data in, confident nonsense out.")]},
         {"id": note("s1-peers", "Ninety seconds. Two food companies, both on Microsoft Copilot, both investing in skills as much as tools."),
@@ -341,6 +402,12 @@ SECTIONS.append({
              q("Ghaima starts selling direct to cafés through an app, and plans production on their orders. Which is it?",
                ["Digitisation", "Digitalisation", "Digital transformation", "None of them"], 2,
                "[[transformation|Digital transformation]]: a new way of doing business, with new customers and a new way of planning.")]},
+        {"id": note("s1-kind", "30 s. The bridge to Job 1: Copilot reads exactly this kind of data."),
+         "type": "quiz", "secs": 30, "title": "Which kind of data?",
+         "questions": [
+             q("The night shift's handwritten stoppage log, photographed on a phone. Which kind of data is it?",
+               ["Structured", "Semi-structured", "Unstructured", "Metadata"], 2,
+               "[[unstructured|Unstructured]]: a photo of handwriting, with no fixed rows and columns. Job 1 asks Copilot to read exactly this.")]},
         {"id": note("s1-useful", "30 s. The point for Job 4: units."),
          "type": "quiz", "secs": 30, "title": "Useful data",
          "questions": [
@@ -358,7 +425,7 @@ SECTIONS.append({
 
 # ======== Round 2 · Meet your assistant
 SECTIONS.append({
-    "id": "s2", "num": "2", "nav": "Your assistant", "mins": 35, "time": "09:50",
+    "id": "s2", "num": "2", "nav": "Your assistant", "mins": 35, "time": "09:55",
     "brief": "Apply Copilot with clear briefs (ILO 2)",
     "title": "Meet", "titleAccent": "your assistant",
     "lede": "How it works and why it can be confidently wrong, what Copilot and ChatGPT each do best, what you'll have at Arla, "
@@ -466,7 +533,7 @@ SECTIONS.append({
 
 # ======== Job 1 · Production
 SECTIONS.append({
-    "id": "j1", "num": "J1", "nav": "Job 1 · Production", "mins": 35, "time": "10:25",
+    "id": "j1", "num": "J1", "nav": "Job 1 · Production", "mins": 35, "time": "10:30",
     "title": "Job 1", "titleAccent": "Production",
     "lede": "Last night's stoppage log for Line 1 has to become a clear handover for the morning shift, and a safety poster for the line.",
     "beats": [
@@ -507,7 +574,7 @@ SECTIONS.append({
 
 # ======== Round 3 · Work from files, check before you trust
 SECTIONS.append({
-    "id": "s3", "num": "3", "nav": "Check it", "mins": 20, "time": "11:15",
+    "id": "s3", "num": "3", "nav": "Check it", "mins": 20, "time": "11:20",
     "brief": "Evaluate outputs before they are used or sent (ILO 3)",
     "title": "Work from files,", "titleAccent": "check before you trust",
     "lede": "What AI does well with your files and where it slips, letting it interview you, instructions hidden in files, and the checking list.",
@@ -574,7 +641,7 @@ SECTIONS.append({
 
 # ======== Job 2 · Procurement
 SECTIONS.append({
-    "id": "j2", "num": "J2", "nav": "Job 2 · Procurement", "mins": 35, "time": "12:05",
+    "id": "j2", "num": "J2", "nav": "Job 2 · Procurement", "mins": 35, "time": "12:10",
     "title": "Job 2", "titleAccent": "Procurement",
     "lede": "Three quotes for the glass jars Line 1 fills. One has its freight in a footnote, one has a minimum order too big for the store, and one is hiding something.",
     "beats": [
@@ -618,7 +685,7 @@ SECTIONS.append({
 
 # ======== Round 4 · AI across the value chain
 SECTIONS.append({
-    "id": "s4", "num": "4", "nav": "The value chain", "mins": 30, "time": "12:40",
+    "id": "s4", "num": "4", "nav": "The value chain", "mins": 30, "time": "12:45",
     "brief": "Where AI fits along a dairy value chain (ILO 1)",
     "title": "AI across", "titleAccent": "the value chain",
     "lede": "What Industry 4.0 looks like in a dairy plant, where classic and generative AI each fit, and your team's own map of opportunities.",
@@ -662,7 +729,7 @@ SECTIONS.append({
 
 # ======== Job 3 · Maintenance
 SECTIONS.append({
-    "id": "j3", "num": "J3", "nav": "Job 3 · Maintenance", "mins": 35, "time": "13:10",
+    "id": "j3", "num": "J3", "nav": "Job 3 · Maintenance", "mins": 35, "time": "13:15",
     "title": "Job 3", "titleAccent": "Maintenance",
     "lede": "Line 1's filler shows a fault after the changeover. The fix is in a 12-page manual that covers two models.",
     "beats": [
@@ -699,7 +766,7 @@ SECTIONS.append({
 
 # ======== Day 1 close
 SECTIONS.append({
-    "id": "c1", "num": "C1", "nav": "Day 1 close", "mins": 15, "time": "13:45",
+    "id": "c1", "num": "C1", "nav": "Day 1 close", "mins": 10, "time": "13:50",
     "title": "End of", "titleAccent": "day one",
     "lede": "Team scores, one lesson from each team, and what comes on Thursday.",
     "beats": [
@@ -1082,10 +1149,10 @@ def job_guide(files_word, attach, extra):
 
 
 GUIDE = {
-    "k0-quick": [["On the course site, open Quick win (top of the page).", ""],
-                 ["Tap your role. Click Copy.", ""],
+    "k0-quick": [["On the Files page, under Quick win, find the prompt for your role. Click Copy.", ""],
                  ["In Copilot Chat, paste and send.", "Ctrl + V, Enter"],
-                 ["Read what comes back. Would you use it at work?", ""]],
+                 ["Read what comes back. Would you use it at work? What would you change?", ""],
+                 ["Tell your team in one sentence.", ""]],
     "s2-warm": [["On the Files page, click Copy on 'The warm-up'.", ""],
                 ["In Copilot Chat, paste and send.", "Ctrl + V, Enter"],
                 ["Switch to the ChatGPT tab, paste the same prompt and send.", "Ctrl + Tab, Ctrl + V, Enter"],
@@ -1308,16 +1375,18 @@ COURSE = {
     "shortcuts": SHORTCUTS,
     "caseFile": CASE,
     "assessment": assessment,
-    "quickWin": QUICK_WIN,
     "card": CARD,
     "breaks": {
-        "after-j1": {"time": "11:00", "mins": 15, "title": "Break", "text": "Fifteen minutes. Leave your tools signed in; the private window stays open."},
-        "after-s3": {"time": "11:35", "mins": 30, "title": "Dhuhr and lunch", "text": "Thirty minutes. Job 2 starts at 12:05."},
+        "after-j1": {"time": "11:05", "mins": 15, "title": "Break", "text": "Fifteen minutes. Leave your tools signed in; the private window stays open."},
+        "after-s3": {"time": "11:40", "mins": 30, "title": "Dhuhr and lunch", "text": "Thirty minutes. Job 2 starts at 12:10."},
         "after-c1": {"time": "14:00", "mins": 0, "title": "End of day one", "text": "See you on Thursday at 09:00."},
         "after-s6": {"time": "11:00", "mins": 15, "title": "Break", "text": "Fifteen minutes. Then your station."},
         "after-j6": {"time": "11:50", "mins": 30, "title": "Dhuhr and lunch", "text": "Thirty minutes. My card starts at 12:20."}},
     "glossary": {
         "digitisation": {"term": "Digitisation", "def": "Turning paper or analogue information into digital files, without changing the process."},
+        "structured": {"term": "Structured data", "def": "Data in fixed rows and columns, such as an order table or a spreadsheet of lab results."},
+        "semistructured": {"term": "Semi-structured data", "def": "Records with tags but no fixed table, such as a machine's alarm log: a time, a code and a value on each line."},
+        "unstructured": {"term": "Unstructured data", "def": "Free text, images, voice and documents, with no fixed rows and columns: emails, photos, manuals."},
         "digitalisation": {"term": "Digitalisation", "def": "Using digital tools and data to run an existing process better."},
         "transformation": {"term": "Digital transformation", "def": "Changing how a business works and creates value, with digital tools, data and new ways of working."},
         "industry40": {"term": "Industry 4.0", "def": "Factories where machines, sensors and systems share data in real time: predictive maintenance, traceability, automated quality checks."},
@@ -1344,8 +1413,8 @@ COURSE = {
 
 # ---------------------------------------------------------------- notes, timetable and sources
 SECTION_SAY = {
-    "k0": "Rules and teams first, then the sign-in check, the outcomes, Ghaima Dairy, the jobs, the takeaways, the pre-course check, then the quick win (10 minutes).",
-    "s1": "Three words with Ghaima examples, data as an asset, two food peers, then five quick questions. Keep it to twenty minutes: the hands-on work is waiting.",
+    "k0": "Rules and teams first, then the warm-up question (no points) to check every phone, then the sign-in check, the outcomes, Ghaima Dairy, the jobs, the takeaways, the pre-course check, then the quick win (10 minutes).",
+    "s1": "Three words with Ghaima examples, the data-sources board (eight minutes, team turns), four ways to describe data, the pyramid, data as an asset, two food peers, then six quick questions. Keep it to twenty-five minutes: the hands-on work is waiting.",
     "s2": "The core of the method. Slow down on the four-part brief and 'let AI write your prompt'. Warm-up in both tools (7 minutes), then the exercises.",
     "j1": "First job. The person closest to production leads each team. Press Start on the first question as soon as they begin.",
     "s3": "Files, the interview, EchoLeak, trust and checking, the checking list, then the slips. This round carries ILO 3.",
@@ -1367,17 +1436,17 @@ NOTES_OUT = {
     "schedule": [
         {"day": "Day 1 · Wednesday 18 November 2026"},
         {"time": "08:45", "mins": 15, "item": "Room open. Desktops: Edge private window, Copilot Chat and ChatGPT in two tabs on BIBF's accounts. Phones: QR code and class login on the projector.", "offDeck": True},
-        {"time": "09:00", "mins": 30, "item": "Kick-off: rules and teams, sign-in, outcomes, Ghaima Dairy, the jobs, pre-course check, quick win", "ref": "k0"},
-        {"time": "09:30", "mins": 20, "item": "Round 1 · From digitisation to transformation: theory, 5 quick questions", "ref": "s1"},
-        {"time": "09:50", "mins": 35, "item": "Round 2 · Meet your assistant: theory, warm-up in both tools, 9 quick questions", "ref": "s2"},
-        {"time": "10:25", "mins": 35, "item": "Job 1 · Production: the night shift's log, the safety poster, one team shows", "ref": "j1"},
-        {"time": "11:00", "mins": 15, "item": "Break", "brk": True},
-        {"time": "11:15", "mins": 20, "item": "Round 3 · Work from files, check before you trust: theory, 7 quick questions", "ref": "s3"},
-        {"time": "11:35", "mins": 30, "item": "Dhuhr and lunch", "brk": True},
-        {"time": "12:05", "mins": 35, "item": "Job 2 · Procurement: three quotes, the hidden line, a second opinion", "ref": "j2"},
-        {"time": "12:40", "mins": 30, "item": "Round 4 · AI across the value chain: theory, value chain case clinic on flipcharts", "ref": "s4"},
-        {"time": "13:10", "mins": 35, "item": "Job 3 · Maintenance: the manual with two models", "ref": "j3"},
-        {"time": "13:45", "mins": 15, "item": "Day 1 close: scores, one lesson per team, clean up and sign out", "ref": "c1"},
+        {"time": "09:00", "mins": 30, "item": "Kick-off: rules and teams, a warm-up question to check the phones, sign-in, outcomes, Ghaima Dairy, the jobs, pre-course check, quick win", "ref": "k0"},
+        {"time": "09:30", "mins": 25, "item": "Round 1 · From digitisation to transformation: theory, the data-sources board, 6 quick questions", "ref": "s1"},
+        {"time": "09:55", "mins": 35, "item": "Round 2 · Meet your assistant: theory, warm-up in both tools, 9 quick questions", "ref": "s2"},
+        {"time": "10:30", "mins": 35, "item": "Job 1 · Production: the night shift's log, the safety poster, one team shows", "ref": "j1"},
+        {"time": "11:05", "mins": 15, "item": "Break", "brk": True},
+        {"time": "11:20", "mins": 20, "item": "Round 3 · Work from files, check before you trust: theory, 7 quick questions", "ref": "s3"},
+        {"time": "11:40", "mins": 30, "item": "Dhuhr and lunch", "brk": True},
+        {"time": "12:10", "mins": 35, "item": "Job 2 · Procurement: three quotes, the hidden line, a second opinion", "ref": "j2"},
+        {"time": "12:45", "mins": 30, "item": "Round 4 · AI across the value chain: theory, value chain case clinic on flipcharts", "ref": "s4"},
+        {"time": "13:15", "mins": 35, "item": "Job 3 · Maintenance: the manual with two models", "ref": "j3"},
+        {"time": "13:50", "mins": 10, "item": "Day 1 close: scores, one lesson per team, clean up and sign out", "ref": "c1"},
         {"day": "Day 2 · Thursday 19 November 2026"},
         {"time": "08:45", "mins": 15, "item": "Room open. Sign in again; phones rejoin their team.", "offDeck": True},
         {"time": "09:00", "mins": 15, "item": "Day 2 kick-off: recap quiz, today's plan", "ref": "d2"},
@@ -1395,7 +1464,9 @@ NOTES_OUT = {
                 "Fastest right team: 2 points. Every other team with a right answer: 1 point.",
                 "Read every question aloud before you press Start.",
                 "Job 6: give each team its station on the presentation before Start. Each team sees and answers only its station's questions.",
-                "Points are added when you press Reveal. The scoreboard buttons still add or remove points by hand."],
+                "Points are added when you press Reveal. The scoreboard buttons still add or remove points by hand.",
+                "The warm-up question in the kick-off scores nothing: it only checks that every phone works.",
+                "Round 1's data-sources board: click a tile when a team names it, then that team's name; its points go to the team. The × takes them back."],
     "general": ["Every round runs the same way: Theory (no phones), then Exercises (quick questions on the phones). Jobs sit between the rounds.",
                 "Copilot Chat does every job, image and second opinion: it's what Arla staff have. ChatGPT is for comparison only, and probably not approved at Arla.",
                 "The method: paste the pack, answer Copilot's multiple-choice questions, check its prompt has the four parts, run it with the files, then check the result.",
@@ -1411,6 +1482,9 @@ NOTES_OUT = {
     "sections": {},
     "help": HELP,
     "sources": [
+        "Reuters, ChatGPT sets record for fastest-growing user base (1 February 2023), citing a UBS analyst note: an estimated 100 million monthly active users in January 2023, two months after launch; TikTok about nine months, Instagram about two and a half years (Sensor Tower). Kick-off warm-up question.",
+        "Tam Harbert, Tapping the power of unstructured data, MIT Sloan Ideas Made to Matter (2021): 80% to 90% of an organisation's data is unstructured, according to multiple analyst estimates. Round 1, Four ways to describe data.",
+        "Round 1's four ways to describe data and the knowledge pyramid follow BIBF's Sales and Marketing Data Analysis course. Ghaima's data-sources board uses made-up figures, checked against the case files (Line 1 about 85,000 kg a week in 500 g jars; Line 2 about 246,000 kg a month).",
         "Microsoft Support, Understanding the different Microsoft Copilot experiences (April 2026); Microsoft Learn, Copilot privacy and protections (enterprise data protection in Copilot Chat on work accounts).",
         "Copilot Chat for users without a licence: file upload and image generation with standard access since July 2025 (MC1117101); fair-use limits extended from 2 and 9 November 2026, numbers not published; "
         "Copilot inside Word, Excel, PowerPoint and OneNote removed for unlicensed users in larger tenants in spring 2026 (A Guide to Cloud, April 2026; WindowsForum, November 2026; Purdue IT, April 2026). Check against the Microsoft 365 Message Center on the day.",

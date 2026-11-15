@@ -36,16 +36,19 @@ ROUND = {
     "k0": [
         "Welcome. For two days your team visits the departments of Ghaima Dairy, a made-up dairy maker in Bahrain. In each one you "
         "do a real kind of job with Copilot Chat, check what comes back, and answer questions on your phone as you go.",
-        "This kick-off sets everything up: the rules and your four teams, Cream, Butter, Cheese and Laban, a sign-in check, what "
+        "This kick-off sets everything up: the rules and your four teams, Cream, Butter, Cheese and Laban, a warm-up question on "
+        "your phone that scores nothing and only checks your phone works, a sign-in check, what "
         "you'll be able to do by Thursday, Ghaima and its jobs, and a short pre-course check. It ends with a quick win: a "
         "ready-made prompt for your own role.",
         "What to watch: be signed in to both tools before Round 1. Teams are mixed on purpose, so in each job the person closest to "
         "that department's work leads. If your desktop gives you trouble, share with a neighbour and keep going.",
     ],
     "s1": [
-        "Before we open the tools, this round gives you the bigger picture: three words people mix up, why data is worth looking "
-        "after, and what two other food companies are already doing with AI.",
-        "It runs as about twelve minutes of theory with phones down, then five quick questions on your phone.",
+        "Before we open the tools, this round gives you the bigger picture: three words people mix up, where a dairy's data "
+        "really comes from, how to describe data, why it's worth looking after, and what two other food companies are already "
+        "doing with AI.",
+        "It runs as about seventeen minutes with phones down, including a guessing board where the teams take turns to name "
+        "Ghaima's sources of data, then six quick questions on your phone.",
         "What to watch: the part on data. Messy data, like the same stoppage typed in twice or kg in one row and tonnes in the "
         "next, comes back in the jobs. AI works on whatever you give it.",
     ],
@@ -231,16 +234,14 @@ BLOCK = {
     "k0-quick": [
         "The quick win comes before any theory, on purpose. In ten minutes, with no score, you get something useful for your own "
         "job and a first feel for Copilot Chat.",
-        ["On the course site, open Quick win and tap your role: Warehouse Team Lead, Lab Supervisor, Finance Lead or Analyst, and "
-         "so on.",
-         "Click Copy, paste the prompt into Copilot Chat and send it.",
+        ["On the Files page, under Quick win, find the prompt for your role: Warehouse Team Lead, Lab Supervisor, Finance Lead or "
+         "Analyst, and so on. Click Copy.",
+         "Paste it into Copilot Chat and send it.",
          "Read what comes back. Would you use it at work? What would you change?",
          "Tell your team in one sentence."],
         "Each prompt is already a small brief: it says who the result is for, the shape and the length. What it can't know is "
         "your plant, your team or your products, so the answer stays general. What you'd change is exactly what the information "
         "pack adds from Round 2 on.",
-        "Nothing confidential goes in: the quick-win prompts hold no company data, so the same prompt works in Copilot Chat at "
-        "Arla.",
         tip("If Copilot asks you a question back, answer it in a few words, or say 'just give me your best version'."),
     ],
 
@@ -257,15 +258,53 @@ BLOCK = {
         "one example from your own work for each word.",
     ],
     "s1-data": [
-        "Data is an asset, like a machine or a building: it's only worth something if it's looked after.",
-        ["**Where it lives.** Line sensors and fillers, the lab's results, the warehouse system, the delivery log, finance's "
-         "month-end.",
-         "**What makes it useful.** Consistent units and names, recorded on time, shared with whoever needs it, and trusted "
+        "Data is an asset, like a machine or a building: it's only worth something if it's looked after. The board showed where "
+        "it comes from; this is what keeps it worth having.",
+        ["**What makes it useful.** Consistent units and names, recorded on time, shared with whoever needs it, and trusted "
          "because someone checks it.",
          "**What spoils it.** Paper that is typed in twice, kg in one row and tonnes in the next, a missing week nobody notices.",
          "**Why AI cares.** AI works on whatever you give it. Messy data in, confident nonsense out."],
         ex("The same stoppage logged twice on paper isn't just a typing slip. It's a data problem: add up the log and the line "
            "looks worse than it was. Job 1 will show you."),
+    ],
+    "s1-board": [
+        "Ask people where a company's data comes from and most say orders, invoices and customer records: neat tables in a "
+        "system. That's real data, but it's a small part of it. This board shows how much more there is.",
+        "The board lists Ghaima's top eight sources, ranked by how often new data arrives, from every second down to every week. "
+        "Each team names one source per turn. Name one that's on the board and your team takes the points on the tile: the "
+        "sources people forget are worth more than the obvious ones. Anything from outside Ghaima counts as a bonus.",
+        ["The colour of each tile is its kind of data: [[structured|structured]], [[semistructured|semi-structured]] or "
+         "[[unstructured|unstructured]]. The next block explains the three.",
+         "Look at where the neat tables land, and how small their share is when you count the records."],
+        "Why it matters for this course: AI can read the kinds of data that never fitted in a spreadsheet, such as messages, "
+        "photos and documents. That widens what you can ask it to help with.",
+        tip("The figures on the board are made up for Ghaima, in the range of a plant its size. The order, though, is typical of "
+            "a food plant: machines and messages produce far more data than orders do."),
+    ],
+    "s1-describe": [
+        "The same piece of data can be described in four ways. You don't need to remember the labels; they help you see what "
+        "you're holding before you hand it to AI.",
+        ["**Structure.** [[structured|Structured]] data sits in fixed rows and columns, like an order in the system. "
+         "[[semistructured|Semi-structured]] data has tags but no fixed table, like a filler's alarm log: a time, a code and a "
+         "value on each line. [[unstructured|Unstructured]] data is free text, images and voice, like a customer's complaint email.",
+         "**Form.** Numbers, such as a fill weight of 497 g, or words and categories, such as an operator's note that the nozzle "
+         "is sticking.",
+         "**Source.** Captured on purpose, like the lab's QC tests, or exhaust: a by-product of another process, like the stop "
+         "times a filler records anyway.",
+         "**Producer.** Primary data is your own, like Ghaima's sensor readings. Secondary data is someone else's, inside or "
+         "outside the company, like market prices or a retailer's sales report."],
+        "Analysts estimate that 80 to 90% of the data a company holds is unstructured (MIT Sloan, 2021). Classic reports read the "
+        "structured part. Generative AI can also read the rest, which is why it matters for a dairy.",
+    ],
+    "s1-pyramid": [
+        "Data on its own doesn't decide anything. The pyramid shows how it gains value as it answers more questions.",
+        ["**Data.** Raw records, such as one sensor reading: Line 1 filler, 02:14, fill weight 491 g.",
+         "**Information.** Data organised to answer a question: Line 1's average fill weight hour by hour, against the 500 g "
+         "target.",
+         "**Knowledge.** A pattern that explains it: fill weight runs low for twenty minutes after each changeover.",
+         "**Wisdom.** A decision: check the filler setting after every changeover, and add it to the changeover checklist."],
+        "Most dashboards stop at information. The aim is the decision at the top. AI can help at every step, but the decision "
+        "stays with a person.",
     ],
     "s1-peers": [
         "You're not the first food company to do this. Here are two that already are.",

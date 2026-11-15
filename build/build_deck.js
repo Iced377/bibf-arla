@@ -429,7 +429,9 @@ function build(edition) {
       const where = FAC ? " (on the course site's files page)" : " (in the course files)";
       const lines = [];
       if (fl.length) lines.push({ text: "Files: ", options: { bold: true, color: C.accent1 } }, { text: fileText + where, options: { color: C.text2, breakLine: !!(b.prompts || []).length } });
-      if ((b.prompts || []).length) lines.push({ text: "Prompts to copy: ", options: { bold: true, color: C.accent1 } }, { text: b.prompts.map((p) => p.title).join("; ") + (fl.length ? "" : where), options: { color: C.text2 } });
+      // many short prompts (the quick win: one per role) go in a table further on, so the line only counts them
+      const many = (b.prompts || []).length > 4 && b.prompts.every((p) => p.text.length < 400);
+      if ((b.prompts || []).length) lines.push({ text: "Prompts to copy: ", options: { bold: true, color: C.accent1 } }, { text: (many ? "one for each role, " + b.prompts.length + " in all" : b.prompts.map((p) => p.title).join("; ")) + (fl.length ? "" : where), options: { color: C.text2 } });
       const nl = (fl.length ? 1 : 0) + ((b.prompts || []).length ? 1 : 0);
       textBox(s, lines, MX, TOP, CW, 0.32 * nl + 0.1, { fontSize: 13, paraSpaceAfter: 2 });
       const top = TOP + 0.32 * nl + 0.3;
@@ -447,7 +449,17 @@ function build(edition) {
         gs.addTable(rows, { x: MX, y: TOP, w: CW, colW: [0.5, CW - 3.3, 2.8], fontSize: 12, border: { type: "solid", pt: 0.75, color: HEX.accent3 }, margin: 0.06, valign: "middle" });
       }
       // each prompt participants copy, one slide each, so the decks hold the exact text
-      const ps = (b.prompts || []).concat((b.takeHome && b.takeHome.prompts) || []);
+      if (many) {
+        const per2 = 5;
+        for (let i = 0; i < b.prompts.length; i += per2) {
+          const ts = content(twoTone(b.title.split(" · ")[0], "· the prompts" + (b.prompts.length > per2 ? " (" + (i / per2 + 1) + " of " + Math.ceil(b.prompts.length / per2) + ")" : "")));
+          const head = (v) => ({ text: v, options: { bold: true, color: "FFFFFF", fill: { color: HEX.accent1 } } });
+          const rows = [[head("For"), head("The prompt")]].concat(b.prompts.slice(i, i + per2).map((p) => [
+            { text: plain(p.title), options: { bold: true, color: C.accent1 } }, { text: plain(p.text), options: { color: C.text2 } }]));
+          ts.addTable(rows, { x: MX, y: TOP, w: CW, colW: [3.2, CW - 3.2], fontSize: 11, border: { type: "solid", pt: 0.75, color: HEX.accent3 }, margin: 0.06, valign: "top" });
+        }
+      }
+      const ps = (many ? [] : b.prompts || []).concat((b.takeHome && b.takeHome.prompts) || []);
       ps.forEach((p) => {
         const sl = content(twoTone(b.title.split(" · ")[0], "· " + p.title));
         const fs = p.text.length > 1100 ? 11 : p.text.length > 700 ? 12.5 : 14;
@@ -581,6 +593,45 @@ function build(edition) {
           ], x + 0.2, y + 1.8, cw - 0.4, hh - 1.9);
         });
       }
+    },
+    // guessing board: the hidden board (ranks only), then the answers, column by column like the site (1 to 5 left, the rest right)
+    topboard(b) {
+      const KC = { structured: ["1D7A4E", GOOD_BG], semi: ["9A6A12", WARN_BG], unstructured: ["223E99", TINT2], outside: [BAD, BAD_BG] };
+      const pts = (n) => (n === 1 ? "1 point" : n + " points");
+      const draw = (shown) => {
+        const s = content(shown ? twoTone(plain(b.title), "The answers") : twoTone(plain(b.title)), shown ? b.summary : beatNote(b));
+        let y = TOP;
+        if (b.intro && !shown) y += para(s, b.intro, y, 15, C.accent6) + 0.12;
+        const n = b.answers.length, rows = Math.ceil(n / 2), gap = 0.14, cw = (CW - gap) / 2, vg = 0.08;
+        const bottom = shown && b.summary ? 5.95 : BOTTOM;
+        const th = Math.min(0.9, (bottom - y - (rows - 1) * vg) / rows);
+        b.answers.forEach((a, k) => {
+          const col = k < rows ? 0 : 1, row = k < rows ? k : k - rows;
+          const x = MX + col * (cw + gap), yy = y + row * (th + vg), rank = a.bonus ? "+" : String(k + 1);
+          if (!shown) {
+            const fill = a.bonus ? TINT2 : C.accent1, fg = a.bonus ? C.accent1 : C.background1;
+            s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y: yy, w: cw, h: th, fill: { color: fill }, line: { color: fill }, rectRadius: 0.08 });
+            textBox(s, rank, x + 0.2, yy, 0.6, th, { fontSize: 22, bold: true, color: fg, valign: "middle" });
+            if (a.bonus) textBox(s, "Bonus", x + 0.8, yy, cw - 2.4, th, { fontSize: 16, bold: true, color: fg, valign: "middle" });
+            textBox(s, pts(a.pts), x + cw - 1.6, yy, 1.4, th, { fontSize: 13, bold: true, color: a.bonus ? C.accent6 : C.accent3, align: "right", valign: "middle" });
+            return;
+          }
+          const [kc, kbg] = KC[a.kind] || [C.accent1, TINT2];
+          s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x, y: yy, w: cw, h: th, fill: { color: "FFFFFF" }, line: { color: HEX.accent1, width: 0.75 }, rectRadius: 0.08 });
+          s.addShape(pres.shapes.RECTANGLE, { x, y: yy + 0.06, w: 0.07, h: th - 0.12, fill: { color: kc }, line: { color: kc } });
+          textBox(s, rank, x + 0.18, yy, 0.45, th, { fontSize: 18, bold: true, color: C.accent1, valign: "middle", align: "center" });
+          textBox(s, [{ text: plain(a.text), options: { bold: true, color: C.text2, fontSize: 14, breakLine: true } },
+                      { text: plain(a.freq || ""), options: { color: C.accent6, fontSize: 11 } }], x + 0.72, yy + 0.06, cw - 2.75, th - 0.12, { valign: "middle" });
+          const label = b.kinds[a.kind] || a.kind, kw = 1.85;
+          s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: x + cw - kw - 0.15, y: yy + 0.1, w: kw, h: 0.3, fill: { color: kbg }, line: { color: kbg }, rectRadius: 0.15 });
+          textBox(s, label, x + cw - kw - 0.15, yy + 0.1, kw, 0.3, { fontSize: 10, bold: true, color: kc, align: "center", valign: "middle" });
+          textBox(s, pts(a.pts), x + cw - kw - 0.15, yy + th - 0.36, kw, 0.28, { fontSize: 10, color: C.accent6, align: "center", valign: "middle" });
+        });
+        if (shown && b.summary) textBox(s, plain(b.summary), MX, 6.02, CW, 0.5, { fontSize: 12, color: C.text2 });
+        if (shown && b.source) textBox(s, plain(b.source), MX, 6.5, CW, 0.25, { fontSize: 10, color: C.accent6 });
+      };
+      draw(false);
+      draw(true);
     },
     regulators(b) {
       if (b.items.length > 6) {

@@ -154,7 +154,8 @@ window.NOTES = {
  ],
  "scoring": [
   "Four teams: Cream, Butter, Cheese and Laban. Everyone answers on their own phone; the points go to the team.",
-  "Fastest right team: 2 points. Every other team with a right answer: 1 point.",
+  "Fastest right team: 2 points. Every other team with a right answer: 1 point. The final quick-fire (ten questions from both days): 5 for the fastest right team, 3 for the second, 1 for every other right team.",
+  "After Reveal, each team's chip on the projector names its fastest right player.",
   "Read every question aloud before you press Start.",
   "Job 6: give each team its station on the presentation before Start. Each team sees and answers only its station's questions.",
   "Points are added when you press Reveal. The scoreboard buttons still add or remove points by hand.",
@@ -355,7 +356,7 @@ window.NOTES = {
    "say": "Post-course check first, then the quick-fire, the podium, the takeaways and what they did. Leave five minutes for the BIBF evaluation and the clean-up.",
    "beats": {
     "f-post": "Press Open the check on the phones. About ten minutes. Each phone shows that person's score at the start and now (never the answers).",
-    "f-quick": "Two fast ones to settle the podium. 20 s each.",
+    "f-quick": "Ten fast ones across both days, 20 s each, worth more than any other question: 5 points for the fastest right team, 3 for the second, 1 for every other right team. Say the points before the first one; it can still turn the podium.",
     "f-board": "Show the final board on the phones and the projector. Read the podium from third to first.",
     "f-take": "Read the three takeaways one last time.",
     "f-built": "One minute. Name a team for each.",

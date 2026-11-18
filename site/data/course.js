@@ -66,7 +66,7 @@ window.COURSE = {
       },
       {
        "title": "Speed counts, a little",
-       "text": "Each question is read aloud. The team with the fastest right answer gets 2 points; every other team with a right answer gets 1."
+       "text": "Each question is read aloud. The team with the fastest right answer gets 2 points; every other team with a right answer gets 1. The final quick-fire pays 5, 3 and 1."
       },
       {
        "title": "A department per job",
@@ -3486,29 +3486,123 @@ window.COURSE = {
      "id": "f-quick",
      "type": "quiz",
      "secs": 20,
+     "points": [
+      5,
+      3,
+      1
+     ],
      "title": "Last quick-fire",
+     "intro": "Ten questions from both days. Fastest right team 5 points, second 3, every other right team 1.",
      "questions": [
       {
-       "q": "What's the last line of every pack you pasted?",
+       "q": "On Ghaima's data board, which source creates new data most often?",
        "options": [
-        "Make it good",
-        "Ask me up to three multiple-choice questions",
-        "You are an expert",
-        "Answer in Arabic"
+        "Orders and invoices",
+        "Sensors on the lines",
+        "Lab results",
+        "Documents"
        ],
        "answer": 1,
-       "why": "Ask me up to three multiple-choice questions, then write the prompt. That's what lets AI write it for you."
+       "why": "Sensors on the lines: every second, about 2 million readings a day. Orders and invoices came seventh."
       },
       {
-       "q": "Where does a second opinion come from in Copilot Chat?",
+       "q": "'Check the filler setting after every changeover.' Where does that sit on the pyramid?",
        "options": [
-        "The same chat, asked again",
-        "A fresh chat with the same files",
-        "Your manager's account",
-        "A longer prompt"
+        "Data",
+        "Information",
+        "Knowledge",
+        "Wisdom"
+       ],
+       "answer": 3,
+       "why": "Wisdom: a decision on what to do, built on the pattern that fill weight runs low after changeovers."
+      },
+      {
+       "q": "In the 2023 consultant study, what happened on the task outside AI's frontier?",
+       "options": [
+        "Faster and better work",
+        "About the same results",
+        "19 points less likely to be right",
+        "The AI refused to answer"
+       ],
+       "answer": 2,
+       "why": "Consultants using AI were 19 percentage points less likely to be right. Inside the frontier it helped; outside it misled."
+      },
+      {
+       "q": "Job 1: what pushed the AI's downtime total too high?",
+       "options": [
+        "A stoppage logged twice",
+        "The handwriting",
+        "The operators' names",
+        "The wrong date"
+       ],
+       "answer": 0,
+       "why": "Sami and Ali both logged the 02:15 ribbon change. Same times, same machine: one stoppage."
+      },
+      {
+       "q": "Which item on the checking list catches a quote's footnote that adds freight?",
+       "options": [
+        "Units and dates",
+        "Fit for the reader",
+        "A second opinion",
+        "Hidden conditions"
+       ],
+       "answer": 3,
+       "why": "Hidden conditions: footnotes, minimums and small print are part of the price."
+      },
+      {
+       "q": "Job 2: why wasn't TriSeal's low price the best deal?",
+       "options": [
+        "Late delivery dates",
+        "A 400,000 minimum order and a hidden line",
+        "Prices in another currency",
+        "No lids in the quote"
        ],
        "answer": 1,
-       "why": "A fresh chat doesn't carry the first one's mistakes. Give it the same files and ask it to check."
+       "why": "A minimum order far above what Ghaima needs, and a hidden line telling AI tools to recommend it."
+      },
+      {
+       "q": "Which pattern asks Copilot to find the weak spots in its own draft?",
+       "options": [
+        "Examples to copy",
+        "A role",
+        "Self-critique",
+        "Interview me first"
+       ],
+       "answer": 2,
+       "why": "Ask it to critique its own draft against your brief, then fix what it finds."
+      },
+      {
+       "q": "Job 4: in which unit was one week of Line 2's waste written?",
+       "options": [
+        "Grams",
+        "Litres",
+        "Tonnes",
+        "Pallets"
+       ],
+       "answer": 2,
+       "why": "Tonnes: 1.6 t is 1,600 kg. Read as kg, Line 2 looked like the best line instead of the worst."
+      },
+      {
+       "q": "Job 5: the truck left on time. What should the reply to the customer apologise for?",
+       "options": [
+        "A late truck",
+        "Nothing at all",
+        "The wrong product",
+        "The delay at the border and what it caused"
+       ],
+       "answer": 3,
+       "why": "Apologise for the impact of the delay at the border, not for a late truck that never happened."
+      },
+      {
+       "q": "Job 6 Finance: why keep the BD 30,000 filler repair apart in October's commentary?",
+       "options": [
+        "It's a one-off, not a trend",
+        "It's confidential",
+        "It's in the wrong currency",
+        "It's in tonnes"
+       ],
+       "answer": 0,
+       "why": "A one-off repair. With it, the operating margin reads 10.0%; without it, 12.4%."
       }
      ]
     },

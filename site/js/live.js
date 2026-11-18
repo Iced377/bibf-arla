@@ -209,6 +209,12 @@ window.LiveGame = function (X) {
     return out.sort(function (a, b) { return a.r - b.r; });
   }
   // per team: its fastest right answer; the fastest team overall gets FAST points, every other right team 1
+  // points for the k-th fastest right team: a question can set its own ladder (b.points, e.g. [5, 3, 1]; the last value goes to every slower right team)
+  function ptsAt(b, k) {
+    if (b && b.practice) return 0;
+    if (b && b.points && b.points.length) return b.points[Math.min(k, b.points.length - 1)];
+    return k === 0 ? FAST : 1;
+  }
   function results(beat, i) {
     var b = BEATS[beat], best = {};
     answers(beat, i).forEach(function (a) {
@@ -216,7 +222,7 @@ window.LiveGame = function (X) {
       best[a.t] = { n: a.d.n, r: a.r };
     });
     var teams = Object.keys(best).sort(function (x, y) { return best[x].r - best[y].r; }), out = {};
-    teams.forEach(function (tm, k) { out[tm] = { n: best[tm].n, pts: b && b.practice ? 0 : k === 0 ? FAST : 1 }; });
+    teams.forEach(function (tm, k) { out[tm] = { n: best[tm].n, pts: ptsAt(b, k) }; });
     return out;
   }
   function locked(beat, i) { var st = INSTR && drive ? D : S.state; return !!(st.locks && st.locks[beat + ":" + i]); }
@@ -265,7 +271,7 @@ window.LiveGame = function (X) {
         p.ans++;
         if (pq.done && a.d.c === correctOf(BEATS[pq.b], pq.i, a.t)) { p.right++; if (!first[a.t] || a.r < first[a.t].r) first[a.t] = { p: p, r: a.r }; }
       });
-      Object.keys(first).sort(function (x, y) { return first[x].r - first[y].r; }).forEach(function (tm, k) { first[tm].p.won += k === 0 ? FAST : 1; });
+      Object.keys(first).sort(function (x, y) { return first[x].r - first[y].r; }).forEach(function (tm, k) { first[tm].p.won += ptsAt(BEATS[pq.b], k); });
     });
     list.sort(function (a, b) { return b.right - a.right || b.won - a.won || b.ans - a.ans || a.name.localeCompare(b.name); });
     return { played: played, list: list };
@@ -454,8 +460,8 @@ window.LiveGame = function (X) {
       var res = results(b.id, i);
       html += '<div class="lv-chips">';
       slots().forEach(function (tm) {
-        // the projector shows team totals only; the notes view also names who answered fastest
-        var r = res[tm], who = h(teamLabel(tm)) + (r && !SOLO && notesView ? " · " + h(r.n) : "");
+        // each team's chip names its fastest right player
+        var r = res[tm], who = h(teamLabel(tm)) + (r && !SOLO ? " · " + h(r.n) : "");
         html += r ? '<span class="lv-chip ok">' + who + (b.practice ? " · ✓" : " · +" + r.pts) + "</span>" : '<span class="lv-chip no">' + who + (b.practice ? "" : " · 0") + "</span>";
       });
       html += "</div>";

@@ -1953,59 +1953,37 @@ window.COURSE = {
     },
     {
      "id": "s4-clinic",
-     "type": "discuss",
+     "type": "task",
      "title": "Value chain case clinic",
-     "mins": 20,
-     "table": {
-      "cols": [
-       "Link",
-       "What it would do",
-       "Classic or generative",
-       "What it would save"
-      ],
-      "rows": [
-       [
-        "Production",
-        "Draft the shift handover from the line log",
-        "Generative",
-        "20 minutes a shift"
-       ],
-       [
-        "(your team's idea)",
-        "",
-        "",
-        ""
-       ],
-       [
-        "(your team's idea)",
-        "",
-        "",
-        ""
-       ]
-      ]
-     },
-     "prompt": "Mark your team's top three opportunities on the chain, in your own departments' work. For each: what it would do, classic or generative AI, and what it would save.",
-     "reading": [
-      "Good opportunities are frequent, boring and checkable: the same task every week, with a clear right answer.",
-      "Start where the data is clean, or clean it first.",
-      "Keep a person on anything that reaches a customer, a regulator or a decision."
+     "steps": [
+      "One laptop per team. On the Files page, under Value chain case clinic, click Copy on 'Clinic · your pack'.",
+      "In Copilot Chat, start a new chat, paste and send. Answer its questions.",
+      "Read the table. Is each idea realistic? Would it really save that? Ask Copilot to change what's wrong.",
+      "Be ready to share one idea with the room. Keep the chat open for this afternoon."
      ],
+     "prompts": [
+      {
+       "title": "Clinic · your pack",
+       "text": "We are a team at Ghaima Dairy, a dairy maker with a plant in Bahrain and sales in Saudi Arabia.\nGoal: find our team's top three opportunities for AI along the value chain: planning, procurement, production, maintenance, lab, logistics, finance and regulatory.\nOur work: ask us first which departments our team members work in.\nWhat good looks like: a table with four columns: the link in the chain, what AI would do, classic AI (predicts from data) or generative AI (writes, reads, compares), and what it would save. Three rows, in our own departments' work. Frequent, boring and checkable tasks beat big, rare ones. Keep a person on anything that reaches a customer, a regulator or a decision.\nAfter asking which departments we work in, ask us up to three short multiple-choice questions, one at a time, so we can answer with a letter. Then give us the table."
+      }
+     ],
+     "note": "Example row: Production · draft the shift handover from the line log · generative · about 20 minutes a shift.",
      "explain": [
-      "Now it's your team's turn. Each team gets a flipchart sheet with the value chain drawn on it, and fifteen minutes to mark its top three opportunities in your own departments' work.",
-      "For each one, write what it would do, whether it's classic or generative AI, and what it would save. The example on the sheet: drafting the shift handover from the line log, generative, 20 minutes a shift.",
+      "Now it's your team's turn, on one laptop, with the same method as the jobs. Copy the clinic pack from the Files page, paste it into a new Copilot Chat, and answer its questions: first which departments you work in, then a few with letters.",
+      "It gives you a table of your top three opportunities: what AI would do, whether it's classic or generative AI, and what it would save. The example: drafting the shift handover from the line log, generative, about 20 minutes a shift. Then argue with it: is each idea realistic, and would it really save that?",
       [
        "**Frequent, boring and checkable.** The same task every week, with a clear right answer.",
        "**Clean data first.** Start where the data is clean, or clean it first.",
        "**A person on the decision.** Keep a person on anything that reaches a customer, a regulator or a decision."
       ],
-      "Then one idea from each team to the room. Keep the sheet: Thursday's action plan starts from it."
+      "Then one idea from each team to the room. Keep the chat open: this afternoon's action plan continues in it."
      ]
     }
    ],
    "explain": [
     "This round steps back from the desk to the whole dairy: what Industry 4.0 looks like in a plant, a generative AI example from the plant floor, and where classic and generative AI each fit along the value chain.",
-    "About ten minutes of theory, then the value chain case clinic. Your team marks its top three opportunities on a flipchart sheet, then shares one idea with the room.",
-    "What to watch: keep your flipchart sheet. Thursday's action plan starts from it."
+    "About ten minutes of theory, then the value chain case clinic in Copilot Chat. Your team pastes a pack, answers its questions, and gets a table of its top three opportunities, then shares one idea with the room.",
+    "What to watch: keep the chat open. The team action plan this afternoon continues in it."
    ]
   },
   {
@@ -3442,41 +3420,23 @@ window.COURSE = {
    "beats": [
     {
      "id": "ap-plan",
-     "type": "discuss",
+     "type": "task",
      "title": "Your team's action plan",
-     "mins": 15,
-     "table": {
-      "cols": [
-       "",
-       "What to write"
-      ],
-      "rows": [
-       [
-        "Two uses",
-        "From your map: two tasks in your members' work where AI will save time"
-       ],
-       [
-        "The data rules",
-        "What may go into Copilot Chat, and what stays out"
-       ],
-       [
-        "Who does what",
-        "A name against each use"
-       ],
-       [
-        "The first step",
-        "What happens next week, and when"
-       ]
-      ]
-     },
-     "prompt": "Pick two opportunities from yesterday's map. For each: who does it, what goes in and what stays out, and the first step next week.",
-     "reading": [
-      "Small and frequent beats big and rare: a weekly report, not a once-a-year project.",
-      "Name a person and a day for the first step.",
-      "Share the plan with your manager: their support is what keeps it going."
+     "steps": [
+      "Open your team's clinic chat from Round 4.",
+      "On the Files page, under Your team's action plan, click Copy on 'Action plan · your pack'. Paste it in the same chat and send.",
+      "Answer its questions. Check the plan has a name and a day for each first step.",
+      "Be ready to present it in two to three minutes."
      ],
+     "prompts": [
+      {
+       "title": "Action plan · your pack",
+       "text": "From the table above, help us turn two of the opportunities into our team's action plan for next week.\nFor each of the two: who does it (a name), what goes into Copilot Chat and what stays out (no confidential or personal data outside approved tools), and the first step next week, with a day.\nSmall and frequent beats big and rare: a weekly report, not a once-a-year project.\nBefore you write anything, ask us up to three short multiple-choice questions, one at a time, so we can answer with a letter. Then give us the plan as a short table we can present in two minutes."
+      }
+     ],
+     "note": "Share the plan with your manager: their support is what keeps it going.",
      "explain": [
-      "Start from your team's flipchart sheet from yesterday's case clinic, and pick two opportunities from your map. Your plan has four parts.",
+      "Go back to your team's clinic chat from Round 4, copy the action-plan pack from the Files page, and paste it in the same chat. It turns two of your opportunities into a plan with four parts.",
       [
        "**Two uses.** Two tasks in your members' work where AI will save time.",
        "**The data rules.** What may go into Copilot Chat, and what stays out.",

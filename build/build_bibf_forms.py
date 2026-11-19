@@ -95,7 +95,7 @@ DAYS = [
                     "Three hands-on jobs in Copilot Chat on the lab PCs, each from one department of the case company, each with a hidden catch checked through questions on the phones and shown to the class: "
                     "a night shift's stoppage log into a handover and a safety poster (Production); three supplier quotes with a footnote fee, a minimum order and a hidden instruction (Procurement); "
                     "a fix and checklist from a manual covering two machine models (Maintenance)",
-                    "Value chain case clinic: each team maps AI opportunities on a flipchart, kept for Day 2's action plans"],
+                    "Value chain case clinic in Copilot Chat: each team maps its top AI opportunities from a pack on the course site, kept open for the action plans"],
      "time": ["Kick-off and quick win: 30 min", "Round 1: 25 min", "Round 2: 35 min", "Job 1: 35 min", "Round 3: 20 min", "Job 2: 35 min",
               "Round 4 and case clinic: 30 min", "Job 3: 35 min", "Day 1 close: 10 min", "Breaks: 45 min (15 min break, 30 min Dhuhr and lunch)", "Total: 5 hours"],
      "assess": ["Pre-course assessment: %d questions, 5 for each ILO" % len(COURSE["assessment"]["questions"]),
@@ -131,7 +131,7 @@ ADJUST = {1: "The pre-course assessment results are reviewed during the first br
           2: "Day 2 opens with a recap quiz on Day 1; topics with weak recap answers are revisited in Round 5. The team action plans start from the opportunities each team mapped on Day 1."}
 ONLINE = "Not applicable: the course is delivered in person. The quizzes and the pre- and post-course assessments run on participants' phones through the course site."
 REMARKS = ("Participants need lab PCs with Microsoft Edge that reach Microsoft Copilot Chat and ChatGPT and allow file uploads and downloads, and Wi-Fi for their phones; "
-           "the instructor needs a projector input for a laptop, and each team a flipchart sheet for Day 1's case clinic, kept for Day 2. Participants sign in with the accounts "
+           "the instructor needs a projector input for a laptop. Participants sign in with the accounts "
            "BIBF provides for the session only, in a private window, and delete their chats and sign out at the end of each day. All case files are fictional. "
            "Course files and quizzes are on the course site, with a class login given in class. The course is delivered for Arla Foods; participants come from Bahrain and Saudi Arabia.")
 DROP = "@@DROP@@"

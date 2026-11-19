@@ -691,7 +691,7 @@ SECTIONS.append({
     "lede": "What Industry 4.0 looks like in a dairy plant, where classic and generative AI each fit, and your team's own map of opportunities.",
     "beats": [
         part("s4-th", "theory", "Theory", "Industry 4.0 in dairy, and classic and generative AI along the chain.", 10,
-             "Ten minutes of theory, then the case clinic. Have the flipchart sheets ready."),
+             "Ten minutes of theory, then the case clinic in Copilot Chat, one laptop per team."),
         {"id": note("s4-i40", "Three minutes, one line per card. These are categories, not claims: dairy case studies with hard figures are mostly vendor marketing, so none are quoted."),
          "type": "cards-static", "title": "Industry 4.0 in a dairy plant",
          "items": [P("Sensors", "Temperatures, fill weights and line speeds recorded on their own, every second."),
@@ -714,17 +714,22 @@ SECTIONS.append({
                   ["Lab", "Flagging an unusual result", "Drafting the out-of-spec report"],
                   ["Logistics", "Predicting a late delivery", "Replying to the customer"],
                   ["Finance and Regulatory", "Detecting unusual spending", "Commentary, label and policy checks"]]},
-        {"id": note("s4-clinic", "Twenty minutes. Each team gets a flipchart sheet with the chain drawn on it. Fifteen minutes to mark their top three opportunities "
-                                 "(where, classic or generative, what it would save), then one idea from each team. Keep the sheets: Thursday's action plans start from them."),
-         "type": "discuss", "title": "Value chain case clinic", "mins": 20,
-         "table": {"cols": ["Link", "What it would do", "Classic or generative", "What it would save"],
-                   "rows": [["Production", "Draft the shift handover from the line log", "Generative", "20 minutes a shift"],
-                            ["(your team's idea)", "", "", ""],
-                            ["(your team's idea)", "", "", ""]]},
-         "prompt": "Mark your team's top three opportunities on the chain, in your own departments' work. For each: what it would do, classic or generative AI, and what it would save.",
-         "reading": ["Good opportunities are frequent, boring and checkable: the same task every week, with a clear right answer.",
-                     "Start where the data is clean, or clean it first.",
-                     "Keep a person on anything that reaches a customer, a regulator or a decision."]},
+        {"id": note("s4-clinic", "Twenty minutes, one laptop per team, in Copilot Chat. Five minutes to paste the pack and answer its questions, ten to argue with "
+                                 "the table, then one idea from each team. Keep the chat open: this afternoon's action plan continues in it."),
+         "type": "task", "title": "Value chain case clinic",
+         "steps": ["One laptop per team. On the Files page, under Value chain case clinic, click Copy on 'Clinic · your pack'.",
+                   "In Copilot Chat, start a new chat, paste and send. Answer its questions.",
+                   "Read the table. Is each idea realistic? Would it really save that? Ask Copilot to change what's wrong.",
+                   "Be ready to share one idea with the room. Keep the chat open for this afternoon."],
+         "prompts": [{"title": "Clinic · your pack", "text":
+             "We are a team at Ghaima Dairy, a dairy maker with a plant in Bahrain and sales in Saudi Arabia.\n"
+             "Goal: find our team's top three opportunities for AI along the value chain: planning, procurement, production, maintenance, lab, logistics, finance and regulatory.\n"
+             "Our work: ask us first which departments our team members work in.\n"
+             "What good looks like: a table with four columns: the link in the chain, what AI would do, classic AI (predicts from data) or generative AI "
+             "(writes, reads, compares), and what it would save. Three rows, in our own departments' work. Frequent, boring and checkable tasks beat big, rare ones. "
+             "Keep a person on anything that reaches a customer, a regulator or a decision.\n"
+             "After asking which departments we work in, ask us up to three short multiple-choice questions, one at a time, so we can answer with a letter. Then give us the table."}],
+         "note": "Example row: Production · draft the shift handover from the line log · generative · about 20 minutes a shift."},
     ]})
 
 # ======== Job 3 · Maintenance
@@ -1087,17 +1092,19 @@ SECTIONS.append({
     "title": "Your team's", "titleAccent": "action plan",
     "lede": "Start from your team's map of opportunities from yesterday, and leave with two uses of AI you'll start next week.",
     "beats": [
-        {"id": note("ap-plan", "Fifteen minutes to draft, then two to three minutes per team. Hand each team its flipchart sheet from yesterday's case clinic."),
-         "type": "discuss", "title": "Your team's action plan", "mins": 15,
-         "table": {"cols": ["", "What to write"],
-                   "rows": [["Two uses", "From your map: two tasks in your members' work where AI will save time"],
-                            ["The data rules", "What may go into Copilot Chat, and what stays out"],
-                            ["Who does what", "A name against each use"],
-                            ["The first step", "What happens next week, and when"]]},
-         "prompt": "Pick two opportunities from yesterday's map. For each: who does it, what goes in and what stays out, and the first step next week.",
-         "reading": ["Small and frequent beats big and rare: a weekly report, not a once-a-year project.",
-                     "Name a person and a day for the first step.",
-                     "Share the plan with your manager: their support is what keeps it going."]},
+        {"id": note("ap-plan", "Fifteen minutes to draft in the clinic chat from Round 4, then two to three minutes per team. A team that closed its chat: paste the clinic pack again first."),
+         "type": "task", "title": "Your team's action plan",
+         "steps": ["Open your team's clinic chat from Round 4.",
+                   "On the Files page, under Your team's action plan, click Copy on 'Action plan · your pack'. Paste it in the same chat and send.",
+                   "Answer its questions. Check the plan has a name and a day for each first step.",
+                   "Be ready to present it in two to three minutes."],
+         "prompts": [{"title": "Action plan · your pack", "text":
+             "From the table above, help us turn two of the opportunities into our team's action plan for next week.\n"
+             "For each of the two: who does it (a name), what goes into Copilot Chat and what stays out (no confidential or personal data outside approved tools), "
+             "and the first step next week, with a day.\n"
+             "Small and frequent beats big and rare: a weekly report, not a once-a-year project.\n"
+             "Before you write anything, ask us up to three short multiple-choice questions, one at a time, so we can answer with a letter. Then give us the plan as a short table we can present in two minutes."}],
+         "note": "Share the plan with your manager: their support is what keeps it going."},
     ]})
 
 # ======== Final
@@ -1454,7 +1461,7 @@ SECTION_SAY = {
     "j1": "First job. The person closest to production leads each team. Press Start on the first question as soon as they begin.",
     "s3": "Files, the interview, EchoLeak, trust and checking, the checking list, then the slips. This round carries ILO 3.",
     "j2": "First thing after lunch: get them hands-on fast. Watch for TriSeal recommendations.",
-    "s4": "Ten minutes of theory, then the case clinic on flipcharts. Keep the sheets for Thursday.",
+    "s4": "Ten minutes of theory, then the case clinic in Copilot Chat, one laptop per team. Keep the chat open for the action plans.",
     "j3": "The manual job. Ask teams to open the pages their checklist names.",
     "c1": "Scores, one lesson per team, clean-up. End on time.",
     "d2": "Five recap questions to wake the phones up, then the day's plan.",
@@ -1464,7 +1471,7 @@ SECTION_SAY = {
     "s6": "People and change, BCG's figures, five minutes on agents, then three questions. Before the break.",
     "j6": "Give each team its station on the presentation before you press Start. One minute per station to show.",
     "mc": "Walk through My card on the projector (5 minutes), then thirty minutes hands-on. First thing after lunch.",
-    "ap": "Hand back the flipchart sheets. Fifteen minutes to draft, then each team presents.",
+    "ap": "Back to each team's clinic chat. Fifteen minutes to draft with the action-plan pack, then each team presents.",
     "f": "Post-course check first, then the quick-fire, the podium, the takeaways and what they did. Leave five minutes for the BIBF evaluation and the clean-up.",
 }
 NOTES_OUT = {
@@ -1479,7 +1486,7 @@ NOTES_OUT = {
         {"time": "11:20", "mins": 20, "item": "Round 3 · Work from files, check before you trust: theory, 7 quick questions", "ref": "s3"},
         {"time": "11:40", "mins": 30, "item": "Dhuhr and lunch", "brk": True},
         {"time": "12:10", "mins": 35, "item": "Job 2 · Procurement: three quotes, the hidden line, a second opinion", "ref": "j2"},
-        {"time": "12:45", "mins": 30, "item": "Round 4 · AI across the value chain: theory, value chain case clinic on flipcharts", "ref": "s4"},
+        {"time": "12:45", "mins": 30, "item": "Round 4 · AI across the value chain: theory, value chain case clinic in Copilot Chat", "ref": "s4"},
         {"time": "13:15", "mins": 35, "item": "Job 3 · Maintenance: the manual with two models", "ref": "j3"},
         {"time": "13:50", "mins": 10, "item": "Day 1 close: scores, one lesson per team, clean up and sign out", "ref": "c1"},
         {"day": "Day 2 · Thursday 19 November 2026"},
@@ -1493,7 +1500,7 @@ NOTES_OUT = {
         {"time": "11:15", "mins": 35, "item": "Job 6 · Stations: Finance, Regulatory or Lab", "ref": "j6"},
         {"time": "11:50", "mins": 30, "item": "Dhuhr and lunch", "brk": True},
         {"time": "12:20", "mins": 35, "item": "My card: walk-through, then everyone's prompts and desk card", "ref": "mc"},
-        {"time": "12:55", "mins": 25, "item": "Team action plans: from the Day 1 map, then 2 to 3 minutes per team", "ref": "ap"},
+        {"time": "12:55", "mins": 25, "item": "Team action plans: from the clinic chat, then 2 to 3 minutes per team", "ref": "ap"},
         {"time": "13:20", "mins": 40, "item": "Final: post-course check, quick-fire, podium, takeaways, BIBF evaluation, clean up", "ref": "f"}],
     "scoring": ["Four teams: Cream, Butter, Cheese and Laban. Everyone answers on their own phone; the points go to the team.",
                 "Fastest right team: 2 points. Every other team with a right answer: 1 point. The final quick-fire (ten questions from both days): 5 for the fastest right team, 3 for the second, 1 for every other right team.",
@@ -1514,7 +1521,7 @@ NOTES_OUT = {
                 "In the lab test, check which mode BIBF's Copilot opens in, so participants see what they'll have at work.",
                 "Running late: shorten theory to the first line of each block, cut questions from the end of a game, skip the ChatGPT comparison. Never cut a job's time first.",
                 "A tool misbehaves on a desktop: two people share one. Phones on slow Wi-Fi: switch to mobile data.",
-                "Keep the case clinic's flipchart sheets overnight: the action plans start from them."],
+                "Each team keeps its case clinic chat open: the action plans continue in it."],
     "sections": {},
     "help": HELP,
     "sources": [

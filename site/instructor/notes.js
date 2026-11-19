@@ -61,7 +61,7 @@ window.NOTES = {
   {
    "time": "12:45",
    "mins": 30,
-   "item": "Round 4 · AI across the value chain: theory, value chain case clinic on flipcharts",
+   "item": "Round 4 · AI across the value chain: theory, value chain case clinic in Copilot Chat",
    "ref": "s4"
   },
   {
@@ -142,7 +142,7 @@ window.NOTES = {
   {
    "time": "12:55",
    "mins": 25,
-   "item": "Team action plans: from the Day 1 map, then 2 to 3 minutes per team",
+   "item": "Team action plans: from the clinic chat, then 2 to 3 minutes per team",
    "ref": "ap"
   },
   {
@@ -174,7 +174,7 @@ window.NOTES = {
   "In the lab test, check which mode BIBF's Copilot opens in, so participants see what they'll have at work.",
   "Running late: shorten theory to the first line of each block, cut questions from the end of a game, skip the ChatGPT comparison. Never cut a job's time first.",
   "A tool misbehaves on a desktop: two people share one. Phones on slow Wi-Fi: switch to mobile data.",
-  "Keep the case clinic's flipchart sheets overnight: the action plans start from them."
+  "Each team keeps its case clinic chat open: the action plans continue in it."
  ],
  "sections": {
   "k0": {
@@ -259,13 +259,13 @@ window.NOTES = {
    }
   },
   "s4": {
-   "say": "Ten minutes of theory, then the case clinic on flipcharts. Keep the sheets for Thursday.",
+   "say": "Ten minutes of theory, then the case clinic in Copilot Chat, one laptop per team. Keep the chat open for the action plans.",
    "beats": {
-    "s4-th": "Ten minutes of theory, then the case clinic. Have the flipchart sheets ready.",
+    "s4-th": "Ten minutes of theory, then the case clinic in Copilot Chat, one laptop per team.",
     "s4-i40": "Three minutes, one line per card. These are categories, not claims: dairy case studies with hard figures are mostly vendor marketing, so none are quoted.",
     "s4-siemens": "One minute. A generative AI example on the plant floor. Say clearly: the figure is Siemens' own, from its pilots.",
     "s4-chain": "Two minutes. Classic AI predicts from data; generative AI writes, summarises and compares. Most real gains come from both.",
-    "s4-clinic": "Twenty minutes. Each team gets a flipchart sheet with the chain drawn on it. Fifteen minutes to mark their top three opportunities (where, classic or generative, what it would save), then one idea from each team. Keep the sheets: Thursday's action plans start from them."
+    "s4-clinic": "Twenty minutes, one laptop per team, in Copilot Chat. Five minutes to paste the pack and answer its questions, ten to argue with the table, then one idea from each team. Keep the chat open: this afternoon's action plan continues in it."
    }
   },
   "j3": {
@@ -347,9 +347,9 @@ window.NOTES = {
    }
   },
   "ap": {
-   "say": "Hand back the flipchart sheets. Fifteen minutes to draft, then each team presents.",
+   "say": "Back to each team's clinic chat. Fifteen minutes to draft with the action-plan pack, then each team presents.",
    "beats": {
-    "ap-plan": "Fifteen minutes to draft, then two to three minutes per team. Hand each team its flipchart sheet from yesterday's case clinic."
+    "ap-plan": "Fifteen minutes to draft in the clinic chat from Round 4, then two to three minutes per team. A team that closed its chat: paste the clinic pack again first."
    }
   },
   "f": {

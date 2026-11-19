@@ -91,9 +91,9 @@ ROUND = {
     "s4": [
         "This round steps back from the desk to the whole dairy: what Industry 4.0 looks like in a plant, a generative AI example "
         "from the plant floor, and where classic and generative AI each fit along the value chain.",
-        "About ten minutes of theory, then the value chain case clinic. Your team marks its top three opportunities on a flipchart "
-        "sheet, then shares one idea with the room.",
-        "What to watch: keep your flipchart sheet. Thursday's action plan starts from it.",
+        "About ten minutes of theory, then the value chain case clinic in Copilot Chat. Your team pastes a pack, answers its "
+        "questions, and gets a table of its top three opportunities, then shares one idea with the room.",
+        "What to watch: keep the chat open. The team action plan this afternoon continues in it.",
     ],
     "j3": [
         "Job 3 is in Maintenance. Line 1's filler shows a fault after the evening changeover. The fix is in a 12-page manual that "
@@ -526,14 +526,15 @@ BLOCK = {
         "chain: detecting unusual spending on one side, commentary, label and policy checks on the other.",
     ],
     "s4-clinic": [
-        "Now it's your team's turn. Each team gets a flipchart sheet with the value chain drawn on it, and fifteen minutes to mark "
-        "its top three opportunities in your own departments' work.",
-        "For each one, write what it would do, whether it's classic or generative AI, and what it would save. The example on the "
-        "sheet: drafting the shift handover from the line log, generative, 20 minutes a shift.",
+        "Now it's your team's turn, on one laptop, with the same method as the jobs. Copy the clinic pack from the Files page, "
+        "paste it into a new Copilot Chat, and answer its questions: first which departments you work in, then a few with letters.",
+        "It gives you a table of your top three opportunities: what AI would do, whether it's classic or generative AI, and what it "
+        "would save. The example: drafting the shift handover from the line log, generative, about 20 minutes a shift. Then argue "
+        "with it: is each idea realistic, and would it really save that?",
         ["**Frequent, boring and checkable.** The same task every week, with a clear right answer.",
          "**Clean data first.** Start where the data is clean, or clean it first.",
          "**A person on the decision.** Keep a person on anything that reaches a customer, a regulator or a decision."],
-        "Then one idea from each team to the room. Keep the sheet: Thursday's action plan starts from it.",
+        "Then one idea from each team to the room. Keep the chat open: this afternoon's action plan continues in it.",
     ],
 
     # ======== Job 3
@@ -733,8 +734,8 @@ BLOCK = {
 
     # ======== Action plans
     "ap-plan": [
-        "Start from your team's flipchart sheet from yesterday's case clinic, and pick two opportunities from your map. Your plan "
-        "has four parts.",
+        "Go back to your team's clinic chat from Round 4, copy the action-plan pack from the Files page, and paste it in the same "
+        "chat. It turns two of your opportunities into a plan with four parts.",
         ["**Two uses.** Two tasks in your members' work where AI will save time.",
          "**The data rules.** What may go into Copilot Chat, and what stays out.",
          "**Who does what.** A name against each use.",

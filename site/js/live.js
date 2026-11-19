@@ -358,6 +358,15 @@ window.LiveGame = function (X) {
         if (st.st && st.st.teams) { X.setST(st.st); X.applyState(null); }
         D.route = location.hash || "#/";
       }
+      // repair: any question that has answers in the database and isn't the one on the phones now counts as played,
+      // so the scores come back if the saved list of revealed questions is ever lost (answers are never lost with it)
+      var liveKey = D.q && !(D.q.ends && D.q.ends <= serverNow()) ? D.q.b + ":" + D.q.i : null, healed = false;   // a question whose time is up counts
+      for (var hk in S.items) {
+        var hit = S.items[hk]; if (hit.k !== "answer") continue;
+        var key = hit.b + ":" + hit.i;
+        if (key !== liveKey && !D.locks[key] && isGame(BEATS[hit.b])) { D.locks[key] = 1; healed = true; }
+      }
+      if (healed) pushSoon(null);
       var c = computeRes(); D.res = c.res; D.auto = c.auto; D.top = publicTop3();
       if (JSON.stringify([D.res, D.auto, D.top]) !== lastSent) pushSoon("teams");
     } else if (stateChanged && st.ts) {

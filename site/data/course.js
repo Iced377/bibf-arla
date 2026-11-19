@@ -2247,7 +2247,7 @@ window.COURSE = {
      "id": "d2-recap",
      "type": "quiz",
      "secs": 20,
-     "title": "Yesterday in five",
+     "title": "Yesterday in eight",
      "questions": [
       {
        "q": "Ghaima's filler sends stoppages to a dashboard on its own. Which word fits?",
@@ -2261,6 +2261,17 @@ window.COURSE = {
        "why": "Digitalisation: a digital tool runs the same process better."
       },
       {
+       "q": "A customer's complaint email. Which kind of data is it?",
+       "options": [
+        "Structured",
+        "Semi-structured",
+        "Unstructured",
+        "Metadata"
+       ],
+       "answer": 2,
+       "why": "Unstructured: free text, with no fixed rows and columns."
+      },
+      {
        "q": "What are the four parts of a brief?",
        "options": [
         "Role, tone, length, style",
@@ -2270,6 +2281,17 @@ window.COURSE = {
        ],
        "answer": 1,
        "why": "Who it's for, what to work from, what shape you want, and what it must not do."
+      },
+      {
+       "q": "What does the last line of every pack ask Copilot to do first?",
+       "options": [
+        "Write the answer straight away",
+        "Act as an expert",
+        "Ask you up to three multiple-choice questions",
+        "Keep it under 100 words"
+       ],
+       "answer": 2,
+       "why": "Ask you up to three multiple-choice questions, then write the prompt. That's what lets AI write it for you."
       },
       {
        "q": "In Job 1, why did some handovers show 65 minutes of downtime?",
@@ -2283,6 +2305,17 @@ window.COURSE = {
        "why": "A stoppage past midnight is easy to misread. 45 minutes, not 15."
       },
       {
+       "q": "Where does a second opinion come from in Copilot Chat?",
+       "options": [
+        "The same chat, asked again",
+        "Your manager's account",
+        "A longer prompt",
+        "A fresh chat with the same files"
+       ],
+       "answer": 3,
+       "why": "A fresh chat doesn't carry the first one's mistakes. Give it the same files and ask it to check."
+      },
+      {
        "q": "Where was Murjan Glass's freight charge?",
        "options": [
         "In the main price table",
@@ -2294,15 +2327,15 @@ window.COURSE = {
        "why": "In small print at the bottom: BD 14 per 1,000 jars, invoiced separately."
       },
       {
-       "q": "Which part of the FX manual was a trap?",
+       "q": "Job 2: which supplier was cheapest once everything was counted?",
        "options": [
-        "The fault code list",
-        "Section 7, for the FX-200",
-        "The spare parts page",
-        "The safety page"
+        "Fanar Glassworks",
+        "Murjan Glass",
+        "TriSeal Packaging",
+        "All three the same"
        ],
-       "answer": 1,
-       "why": "Section 7 is for the FX-200. The FX-250's fix is in section 8."
+       "answer": 0,
+       "why": "Fanar at BD 118. Murjan is BD 127 with freight, and TriSeal's low price needs a 400,000 minimum order."
       }
      ]
     },
@@ -2336,7 +2369,7 @@ window.COURSE = {
     }
    ],
    "explain": [
-    "Welcome back to Ghaima Dairy. Day two starts with five quick questions, one from each part of yesterday, to wake the phones up. Then a look at today's plan.",
+    "Welcome back to Ghaima Dairy. Day two starts with eight quick questions on yesterday, to wake the phones up. Then a look at today's plan.",
     "The morning keeps yesterday's rhythm: a round, then jobs, this time in Planning and Logistics. Before lunch your team chooses a station. After lunch the course turns to your own work.",
     "What to watch: sign in again in a private window, and rejoin your team on your phone before the first question."
    ]

@@ -109,7 +109,7 @@ ROUND = {
         "close the private window before you leave.",
     ],
     "d2": [
-        "Welcome back to Ghaima Dairy. Day two starts with five quick questions, one from each part of yesterday, to wake the "
+        "Welcome back to Ghaima Dairy. Day two starts with eight quick questions on yesterday, to wake the "
         "phones up. Then a look at today's plan.",
         "The morning keeps yesterday's rhythm: a round, then jobs, this time in Planning and Logistics. Before lunch your team "
         "chooses a station. After lunch the course turns to your own work.",

@@ -287,7 +287,7 @@ window.NOTES = {
   "d2": {
    "say": "Five recap questions to wake the phones up, then the day's plan.",
    "beats": {
-    "d2-recap": "20 s each. One from each part of yesterday.",
+    "d2-recap": "20 s each. Eight from yesterday, up to Job 2.",
     "d2-today": "Thirty seconds."
    }
   },

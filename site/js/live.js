@@ -504,8 +504,15 @@ window.LiveGame = function (X) {
   // ---------- attendance: a tick per person and course day, kept in the live store ----------
   var DAY_OF = {}, DAYS = [];
   var ONE_DAY = Object.keys((C.qa && C.qa.days) || {}).length === 1;   // a one-day course: every section is Day 1
+  // the day comes from "Day 2 · 09:00" in the time, or, with plain clock times, a new day starts when the clock goes back to the morning
+  var MULTI = Object.keys((C.qa && C.qa.days) || {}).length > 1, dayRun = 1, prevMin = -1;
   SECTIONS.forEach(function (sec) {
     var m = String(sec.time || "").match(/Day (\d)/), d = m ? +m[1] : ONE_DAY ? 1 : 0;
+    var hm = String(sec.time || "").match(/^(\d{1,2}):(\d{2})$/);
+    if (!m && MULTI) {
+      if (hm) { var mins = +hm[1] * 60 + +hm[2]; if (prevMin >= 0 && mins < prevMin) dayRun++; prevMin = mins; }
+      d = dayRun;
+    }
     if (!d) return;
     if (DAYS.indexOf(d) < 0) DAYS.push(d);
     (sec.beats || []).forEach(function (b) { DAY_OF[b.id] = d; if (b.type === "assesscue") DAY_OF[b.which] = d; });

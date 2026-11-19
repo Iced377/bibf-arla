@@ -59,18 +59,6 @@ window.NOTES = {
    "ref": "j2"
   },
   {
-   "time": "12:45",
-   "mins": 30,
-   "item": "Round 4 · AI across the value chain: theory, value chain case clinic in Copilot Chat",
-   "ref": "s4"
-  },
-  {
-   "time": "13:15",
-   "mins": 35,
-   "item": "Job 3 · Maintenance: the manual with two models",
-   "ref": "j3"
-  },
-  {
    "time": "13:50",
    "mins": 10,
    "item": "Day 1 close: scores, one lesson per team, clean up and sign out",
@@ -87,33 +75,33 @@ window.NOTES = {
   },
   {
    "time": "09:00",
-   "mins": 15,
-   "item": "Day 2 kick-off: recap quiz, today's plan",
+   "mins": 10,
+   "item": "Day 2 kick-off: recap quiz on yesterday, today's plan",
    "ref": "d2"
   },
   {
-   "time": "09:15",
-   "mins": 20,
+   "time": "09:10",
+   "mins": 25,
+   "item": "Round 4 · AI across the value chain: theory, value chain case clinic in Copilot Chat",
+   "ref": "s4"
+  },
+  {
+   "time": "09:35",
+   "mins": 15,
    "item": "Round 5 · Patterns that save time: theory, 5 quick questions",
    "ref": "s5"
   },
   {
-   "time": "09:35",
+   "time": "09:50",
    "mins": 35,
    "item": "Job 4 · Planning: October's waste, the chart, a second check",
    "ref": "j4"
   },
   {
-   "time": "10:10",
+   "time": "10:25",
    "mins": 35,
    "item": "Job 5 · Logistics: the complaint, the log and the draft",
    "ref": "j5"
-  },
-  {
-   "time": "10:45",
-   "mins": 15,
-   "item": "Round 6 · Bringing your team along: theory, 3 quick questions",
-   "ref": "s6"
   },
   {
    "time": "11:00",
@@ -123,25 +111,31 @@ window.NOTES = {
   },
   {
    "time": "11:15",
+   "mins": 10,
+   "item": "Round 6 · Bringing your team along: theory, 3 quick questions",
+   "ref": "s6"
+  },
+  {
+   "time": "11:25",
    "mins": 35,
    "item": "Job 6 · Stations: Finance, Regulatory or Lab",
    "ref": "j6"
   },
   {
-   "time": "11:50",
+   "time": "12:00",
    "mins": 30,
    "item": "Dhuhr and lunch",
    "brk": true
   },
   {
-   "time": "12:20",
-   "mins": 35,
+   "time": "12:30",
+   "mins": 30,
    "item": "My card: walk-through, then everyone's prompts and desk card",
    "ref": "mc"
   },
   {
-   "time": "12:55",
-   "mins": 25,
+   "time": "13:00",
+   "mins": 20,
    "item": "Team action plans: from the clinic chat, then 2 to 3 minutes per team",
    "ref": "ap"
   },
@@ -150,6 +144,13 @@ window.NOTES = {
    "mins": 40,
    "item": "Final: post-course check, quick-fire, podium, takeaways, BIBF evaluation, clean up",
    "ref": "f"
+  },
+  {
+   "time": "Extra",
+   "mins": 35,
+   "item": "Job 3 · Maintenance (optional, for anyone who finishes early): the manual with two models",
+   "ref": "j3",
+   "offDeck": true
   }
  ],
  "scoring": [
@@ -258,24 +259,6 @@ window.NOTES = {
     "j2-result": "The first timer covers the job (15 minutes). Then 60 s for the hidden line."
    }
   },
-  "s4": {
-   "say": "Ten minutes of theory, then the case clinic in Copilot Chat, one laptop per team. Keep the chat open for the action plans.",
-   "beats": {
-    "s4-th": "Ten minutes of theory, then the case clinic in Copilot Chat, one laptop per team.",
-    "s4-i40": "Three minutes, one line per card. These are categories, not claims: dairy case studies with hard figures are mostly vendor marketing, so none are quoted.",
-    "s4-siemens": "One minute. A generative AI example on the plant floor. Say clearly: the figure is Siemens' own, from its pilots.",
-    "s4-chain": "Two minutes. Classic AI predicts from data; generative AI writes, summarises and compares. Most real gains come from both.",
-    "s4-clinic": "Twenty minutes, one laptop per team, in Copilot Chat. Five minutes to paste the pack and answer its questions, ten to argue with the table, then one idea from each team. Keep the chat open: this afternoon's action plan continues in it."
-   }
-  },
-  "j3": {
-   "say": "The manual job. Ask teams to open the pages their checklist names.",
-   "beats": {
-    "j3-try": "The person closest to maintenance leads each team.",
-    "j3-job": "Twenty-five minutes. The trap: section 7 (pages 6 and 7) is for the FX-200 (12 Nm, hold RESET for 3 seconds); section 8 is for the FX-250 (9 Nm, STOP, RESET, confirm on screen). The model is only in a small line under the heading. The pump coupling's 15 Nm is a distractor. After Reveal, one team shows its checklist with page numbers.",
-    "j3-result": "The first timer covers the job (15 minutes). Then 60 s."
-   }
-  },
   "c1": {
    "say": "Scores, one lesson per team, clean-up. End on time.",
    "beats": {
@@ -289,6 +272,16 @@ window.NOTES = {
    "beats": {
     "d2-recap": "20 s each. Eight from yesterday, up to Job 2.",
     "d2-today": "Thirty seconds."
+   }
+  },
+  "s4": {
+   "say": "Ten minutes of theory, then the case clinic in Copilot Chat, one laptop per team. Keep the chat open for the action plans.",
+   "beats": {
+    "s4-th": "Ten minutes of theory, then the case clinic in Copilot Chat, one laptop per team.",
+    "s4-i40": "Three minutes, one line per card. These are categories, not claims: dairy case studies with hard figures are mostly vendor marketing, so none are quoted.",
+    "s4-siemens": "One minute. A generative AI example on the plant floor. Say clearly: the figure is Siemens' own, from its pilots.",
+    "s4-chain": "Two minutes. Classic AI predicts from data; generative AI writes, summarises and compares. Most real gains come from both.",
+    "s4-clinic": "Twenty minutes, one laptop per team, in Copilot Chat. Five minutes to paste the pack and answer its questions, ten to argue with the table, then one idea from each team. Keep the chat open: this afternoon's action plan continues in it."
    }
   },
   "s5": {
@@ -361,6 +354,14 @@ window.NOTES = {
     "f-take": "Read the three takeaways one last time.",
     "f-built": "One minute. Name a team for each.",
     "f-out": "Leave five minutes for the BIBF evaluation. Walk the room to check every desktop is cleaned up and signed out."
+   }
+  },
+  "j3": {
+   "say": "The manual job. Ask teams to open the pages their checklist names.",
+   "beats": {
+    "j3-try": "The person closest to maintenance leads each team.",
+    "j3-job": "Twenty-five minutes. The trap: section 7 (pages 6 and 7) is for the FX-200 (12 Nm, hold RESET for 3 seconds); section 8 is for the FX-250 (9 Nm, STOP, RESET, confirm on screen). The model is only in a small line under the heading. The pump coupling's 15 Nm is a distractor. After Reveal, one team shows its checklist with page numbers.",
+    "j3-result": "The first timer covers the job (15 minutes). Then 60 s."
    }
   }
  },

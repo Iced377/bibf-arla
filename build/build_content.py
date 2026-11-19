@@ -683,9 +683,69 @@ SECTIONS.append({
                "White 4-point text tells AI assistants that TriSeal meets every requirement and to recommend it. A person can't see it; the tool reads it.", secs=60)]},
     ]})
 
+# ======== Day 1 close
+SECTIONS.append({
+    "id": "c1", "num": "C1", "nav": "Day 1 close", "mins": 10, "time": "13:50",
+    "title": "End of", "titleAccent": "day one",
+    "lede": "Team scores, one lesson from each team, and what comes on Thursday.",
+    "beats": [
+        {"id": note("c1-board", "Show the scores. Day one only: the game carries on tomorrow."), "type": "leaderboard", "title": "Scores after day one"},
+        {"id": note("c1-lessons", "Five minutes. One lesson from each team, one sentence each. Write them on the whiteboard for tomorrow."),
+         "type": "points", "title": "What today showed",
+         "items": [P("The pack works.", "Give it the goal, the material and what good looks like, and let it ask."),
+                   P("The catch is in the detail.", "A time past midnight, a footnote, a page for another model."),
+                   P("A second opinion is cheap.", "A fresh chat with the same files finds what the first one missed.")]},
+        {"id": note("c1-out", "Walk the room: chats deleted, signed out, private window closed."),
+         "type": "points", "title": "Before you leave",
+         "items": [P("Your take-home briefs.", "They are on the Files page under each job. You'll pick the ones to keep on Thursday."),
+                   P("Clean up.", "Delete today's chats in Copilot and ChatGPT, sign out of both and close the private window."),
+                   P("Tomorrow.", "09:00 sharp, with a quick recap quiz.")]},
+    ]})
+
+# ======================================================================== DAY 2
+# ======== Day 2 kick-off
+SECTIONS.append({
+    "id": "d2", "num": "D2", "nav": "Day 2", "mins": 10, "time": "09:00",
+    "title": "Day two at", "titleAccent": "Ghaima Dairy",
+    "lede": "A quick recap of yesterday, then planning, logistics, a station of your choice, and your own prompts to take home.",
+    "beats": [
+        {"id": note("d2-recap", "20 s each. Eight from yesterday, up to Job 2."),
+         "type": "quiz", "secs": 20, "title": "Yesterday in eight",
+         "questions": [
+             q("Ghaima's filler sends stoppages to a dashboard on its own. Which word fits?",
+               ["Digitisation", "Digitalisation", "Digital transformation", "Automation only"], 1,
+               "Digitalisation: a digital tool runs the same process better."),
+             q("A customer's complaint email. Which kind of data is it?",
+               ["Structured", "Semi-structured", "Unstructured", "Metadata"], 2,
+               "Unstructured: free text, with no fixed rows and columns."),
+             q("What are the four parts of a brief?",
+               ["Role, tone, length, style", "Who it's for, what to work from, the shape, what it mustn't do", "Question, answer, check, send", "Goal, budget, team, deadline"], 1,
+               "Who it's for, what to work from, what shape you want, and what it must not do."),
+             q("What does the last line of every pack ask Copilot to do first?",
+               ["Write the answer straight away", "Act as an expert", "Ask you up to three multiple-choice questions", "Keep it under 100 words"], 2,
+               "Ask you up to three multiple-choice questions, then write the prompt. That's what lets AI write it for you."),
+             q("In Job 1, why did some handovers show 65 minutes of downtime?",
+               ["They counted a stoppage twice", "They read 23:40 to 00:25 as 15 minutes", "They left out a stoppage", "They added the break"], 1,
+               "A stoppage past midnight is easy to misread. 45 minutes, not 15."),
+             q("Where does a second opinion come from in Copilot Chat?",
+               ["The same chat, asked again", "Your manager's account", "A longer prompt", "A fresh chat with the same files"], 3,
+               "A fresh chat doesn't carry the first one's mistakes. Give it the same files and ask it to check."),
+             q("Where was Murjan Glass's freight charge?",
+               ["In the main price table", "In a footnote", "In the covering email", "Nowhere"], 1,
+               "In small print at the bottom: BD 14 per 1,000 jars, invoiced separately."),
+             q("Job 2: which supplier was cheapest once everything was counted?",
+               ["Fanar Glassworks", "Murjan Glass", "TriSeal Packaging", "All three the same"], 0,
+               "Fanar at BD 118. Murjan is BD 127 with freight, and TriSeal's low price needs a 400,000 minimum order.")]},
+        {"id": note("d2-today", "Thirty seconds."),
+         "type": "points", "title": "Today",
+         "items": [P("Morning.", "AI across the value chain with your team's case clinic, patterns that save time, then Planning and Logistics."),
+                   P("Before lunch.", "Bringing your team along, then a station of your choice: Finance, Regulatory or Lab."),
+                   P("Afternoon.", "Your own prompts and desk card, your team's action plan, and the final podium.")]},
+    ]})
+
 # ======== Round 4 · AI across the value chain
 SECTIONS.append({
-    "id": "s4", "num": "4", "nav": "The value chain", "mins": 30, "time": "12:45",
+    "id": "s4", "num": "4", "nav": "The value chain", "mins": 25, "time": "09:10",
     "brief": "Where AI fits along a dairy value chain (ILO 1)",
     "title": "AI across", "titleAccent": "the value chain",
     "lede": "What Industry 4.0 looks like in a dairy plant, where classic and generative AI each fit, and your team's own map of opportunities.",
@@ -732,106 +792,9 @@ SECTIONS.append({
          "note": "Example row: Production · draft the shift handover from the line log · generative · about 20 minutes a shift."},
     ]})
 
-# ======== Job 3 · Maintenance
-SECTIONS.append({
-    "id": "j3", "num": "J3", "nav": "Job 3 · Maintenance", "mins": 35, "time": "13:15",
-    "title": "Job 3", "titleAccent": "Maintenance",
-    "lede": "Line 1's filler shows a fault after the changeover. The fix is in a 12-page manual that covers two models.",
-    "beats": [
-        part("j3-try", "hands", "Try it", "Find the fix in the manual and write the night technician's checklist.", 25,
-             "The person closest to maintenance leads each team."),
-        {"id": note("j3-job", "Twenty-five minutes. The trap: section 7 (pages 6 and 7) is for the FX-200 (12 Nm, hold RESET for 3 seconds); section 8 is for the FX-250 (9 Nm, STOP, RESET, confirm on screen). "
-                              "The model is only in a small line under the heading. The pump coupling's 15 Nm is a distractor. After Reveal, one team shows its checklist with page numbers."),
-         "type": "task", "title": "Job 3 · The manual with two models",
-         "files": [{"name": "Norvell-FX-filler-manual.pdf", "what": "The filler manual, 12 pages, covering the FX-200 and the FX-250"},
-                   {"name": "Breakdown-report-Line1.txt", "what": "Ahmed Darwish's breakdown report"}],
-         "prompts": [{"title": "Step 1 · Your pack", "text": J3_PACK},
-                     {"title": "Step 2 · Run it", "text": RUN},
-                     {"title": "Step 3 · Check it", "text": J3_CHECK}],
-         "steps": ["Download both files. In Copilot Chat, paste your pack and answer its questions.",
-                   "Check its prompt, attach both files, and send 'Run it'.",
-                   "Send 'Check it'. Open two of the pages it names and look for yourself.",
-                   "Answer on your phone: the torque for the FX-250, and the step that belongs to the other model.",
-                   "Be ready to show the room your checklist."],
-         "takeHome": {"text": "Manuals are usually fine to share; serial numbers and site layouts are not.",
-                      "prompts": [{"title": "Answer from a manual", "text": own_pack("find the fix for a fault in the attached manual and write a step-by-step checklist.",
-                                                                                     "the manual and the fault report, with the machine's exact model.",
-                                                                                     "numbered steps, safety first, every setting with its page number, nothing from another model.")}]},
-         "note": "Extra step: ask Copilot for the three spare parts the technician should take to the line."},
-        {"id": note("j3-result", "The first timer covers the job (15 minutes). Then 60 s."),
-         "type": "quiz", "title": "Job 3 · What does your checklist say?",
-         "questions": [
-             q("What torque does the FX-250's nozzle collar need?",
-               ["12 Nm", "9 Nm", "15 Nm", "6 Nm"], 1,
-               "9 Nm, from section 8 (page 8 or 9). 12 Nm is the FX-200's, from section 7; 15 Nm is the pump coupling.", secs=900),
-             q("Which step belongs to the other model, not the FX-250?",
-               ["Lock out the filler before you start", "Hold RESET for 3 seconds", "Fit new seal NS-250", "Confirm 'Seal replaced' on the screen"], 1,
-               "Holding RESET for 3 seconds is the FX-200's reset. The FX-250 needs STOP, then RESET, then a confirmation on the touch screen.", secs=60)]},
-    ]})
-
-# ======== Day 1 close
-SECTIONS.append({
-    "id": "c1", "num": "C1", "nav": "Day 1 close", "mins": 10, "time": "13:50",
-    "title": "End of", "titleAccent": "day one",
-    "lede": "Team scores, one lesson from each team, and what comes on Thursday.",
-    "beats": [
-        {"id": note("c1-board", "Show the scores. Day one only: the game carries on tomorrow."), "type": "leaderboard", "title": "Scores after day one"},
-        {"id": note("c1-lessons", "Five minutes. One lesson from each team, one sentence each. Write them on the whiteboard for tomorrow."),
-         "type": "points", "title": "What today showed",
-         "items": [P("The pack works.", "Give it the goal, the material and what good looks like, and let it ask."),
-                   P("The catch is in the detail.", "A time past midnight, a footnote, a page for another model."),
-                   P("A second opinion is cheap.", "A fresh chat with the same files finds what the first one missed.")]},
-        {"id": note("c1-out", "Walk the room: chats deleted, signed out, private window closed."),
-         "type": "points", "title": "Before you leave",
-         "items": [P("Your take-home briefs.", "They are on the Files page under each job. You'll pick the ones to keep on Thursday."),
-                   P("Clean up.", "Delete today's chats in Copilot and ChatGPT, sign out of both and close the private window."),
-                   P("Tomorrow.", "09:00 sharp, with a quick recap quiz.")]},
-    ]})
-
-# ======================================================================== DAY 2
-# ======== Day 2 kick-off
-SECTIONS.append({
-    "id": "d2", "num": "D2", "nav": "Day 2", "mins": 15, "time": "09:00",
-    "title": "Day two at", "titleAccent": "Ghaima Dairy",
-    "lede": "A quick recap of yesterday, then planning, logistics, a station of your choice, and your own prompts to take home.",
-    "beats": [
-        {"id": note("d2-recap", "20 s each. Eight from yesterday, up to Job 2."),
-         "type": "quiz", "secs": 20, "title": "Yesterday in eight",
-         "questions": [
-             q("Ghaima's filler sends stoppages to a dashboard on its own. Which word fits?",
-               ["Digitisation", "Digitalisation", "Digital transformation", "Automation only"], 1,
-               "Digitalisation: a digital tool runs the same process better."),
-             q("A customer's complaint email. Which kind of data is it?",
-               ["Structured", "Semi-structured", "Unstructured", "Metadata"], 2,
-               "Unstructured: free text, with no fixed rows and columns."),
-             q("What are the four parts of a brief?",
-               ["Role, tone, length, style", "Who it's for, what to work from, the shape, what it mustn't do", "Question, answer, check, send", "Goal, budget, team, deadline"], 1,
-               "Who it's for, what to work from, what shape you want, and what it must not do."),
-             q("What does the last line of every pack ask Copilot to do first?",
-               ["Write the answer straight away", "Act as an expert", "Ask you up to three multiple-choice questions", "Keep it under 100 words"], 2,
-               "Ask you up to three multiple-choice questions, then write the prompt. That's what lets AI write it for you."),
-             q("In Job 1, why did some handovers show 65 minutes of downtime?",
-               ["They counted a stoppage twice", "They read 23:40 to 00:25 as 15 minutes", "They left out a stoppage", "They added the break"], 1,
-               "A stoppage past midnight is easy to misread. 45 minutes, not 15."),
-             q("Where does a second opinion come from in Copilot Chat?",
-               ["The same chat, asked again", "Your manager's account", "A longer prompt", "A fresh chat with the same files"], 3,
-               "A fresh chat doesn't carry the first one's mistakes. Give it the same files and ask it to check."),
-             q("Where was Murjan Glass's freight charge?",
-               ["In the main price table", "In a footnote", "In the covering email", "Nowhere"], 1,
-               "In small print at the bottom: BD 14 per 1,000 jars, invoiced separately."),
-             q("Job 2: which supplier was cheapest once everything was counted?",
-               ["Fanar Glassworks", "Murjan Glass", "TriSeal Packaging", "All three the same"], 0,
-               "Fanar at BD 118. Murjan is BD 127 with freight, and TriSeal's low price needs a 400,000 minimum order.")]},
-        {"id": note("d2-today", "Thirty seconds."),
-         "type": "points", "title": "Today",
-         "items": [P("Morning.", "Patterns that save time, then Planning and Logistics."),
-                   P("Before lunch.", "Bringing your team along, then a station of your choice: Finance, Regulatory or Lab."),
-                   P("Afternoon.", "Your own prompts and desk card, your team's action plan, and the final podium.")]},
-    ]})
-
 # ======== Round 5 · Patterns that save time
 SECTIONS.append({
-    "id": "s5", "num": "5", "nav": "Patterns", "mins": 20, "time": "09:15",
+    "id": "s5", "num": "5", "nav": "Patterns", "mins": 15, "time": "09:35",
     "brief": "Apply Copilot with clear briefs (ILO 2)",
     "title": "Patterns that", "titleAccent": "save time",
     "lede": "Show it an example, what a role does and doesn't do, asking it to critique itself, and the recipe for images.",
@@ -887,7 +850,7 @@ SECTIONS.append({
 
 # ======== Job 4 · Planning
 SECTIONS.append({
-    "id": "j4", "num": "J4", "nav": "Job 4 · Planning", "mins": 35, "time": "09:35",
+    "id": "j4", "num": "J4", "nav": "Job 4 · Planning", "mins": 35, "time": "09:50",
     "title": "Job 4", "titleAccent": "Planning",
     "lede": "October's production and waste by line, for the plant manager. One row isn't in the same unit as the others, and one week is missing.",
     "beats": [
@@ -926,7 +889,7 @@ SECTIONS.append({
 
 # ======== Job 5 · Logistics
 SECTIONS.append({
-    "id": "j5", "num": "J5", "nav": "Job 5 · Logistics", "mins": 35, "time": "10:10",
+    "id": "j5", "num": "J5", "nav": "Job 5 · Logistics", "mins": 35, "time": "10:25",
     "title": "Job 5", "titleAccent": "Logistics",
     "lede": "A supermarket in Al Khobar is angry about a late delivery. A colleague has drafted a reply. The delivery log tells a different story.",
     "beats": [
@@ -965,7 +928,7 @@ SECTIONS.append({
 
 # ======== Round 6 · Bringing your team along
 SECTIONS.append({
-    "id": "s6", "num": "6", "nav": "Your team", "mins": 15, "time": "10:45",
+    "id": "s6", "num": "6", "nav": "Your team", "mins": 10, "time": "11:15",
     "brief": "Using AI safely at work, with your team (ILO 3)",
     "title": "Bringing", "titleAccent": "your team along",
     "lede": "Why people stop using it, what keeps them going, and five minutes on agents and what's coming.",
@@ -1011,7 +974,7 @@ STATION_FILES = [{"name": "October-month-end-summary.pdf", "what": "Finance · t
                  {"name": "QC-results-Ghaima-Spread.xlsx", "what": "Lab · this week's QC results"},
                  {"name": "Practice-spec-Ghaima-Spread.pdf", "what": "Lab · the practice spec"}]
 SECTIONS.append({
-    "id": "j6", "num": "J6", "nav": "Job 6 · Stations", "mins": 35, "time": "11:15",
+    "id": "j6", "num": "J6", "nav": "Job 6 · Stations", "mins": 35, "time": "11:25",
     "title": "Job 6", "titleAccent": "Your station",
     "lede": "Each team picks one station: Finance, Regulatory or Lab. The person from that department leads it.",
     "beats": [
@@ -1064,7 +1027,7 @@ SECTIONS.append({
 
 # ======== My card
 SECTIONS.append({
-    "id": "mc", "num": "M", "nav": "My card", "mins": 35, "time": "12:20",
+    "id": "mc", "num": "M", "nav": "My card", "mins": 30, "time": "12:30",
     "title": "Your prompts", "titleAccent": "and your desk card",
     "lede": "Pick your role and your weekly tasks, let Copilot write your prompts and your desk card, test one, and take the pack home on your phone.",
     "beats": [
@@ -1088,7 +1051,7 @@ SECTIONS.append({
 
 # ======== Team action plans
 SECTIONS.append({
-    "id": "ap", "num": "A", "nav": "Action plans", "mins": 25, "time": "12:55",
+    "id": "ap", "num": "A", "nav": "Action plans", "mins": 20, "time": "13:00",
     "title": "Your team's", "titleAccent": "action plan",
     "lede": "Start from your team's map of opportunities from yesterday, and leave with two uses of AI you'll start next week.",
     "beats": [
@@ -1168,6 +1131,44 @@ SECTIONS.append({
                    P("Clean up.", "Delete the chats you made in both tools, sign out and close the private window."),
                    P("Tell BIBF.", "Fill in the BIBF evaluation.")]},
     ]})
+
+# ======== Job 3 · Maintenance
+SECTIONS.append({
+    "id": "j3", "num": "J3", "nav": "Extra · Job 3", "mins": 35, "time": "Optional",
+    "title": "Job 3", "titleAccent": "Maintenance",
+    "lede": "Line 1's filler shows a fault after the changeover. The fix is in a 12-page manual that covers two models.",
+    "beats": [
+        part("j3-try", "hands", "Try it", "Find the fix in the manual and write the night technician's checklist.", 25,
+             "The person closest to maintenance leads each team."),
+        {"id": note("j3-job", "Twenty-five minutes. The trap: section 7 (pages 6 and 7) is for the FX-200 (12 Nm, hold RESET for 3 seconds); section 8 is for the FX-250 (9 Nm, STOP, RESET, confirm on screen). "
+                              "The model is only in a small line under the heading. The pump coupling's 15 Nm is a distractor. After Reveal, one team shows its checklist with page numbers."),
+         "type": "task", "title": "Job 3 · The manual with two models",
+         "files": [{"name": "Norvell-FX-filler-manual.pdf", "what": "The filler manual, 12 pages, covering the FX-200 and the FX-250"},
+                   {"name": "Breakdown-report-Line1.txt", "what": "Ahmed Darwish's breakdown report"}],
+         "prompts": [{"title": "Step 1 · Your pack", "text": J3_PACK},
+                     {"title": "Step 2 · Run it", "text": RUN},
+                     {"title": "Step 3 · Check it", "text": J3_CHECK}],
+         "steps": ["Download both files. In Copilot Chat, paste your pack and answer its questions.",
+                   "Check its prompt, attach both files, and send 'Run it'.",
+                   "Send 'Check it'. Open two of the pages it names and look for yourself.",
+                   "Answer on your phone: the torque for the FX-250, and the step that belongs to the other model.",
+                   "Be ready to show the room your checklist."],
+         "takeHome": {"text": "Manuals are usually fine to share; serial numbers and site layouts are not.",
+                      "prompts": [{"title": "Answer from a manual", "text": own_pack("find the fix for a fault in the attached manual and write a step-by-step checklist.",
+                                                                                     "the manual and the fault report, with the machine's exact model.",
+                                                                                     "numbered steps, safety first, every setting with its page number, nothing from another model.")}]},
+         "note": "Extra step: ask Copilot for the three spare parts the technician should take to the line."},
+        {"id": note("j3-result", "The first timer covers the job (15 minutes). Then 60 s."),
+         "type": "quiz", "title": "Job 3 · What does your checklist say?",
+         "questions": [
+             q("What torque does the FX-250's nozzle collar need?",
+               ["12 Nm", "9 Nm", "15 Nm", "6 Nm"], 1,
+               "9 Nm, from section 8 (page 8 or 9). 12 Nm is the FX-200's, from section 7; 15 Nm is the pump coupling.", secs=900),
+             q("Which step belongs to the other model, not the FX-250?",
+               ["Lock out the filler before you start", "Hold RESET for 3 seconds", "Fit new seal NS-250", "Confirm 'Seal replaced' on the screen"], 1,
+               "Holding RESET for 3 seconds is the FX-200's reset. The FX-250 needs STOP, then RESET, then a confirmation on the touch screen.", secs=60)]},
+    ]})
+
 
 # ---------------------------------------------------------------- task guides: step by step with Windows shortcuts
 SHORTCUTS = [
@@ -1422,8 +1423,8 @@ COURSE = {
         "after-j1": {"time": "11:05", "mins": 15, "title": "Break", "text": "Fifteen minutes. Leave your tools signed in; the private window stays open."},
         "after-s3": {"time": "11:40", "mins": 30, "title": "Dhuhr and lunch", "text": "Thirty minutes. Job 2 starts at 12:10."},
         "after-c1": {"time": "14:00", "mins": 0, "title": "End of day one", "text": "See you on Thursday at 09:00."},
-        "after-s6": {"time": "11:00", "mins": 15, "title": "Break", "text": "Fifteen minutes. Then your station."},
-        "after-j6": {"time": "11:50", "mins": 30, "title": "Dhuhr and lunch", "text": "Thirty minutes. My card starts at 12:20."}},
+        "after-j5": {"time": "11:00", "mins": 15, "title": "Break", "text": "Fifteen minutes. Then Round 6 and your station."},
+        "after-j6": {"time": "12:00", "mins": 30, "title": "Dhuhr and lunch", "text": "Thirty minutes. My card starts at 12:30."}},
     "glossary": {
         "digitisation": {"term": "Digitisation", "def": "Turning paper or analogue information into digital files, without changing the process."},
         "structured": {"term": "Structured data", "def": "Data in fixed rows and columns, such as an order table or a spreadsheet of lab results."},
@@ -1486,22 +1487,22 @@ NOTES_OUT = {
         {"time": "11:20", "mins": 20, "item": "Round 3 · Work from files, check before you trust: theory, 7 quick questions", "ref": "s3"},
         {"time": "11:40", "mins": 30, "item": "Dhuhr and lunch", "brk": True},
         {"time": "12:10", "mins": 35, "item": "Job 2 · Procurement: three quotes, the hidden line, a second opinion", "ref": "j2"},
-        {"time": "12:45", "mins": 30, "item": "Round 4 · AI across the value chain: theory, value chain case clinic in Copilot Chat", "ref": "s4"},
-        {"time": "13:15", "mins": 35, "item": "Job 3 · Maintenance: the manual with two models", "ref": "j3"},
         {"time": "13:50", "mins": 10, "item": "Day 1 close: scores, one lesson per team, clean up and sign out", "ref": "c1"},
         {"day": "Day 2 · Thursday 19 November 2026"},
         {"time": "08:45", "mins": 15, "item": "Room open. Sign in again; phones rejoin their team.", "offDeck": True},
-        {"time": "09:00", "mins": 15, "item": "Day 2 kick-off: recap quiz, today's plan", "ref": "d2"},
-        {"time": "09:15", "mins": 20, "item": "Round 5 · Patterns that save time: theory, 5 quick questions", "ref": "s5"},
-        {"time": "09:35", "mins": 35, "item": "Job 4 · Planning: October's waste, the chart, a second check", "ref": "j4"},
-        {"time": "10:10", "mins": 35, "item": "Job 5 · Logistics: the complaint, the log and the draft", "ref": "j5"},
-        {"time": "10:45", "mins": 15, "item": "Round 6 · Bringing your team along: theory, 3 quick questions", "ref": "s6"},
+        {"time": "09:00", "mins": 10, "item": "Day 2 kick-off: recap quiz on yesterday, today's plan", "ref": "d2"},
+        {"time": "09:10", "mins": 25, "item": "Round 4 · AI across the value chain: theory, value chain case clinic in Copilot Chat", "ref": "s4"},
+        {"time": "09:35", "mins": 15, "item": "Round 5 · Patterns that save time: theory, 5 quick questions", "ref": "s5"},
+        {"time": "09:50", "mins": 35, "item": "Job 4 · Planning: October's waste, the chart, a second check", "ref": "j4"},
+        {"time": "10:25", "mins": 35, "item": "Job 5 · Logistics: the complaint, the log and the draft", "ref": "j5"},
         {"time": "11:00", "mins": 15, "item": "Break", "brk": True},
-        {"time": "11:15", "mins": 35, "item": "Job 6 · Stations: Finance, Regulatory or Lab", "ref": "j6"},
-        {"time": "11:50", "mins": 30, "item": "Dhuhr and lunch", "brk": True},
-        {"time": "12:20", "mins": 35, "item": "My card: walk-through, then everyone's prompts and desk card", "ref": "mc"},
-        {"time": "12:55", "mins": 25, "item": "Team action plans: from the clinic chat, then 2 to 3 minutes per team", "ref": "ap"},
-        {"time": "13:20", "mins": 40, "item": "Final: post-course check, quick-fire, podium, takeaways, BIBF evaluation, clean up", "ref": "f"}],
+        {"time": "11:15", "mins": 10, "item": "Round 6 · Bringing your team along: theory, 3 quick questions", "ref": "s6"},
+        {"time": "11:25", "mins": 35, "item": "Job 6 · Stations: Finance, Regulatory or Lab", "ref": "j6"},
+        {"time": "12:00", "mins": 30, "item": "Dhuhr and lunch", "brk": True},
+        {"time": "12:30", "mins": 30, "item": "My card: walk-through, then everyone's prompts and desk card", "ref": "mc"},
+        {"time": "13:00", "mins": 20, "item": "Team action plans: from the clinic chat, then 2 to 3 minutes per team", "ref": "ap"},
+        {"time": "13:20", "mins": 40, "item": "Final: post-course check, quick-fire, podium, takeaways, BIBF evaluation, clean up", "ref": "f"},
+        {"time": "Extra", "mins": 35, "item": "Job 3 · Maintenance (optional, for anyone who finishes early): the manual with two models", "ref": "j3", "offDeck": True}],
     "scoring": ["Four teams: Cream, Butter, Cheese and Laban. Everyone answers on their own phone; the points go to the team.",
                 "Fastest right team: 2 points. Every other team with a right answer: 1 point. The final quick-fire (ten questions from both days): 5 for the fastest right team, 3 for the second, 1 for every other right team.",
                 "After Reveal, each team's chip on the projector names its fastest right player.",

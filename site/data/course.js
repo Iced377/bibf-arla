@@ -1816,11 +1816,230 @@ window.COURSE = {
    ]
   },
   {
+   "id": "c1",
+   "num": "C1",
+   "nav": "Day 1 close",
+   "mins": 10,
+   "time": "13:50",
+   "title": "End of",
+   "titleAccent": "day one",
+   "lede": "Team scores, one lesson from each team, and what comes on Thursday.",
+   "beats": [
+    {
+     "id": "c1-board",
+     "type": "leaderboard",
+     "title": "Scores after day one"
+    },
+    {
+     "id": "c1-lessons",
+     "type": "points",
+     "title": "What today showed",
+     "items": [
+      {
+       "title": "The pack works.",
+       "text": "Give it the goal, the material and what good looks like, and let it ask."
+      },
+      {
+       "title": "The catch is in the detail.",
+       "text": "A time past midnight, a footnote, a page for another model."
+      },
+      {
+       "title": "A second opinion is cheap.",
+       "text": "A fresh chat with the same files finds what the first one missed."
+      }
+     ],
+     "explain": [
+      "Day one in three lines. Then each team adds one lesson of its own, in one sentence, and they go on the whiteboard for tomorrow.",
+      [
+       "**The pack works.** Give it the goal, the material and what good looks like, and let it ask.",
+       "**The catch is in the detail.** A time past midnight, a footnote, a page for another model.",
+       "**A second opinion is cheap.** A fresh chat with the same files finds what the first one missed."
+      ],
+      "None of today's catches was hard to see once you looked. The skill isn't spotting clever tricks. It's the habit of looking before you send."
+     ]
+    },
+    {
+     "id": "c1-out",
+     "type": "points",
+     "title": "Before you leave",
+     "items": [
+      {
+       "title": "Your take-home briefs.",
+       "text": "They are on the Files page under each job. You'll pick the ones to keep on Thursday."
+      },
+      {
+       "title": "Clean up.",
+       "text": "Delete today's chats in Copilot and ChatGPT, sign out of both and close the private window."
+      },
+      {
+       "title": "Tomorrow.",
+       "text": "09:00 sharp, with a quick recap quiz."
+      }
+     ],
+     "explain": [
+      "Three things before you go.",
+      [
+       "**Your take-home briefs.** They're on the Files page under each job: shift notes, supplier quotes, a manual. You'll pick the ones to keep on Thursday.",
+       "**Clean up.** Delete today's chats in Copilot and ChatGPT, sign out of both and close the private window. The accounts are BIBF's, and only for the course.",
+       "**Tomorrow.** 09:00 sharp, with a quick recap quiz."
+      ],
+      "The take-home briefs use the same pack as today, written for your own work. In Copilot Chat on your Arla account they work the same way."
+     ]
+    }
+   ],
+   "explain": [
+    "The end of day one. You see the team scores so far, each team gives one lesson from the day, and we clean up.",
+    "The scores are for day one only. The game carries on tomorrow, and the final podium is on Thursday afternoon.",
+    "What to watch: the clean-up. BIBF's accounts are for the course only, so delete your chats in both tools, sign out and close the private window before you leave."
+   ]
+  },
+  {
+   "id": "d2",
+   "num": "D2",
+   "nav": "Day 2",
+   "mins": 10,
+   "time": "09:00",
+   "title": "Day two at",
+   "titleAccent": "Ghaima Dairy",
+   "lede": "A quick recap of yesterday, then planning, logistics, a station of your choice, and your own prompts to take home.",
+   "beats": [
+    {
+     "id": "d2-recap",
+     "type": "quiz",
+     "secs": 20,
+     "title": "Yesterday in eight",
+     "questions": [
+      {
+       "q": "Ghaima's filler sends stoppages to a dashboard on its own. Which word fits?",
+       "options": [
+        "Digitisation",
+        "Digitalisation",
+        "Digital transformation",
+        "Automation only"
+       ],
+       "answer": 1,
+       "why": "Digitalisation: a digital tool runs the same process better."
+      },
+      {
+       "q": "A customer's complaint email. Which kind of data is it?",
+       "options": [
+        "Structured",
+        "Semi-structured",
+        "Unstructured",
+        "Metadata"
+       ],
+       "answer": 2,
+       "why": "Unstructured: free text, with no fixed rows and columns."
+      },
+      {
+       "q": "What are the four parts of a brief?",
+       "options": [
+        "Role, tone, length, style",
+        "Who it's for, what to work from, the shape, what it mustn't do",
+        "Question, answer, check, send",
+        "Goal, budget, team, deadline"
+       ],
+       "answer": 1,
+       "why": "Who it's for, what to work from, what shape you want, and what it must not do."
+      },
+      {
+       "q": "What does the last line of every pack ask Copilot to do first?",
+       "options": [
+        "Write the answer straight away",
+        "Act as an expert",
+        "Ask you up to three multiple-choice questions",
+        "Keep it under 100 words"
+       ],
+       "answer": 2,
+       "why": "Ask you up to three multiple-choice questions, then write the prompt. That's what lets AI write it for you."
+      },
+      {
+       "q": "In Job 1, why did some handovers show 65 minutes of downtime?",
+       "options": [
+        "They counted a stoppage twice",
+        "They read 23:40 to 00:25 as 15 minutes",
+        "They left out a stoppage",
+        "They added the break"
+       ],
+       "answer": 1,
+       "why": "A stoppage past midnight is easy to misread. 45 minutes, not 15."
+      },
+      {
+       "q": "Where does a second opinion come from in Copilot Chat?",
+       "options": [
+        "The same chat, asked again",
+        "Your manager's account",
+        "A longer prompt",
+        "A fresh chat with the same files"
+       ],
+       "answer": 3,
+       "why": "A fresh chat doesn't carry the first one's mistakes. Give it the same files and ask it to check."
+      },
+      {
+       "q": "Where was Murjan Glass's freight charge?",
+       "options": [
+        "In the main price table",
+        "In a footnote",
+        "In the covering email",
+        "Nowhere"
+       ],
+       "answer": 1,
+       "why": "In small print at the bottom: BD 14 per 1,000 jars, invoiced separately."
+      },
+      {
+       "q": "Job 2: which supplier was cheapest once everything was counted?",
+       "options": [
+        "Fanar Glassworks",
+        "Murjan Glass",
+        "TriSeal Packaging",
+        "All three the same"
+       ],
+       "answer": 0,
+       "why": "Fanar at BD 118. Murjan is BD 127 with freight, and TriSeal's low price needs a 400,000 minimum order."
+      }
+     ]
+    },
+    {
+     "id": "d2-today",
+     "type": "points",
+     "title": "Today",
+     "items": [
+      {
+       "title": "Morning.",
+       "text": "AI across the value chain with your team's case clinic, patterns that save time, then Planning and Logistics."
+      },
+      {
+       "title": "Before lunch.",
+       "text": "Bringing your team along, then a station of your choice: Finance, Regulatory or Lab."
+      },
+      {
+       "title": "Afternoon.",
+       "text": "Your own prompts and desk card, your team's action plan, and the final podium."
+      }
+     ],
+     "explain": [
+      "Here's the shape of day two.",
+      [
+       "**Morning.** Patterns that save time, then two jobs: Planning and Logistics.",
+       "**Before lunch.** Bringing your team along, then a station your team chooses: Finance, Regulatory or Lab.",
+       "**Afternoon.** Your own prompts and desk card, your team's action plan, and the final podium."
+      ],
+      "The morning keeps yesterday's rhythm: a round, then jobs. After lunch the course turns to your own work, so think now about the two or three tasks you do every week that you'd most like help with."
+     ]
+    }
+   ],
+   "explain": [
+    "Welcome back to Ghaima Dairy. Day two starts with eight quick questions on yesterday, to wake the phones up. Then a look at today's plan.",
+    "The morning keeps yesterday's rhythm: a round, then jobs, this time in Planning and Logistics. Before lunch your team chooses a station. After lunch the course turns to your own work.",
+    "What to watch: sign in again in a private window, and rejoin your team on your phone before the first question."
+   ]
+  },
+  {
    "id": "s4",
    "num": "4",
    "nav": "The value chain",
-   "mins": 30,
-   "time": "12:45",
+   "mins": 25,
+   "time": "09:10",
    "brief": "Where AI fits along a dairy value chain (ILO 1)",
    "title": "AI across",
    "titleAccent": "the value chain",
@@ -1987,377 +2206,11 @@ window.COURSE = {
    ]
   },
   {
-   "id": "j3",
-   "num": "J3",
-   "nav": "Job 3 · Maintenance",
-   "mins": 35,
-   "time": "13:15",
-   "title": "Job 3",
-   "titleAccent": "Maintenance",
-   "lede": "Line 1's filler shows a fault after the changeover. The fix is in a 12-page manual that covers two models.",
-   "beats": [
-    {
-     "id": "j3-try",
-     "type": "part",
-     "kind": "hands",
-     "title": "Try it",
-     "text": "Find the fix in the manual and write the night technician's checklist.",
-     "mins": 25
-    },
-    {
-     "id": "j3-job",
-     "type": "task",
-     "title": "Job 3 · The manual with two models",
-     "files": [
-      {
-       "name": "Norvell-FX-filler-manual.pdf",
-       "what": "The filler manual, 12 pages, covering the FX-200 and the FX-250"
-      },
-      {
-       "name": "Breakdown-report-Line1.txt",
-       "what": "Ahmed Darwish's breakdown report"
-      }
-     ],
-     "prompts": [
-      {
-       "title": "Step 1 · Your pack",
-       "text": "I work at Ghaima Dairy, a dairy maker with a plant in Bahrain and sales in Saudi Arabia.\nGoal: the Line 1 filler, a Norvell FX-250, shows fault E14 after the evening changeover. Find the fix in the manual and write a step-by-step checklist for the night technician.\nWhat I'll give you: the filler manual (PDF, 12 pages, it covers two models) and the breakdown report.\nWhat good looks like: numbered steps, safety first, with every setting and the reset, and the page number for each step. Nothing from another model.\n\nBefore you write anything, ask me up to three short multiple-choice questions, one at a time, so I can answer with a letter. Then write the prompt I should use. Make sure it says who it's for, what to work from, what shape I want, and what it must not do. Show me the prompt and wait."
-      },
-      {
-       "title": "Step 2 · Run it",
-       "text": "Run the prompt you wrote on the attached files. Use only what is in the files, and mark anything you can't find as a question."
-      },
-      {
-       "title": "Step 3 · Check it",
-       "text": "For each step and each setting in your checklist, give the page it comes from and the model that page is about. Are any of them for a model other than the FX-250?"
-      }
-     ],
-     "steps": [
-      "Download both files. In Copilot Chat, paste your pack and answer its questions.",
-      "Check its prompt, attach both files, and send 'Run it'.",
-      "Send 'Check it'. Open two of the pages it names and look for yourself.",
-      "Answer on your phone: the torque for the FX-250, and the step that belongs to the other model.",
-      "Be ready to show the room your checklist."
-     ],
-     "takeHome": {
-      "text": "Manuals are usually fine to share; serial numbers and site layouts are not.",
-      "prompts": [
-       {
-        "title": "Answer from a manual",
-        "text": "I work at a dairy company in the GCC.\nGoal: find the fix for a fault in the attached manual and write a step-by-step checklist.\nWhat I'll give you: the manual and the fault report, with the machine's exact model.\nWhat good looks like: numbered steps, safety first, every setting with its page number, nothing from another model.\n\nBefore you write anything, ask me up to three short multiple-choice questions, one at a time, so I can answer with a letter. Then write the prompt I should use. Make sure it says who it's for, what to work from, what shape I want, and what it must not do. Show me the prompt and wait."
-       }
-      ]
-     },
-     "note": "Extra step: ask Copilot for the three spare parts the technician should take to the line.",
-     "guide": [
-      [
-       "On the Files page, click Download for the manual and the breakdown report.",
-       ""
-      ],
-      [
-       "In Copilot Chat, start a new chat. On the Files page, click Copy on 'Step 1 · Your pack'. Paste it and send.",
-       "Ctrl + V, Enter"
-      ],
-      [
-       "Answer each question with a letter.",
-       ""
-      ],
-      [
-       "Read the prompt it wrote. Does it say who it's for, what to work from, the shape and what it must not do? Ask it to fix anything vague.",
-       ""
-      ],
-      [
-       "Click + (or the paperclip) and attach both files. Copy 'Step 2 · Run it', paste and send.",
-       "Ctrl + V, Enter"
-      ],
-      [
-       "Copy 'Step 3 · Check it', paste and send. Open two of the pages it names in the PDF and look for yourself.",
-       "Ctrl + V, Enter"
-      ],
-      [
-       "Answer the questions on your phone.",
-       ""
-      ],
-      [
-       "Be ready to show the room your result.",
-       ""
-      ]
-     ],
-     "explain": [
-      "This job practises getting the right answer out of a long technical document. Line 1's filler, a Norvell FX-250, shows fault E14 after the evening changeover. You write the night technician's checklist from the 12-page manual.",
-      [
-       "Paste your pack and answer its questions. Check its prompt asks for safety first, every setting and the reset, a page number for each step, and nothing from another model.",
-       "Attach the manual and Ahmed Darwish's breakdown report, and send 'Run it'.",
-       "Send 'Check it'. For each step and setting, it names the page and the model that page is about.",
-       "Open two of those pages in the PDF and look for yourself."
-      ],
-      "Where's the catch? The manual covers two models, and their sections look alike. Which model a section is for may be printed only in small type. AI tends to find the section that matches the fault and copy it, without asking which machine it's for. A setting for the wrong model reads just as confidently as the right one.",
-      "Data check: manuals are usually fine to share. Serial numbers and site layouts are not."
-     ]
-    },
-    {
-     "id": "j3-result",
-     "type": "quiz",
-     "title": "Job 3 · What does your checklist say?",
-     "questions": [
-      {
-       "q": "What torque does the FX-250's nozzle collar need?",
-       "options": [
-        "12 Nm",
-        "9 Nm",
-        "15 Nm",
-        "6 Nm"
-       ],
-       "answer": 1,
-       "why": "9 Nm, from section 8 (page 8 or 9). 12 Nm is the FX-200's, from section 7; 15 Nm is the pump coupling.",
-       "secs": 900
-      },
-      {
-       "q": "Which step belongs to the other model, not the FX-250?",
-       "options": [
-        "Lock out the filler before you start",
-        "Hold RESET for 3 seconds",
-        "Fit new seal NS-250",
-        "Confirm 'Seal replaced' on the screen"
-       ],
-       "answer": 1,
-       "why": "Holding RESET for 3 seconds is the FX-200's reset. The FX-250 needs STOP, then RESET, then a confirmation on the touch screen.",
-       "secs": 60
-      }
-     ]
-    }
-   ],
-   "explain": [
-    "Job 3 is in Maintenance. Line 1's filler shows a fault after the evening changeover. The fix is in a 12-page manual that covers two models, and you turn it into a checklist for the night technician.",
-    "Same method, with the manual and the breakdown report. Then you ask Copilot where each step came from, and you open two of those pages yourself.",
-    "What to watch: which model each page is about. The person closest to maintenance leads."
-   ]
-  },
-  {
-   "id": "c1",
-   "num": "C1",
-   "nav": "Day 1 close",
-   "mins": 10,
-   "time": "13:50",
-   "title": "End of",
-   "titleAccent": "day one",
-   "lede": "Team scores, one lesson from each team, and what comes on Thursday.",
-   "beats": [
-    {
-     "id": "c1-board",
-     "type": "leaderboard",
-     "title": "Scores after day one"
-    },
-    {
-     "id": "c1-lessons",
-     "type": "points",
-     "title": "What today showed",
-     "items": [
-      {
-       "title": "The pack works.",
-       "text": "Give it the goal, the material and what good looks like, and let it ask."
-      },
-      {
-       "title": "The catch is in the detail.",
-       "text": "A time past midnight, a footnote, a page for another model."
-      },
-      {
-       "title": "A second opinion is cheap.",
-       "text": "A fresh chat with the same files finds what the first one missed."
-      }
-     ],
-     "explain": [
-      "Day one in three lines. Then each team adds one lesson of its own, in one sentence, and they go on the whiteboard for tomorrow.",
-      [
-       "**The pack works.** Give it the goal, the material and what good looks like, and let it ask.",
-       "**The catch is in the detail.** A time past midnight, a footnote, a page for another model.",
-       "**A second opinion is cheap.** A fresh chat with the same files finds what the first one missed."
-      ],
-      "None of today's catches was hard to see once you looked. The skill isn't spotting clever tricks. It's the habit of looking before you send."
-     ]
-    },
-    {
-     "id": "c1-out",
-     "type": "points",
-     "title": "Before you leave",
-     "items": [
-      {
-       "title": "Your take-home briefs.",
-       "text": "They are on the Files page under each job. You'll pick the ones to keep on Thursday."
-      },
-      {
-       "title": "Clean up.",
-       "text": "Delete today's chats in Copilot and ChatGPT, sign out of both and close the private window."
-      },
-      {
-       "title": "Tomorrow.",
-       "text": "09:00 sharp, with a quick recap quiz."
-      }
-     ],
-     "explain": [
-      "Three things before you go.",
-      [
-       "**Your take-home briefs.** They're on the Files page under each job: shift notes, supplier quotes, a manual. You'll pick the ones to keep on Thursday.",
-       "**Clean up.** Delete today's chats in Copilot and ChatGPT, sign out of both and close the private window. The accounts are BIBF's, and only for the course.",
-       "**Tomorrow.** 09:00 sharp, with a quick recap quiz."
-      ],
-      "The take-home briefs use the same pack as today, written for your own work. In Copilot Chat on your Arla account they work the same way."
-     ]
-    }
-   ],
-   "explain": [
-    "The end of day one. You see the team scores so far, each team gives one lesson from the day, and we clean up.",
-    "The scores are for day one only. The game carries on tomorrow, and the final podium is on Thursday afternoon.",
-    "What to watch: the clean-up. BIBF's accounts are for the course only, so delete your chats in both tools, sign out and close the private window before you leave."
-   ]
-  },
-  {
-   "id": "d2",
-   "num": "D2",
-   "nav": "Day 2",
-   "mins": 15,
-   "time": "09:00",
-   "title": "Day two at",
-   "titleAccent": "Ghaima Dairy",
-   "lede": "A quick recap of yesterday, then planning, logistics, a station of your choice, and your own prompts to take home.",
-   "beats": [
-    {
-     "id": "d2-recap",
-     "type": "quiz",
-     "secs": 20,
-     "title": "Yesterday in eight",
-     "questions": [
-      {
-       "q": "Ghaima's filler sends stoppages to a dashboard on its own. Which word fits?",
-       "options": [
-        "Digitisation",
-        "Digitalisation",
-        "Digital transformation",
-        "Automation only"
-       ],
-       "answer": 1,
-       "why": "Digitalisation: a digital tool runs the same process better."
-      },
-      {
-       "q": "A customer's complaint email. Which kind of data is it?",
-       "options": [
-        "Structured",
-        "Semi-structured",
-        "Unstructured",
-        "Metadata"
-       ],
-       "answer": 2,
-       "why": "Unstructured: free text, with no fixed rows and columns."
-      },
-      {
-       "q": "What are the four parts of a brief?",
-       "options": [
-        "Role, tone, length, style",
-        "Who it's for, what to work from, the shape, what it mustn't do",
-        "Question, answer, check, send",
-        "Goal, budget, team, deadline"
-       ],
-       "answer": 1,
-       "why": "Who it's for, what to work from, what shape you want, and what it must not do."
-      },
-      {
-       "q": "What does the last line of every pack ask Copilot to do first?",
-       "options": [
-        "Write the answer straight away",
-        "Act as an expert",
-        "Ask you up to three multiple-choice questions",
-        "Keep it under 100 words"
-       ],
-       "answer": 2,
-       "why": "Ask you up to three multiple-choice questions, then write the prompt. That's what lets AI write it for you."
-      },
-      {
-       "q": "In Job 1, why did some handovers show 65 minutes of downtime?",
-       "options": [
-        "They counted a stoppage twice",
-        "They read 23:40 to 00:25 as 15 minutes",
-        "They left out a stoppage",
-        "They added the break"
-       ],
-       "answer": 1,
-       "why": "A stoppage past midnight is easy to misread. 45 minutes, not 15."
-      },
-      {
-       "q": "Where does a second opinion come from in Copilot Chat?",
-       "options": [
-        "The same chat, asked again",
-        "Your manager's account",
-        "A longer prompt",
-        "A fresh chat with the same files"
-       ],
-       "answer": 3,
-       "why": "A fresh chat doesn't carry the first one's mistakes. Give it the same files and ask it to check."
-      },
-      {
-       "q": "Where was Murjan Glass's freight charge?",
-       "options": [
-        "In the main price table",
-        "In a footnote",
-        "In the covering email",
-        "Nowhere"
-       ],
-       "answer": 1,
-       "why": "In small print at the bottom: BD 14 per 1,000 jars, invoiced separately."
-      },
-      {
-       "q": "Job 2: which supplier was cheapest once everything was counted?",
-       "options": [
-        "Fanar Glassworks",
-        "Murjan Glass",
-        "TriSeal Packaging",
-        "All three the same"
-       ],
-       "answer": 0,
-       "why": "Fanar at BD 118. Murjan is BD 127 with freight, and TriSeal's low price needs a 400,000 minimum order."
-      }
-     ]
-    },
-    {
-     "id": "d2-today",
-     "type": "points",
-     "title": "Today",
-     "items": [
-      {
-       "title": "Morning.",
-       "text": "Patterns that save time, then Planning and Logistics."
-      },
-      {
-       "title": "Before lunch.",
-       "text": "Bringing your team along, then a station of your choice: Finance, Regulatory or Lab."
-      },
-      {
-       "title": "Afternoon.",
-       "text": "Your own prompts and desk card, your team's action plan, and the final podium."
-      }
-     ],
-     "explain": [
-      "Here's the shape of day two.",
-      [
-       "**Morning.** Patterns that save time, then two jobs: Planning and Logistics.",
-       "**Before lunch.** Bringing your team along, then a station your team chooses: Finance, Regulatory or Lab.",
-       "**Afternoon.** Your own prompts and desk card, your team's action plan, and the final podium."
-      ],
-      "The morning keeps yesterday's rhythm: a round, then jobs. After lunch the course turns to your own work, so think now about the two or three tasks you do every week that you'd most like help with."
-     ]
-    }
-   ],
-   "explain": [
-    "Welcome back to Ghaima Dairy. Day two starts with eight quick questions on yesterday, to wake the phones up. Then a look at today's plan.",
-    "The morning keeps yesterday's rhythm: a round, then jobs, this time in Planning and Logistics. Before lunch your team chooses a station. After lunch the course turns to your own work.",
-    "What to watch: sign in again in a private window, and rejoin your team on your phone before the first question."
-   ]
-  },
-  {
    "id": "s5",
    "num": "5",
    "nav": "Patterns",
-   "mins": 20,
-   "time": "09:15",
+   "mins": 15,
+   "time": "09:35",
    "brief": "Apply Copilot with clear briefs (ILO 2)",
    "title": "Patterns that",
    "titleAccent": "save time",
@@ -2607,7 +2460,7 @@ window.COURSE = {
    "num": "J4",
    "nav": "Job 4 · Planning",
    "mins": 35,
-   "time": "09:35",
+   "time": "09:50",
    "title": "Job 4",
    "titleAccent": "Planning",
    "lede": "October's production and waste by line, for the plant manager. One row isn't in the same unit as the others, and one week is missing.",
@@ -2759,7 +2612,7 @@ window.COURSE = {
    "num": "J5",
    "nav": "Job 5 · Logistics",
    "mins": 35,
-   "time": "10:10",
+   "time": "10:25",
    "title": "Job 5",
    "titleAccent": "Logistics",
    "lede": "A supermarket in Al Khobar is angry about a late delivery. A colleague has drafted a reply. The delivery log tells a different story.",
@@ -2909,8 +2762,8 @@ window.COURSE = {
    "id": "s6",
    "num": "6",
    "nav": "Your team",
-   "mins": 15,
-   "time": "10:45",
+   "mins": 10,
+   "time": "11:15",
    "brief": "Using AI safely at work, with your team (ILO 3)",
    "title": "Bringing",
    "titleAccent": "your team along",
@@ -3081,7 +2934,7 @@ window.COURSE = {
    "num": "J6",
    "nav": "Job 6 · Stations",
    "mins": 35,
-   "time": "11:15",
+   "time": "11:25",
    "title": "Job 6",
    "titleAccent": "Your station",
    "lede": "Each team picks one station: Finance, Regulatory or Lab. The person from that department leads it.",
@@ -3312,8 +3165,8 @@ window.COURSE = {
    "id": "mc",
    "num": "M",
    "nav": "My card",
-   "mins": 35,
-   "time": "12:20",
+   "mins": 30,
+   "time": "12:30",
    "title": "Your prompts",
    "titleAccent": "and your desk card",
    "lede": "Pick your role and your weekly tasks, let Copilot write your prompts and your desk card, test one, and take the pack home on your phone.",
@@ -3412,8 +3265,8 @@ window.COURSE = {
    "id": "ap",
    "num": "A",
    "nav": "Action plans",
-   "mins": 25,
-   "time": "12:55",
+   "mins": 20,
+   "time": "13:00",
    "title": "Your team's",
    "titleAccent": "action plan",
    "lede": "Start from your team's map of opportunities from yesterday, and leave with two uses of AI you'll start next week.",
@@ -3686,6 +3539,153 @@ window.COURSE = {
     "The final round brings the two days together. You take the same fifteen questions as on Wednesday morning, and see your score at the start and your score now.",
     "Then a last quick-fire, the final podium, the takeaways and a look back at what your teams did.",
     "Before you leave: check your pack is on your phone, delete your chats in both tools, sign out and close the private window. Then fill in the BIBF evaluation."
+   ]
+  },
+  {
+   "id": "j3",
+   "num": "J3",
+   "nav": "Extra · Job 3",
+   "mins": 35,
+   "time": "Optional",
+   "title": "Job 3",
+   "titleAccent": "Maintenance",
+   "lede": "Line 1's filler shows a fault after the changeover. The fix is in a 12-page manual that covers two models.",
+   "beats": [
+    {
+     "id": "j3-try",
+     "type": "part",
+     "kind": "hands",
+     "title": "Try it",
+     "text": "Find the fix in the manual and write the night technician's checklist.",
+     "mins": 25
+    },
+    {
+     "id": "j3-job",
+     "type": "task",
+     "title": "Job 3 · The manual with two models",
+     "files": [
+      {
+       "name": "Norvell-FX-filler-manual.pdf",
+       "what": "The filler manual, 12 pages, covering the FX-200 and the FX-250"
+      },
+      {
+       "name": "Breakdown-report-Line1.txt",
+       "what": "Ahmed Darwish's breakdown report"
+      }
+     ],
+     "prompts": [
+      {
+       "title": "Step 1 · Your pack",
+       "text": "I work at Ghaima Dairy, a dairy maker with a plant in Bahrain and sales in Saudi Arabia.\nGoal: the Line 1 filler, a Norvell FX-250, shows fault E14 after the evening changeover. Find the fix in the manual and write a step-by-step checklist for the night technician.\nWhat I'll give you: the filler manual (PDF, 12 pages, it covers two models) and the breakdown report.\nWhat good looks like: numbered steps, safety first, with every setting and the reset, and the page number for each step. Nothing from another model.\n\nBefore you write anything, ask me up to three short multiple-choice questions, one at a time, so I can answer with a letter. Then write the prompt I should use. Make sure it says who it's for, what to work from, what shape I want, and what it must not do. Show me the prompt and wait."
+      },
+      {
+       "title": "Step 2 · Run it",
+       "text": "Run the prompt you wrote on the attached files. Use only what is in the files, and mark anything you can't find as a question."
+      },
+      {
+       "title": "Step 3 · Check it",
+       "text": "For each step and each setting in your checklist, give the page it comes from and the model that page is about. Are any of them for a model other than the FX-250?"
+      }
+     ],
+     "steps": [
+      "Download both files. In Copilot Chat, paste your pack and answer its questions.",
+      "Check its prompt, attach both files, and send 'Run it'.",
+      "Send 'Check it'. Open two of the pages it names and look for yourself.",
+      "Answer on your phone: the torque for the FX-250, and the step that belongs to the other model.",
+      "Be ready to show the room your checklist."
+     ],
+     "takeHome": {
+      "text": "Manuals are usually fine to share; serial numbers and site layouts are not.",
+      "prompts": [
+       {
+        "title": "Answer from a manual",
+        "text": "I work at a dairy company in the GCC.\nGoal: find the fix for a fault in the attached manual and write a step-by-step checklist.\nWhat I'll give you: the manual and the fault report, with the machine's exact model.\nWhat good looks like: numbered steps, safety first, every setting with its page number, nothing from another model.\n\nBefore you write anything, ask me up to three short multiple-choice questions, one at a time, so I can answer with a letter. Then write the prompt I should use. Make sure it says who it's for, what to work from, what shape I want, and what it must not do. Show me the prompt and wait."
+       }
+      ]
+     },
+     "note": "Extra step: ask Copilot for the three spare parts the technician should take to the line.",
+     "guide": [
+      [
+       "On the Files page, click Download for the manual and the breakdown report.",
+       ""
+      ],
+      [
+       "In Copilot Chat, start a new chat. On the Files page, click Copy on 'Step 1 · Your pack'. Paste it and send.",
+       "Ctrl + V, Enter"
+      ],
+      [
+       "Answer each question with a letter.",
+       ""
+      ],
+      [
+       "Read the prompt it wrote. Does it say who it's for, what to work from, the shape and what it must not do? Ask it to fix anything vague.",
+       ""
+      ],
+      [
+       "Click + (or the paperclip) and attach both files. Copy 'Step 2 · Run it', paste and send.",
+       "Ctrl + V, Enter"
+      ],
+      [
+       "Copy 'Step 3 · Check it', paste and send. Open two of the pages it names in the PDF and look for yourself.",
+       "Ctrl + V, Enter"
+      ],
+      [
+       "Answer the questions on your phone.",
+       ""
+      ],
+      [
+       "Be ready to show the room your result.",
+       ""
+      ]
+     ],
+     "explain": [
+      "This job practises getting the right answer out of a long technical document. Line 1's filler, a Norvell FX-250, shows fault E14 after the evening changeover. You write the night technician's checklist from the 12-page manual.",
+      [
+       "Paste your pack and answer its questions. Check its prompt asks for safety first, every setting and the reset, a page number for each step, and nothing from another model.",
+       "Attach the manual and Ahmed Darwish's breakdown report, and send 'Run it'.",
+       "Send 'Check it'. For each step and setting, it names the page and the model that page is about.",
+       "Open two of those pages in the PDF and look for yourself."
+      ],
+      "Where's the catch? The manual covers two models, and their sections look alike. Which model a section is for may be printed only in small type. AI tends to find the section that matches the fault and copy it, without asking which machine it's for. A setting for the wrong model reads just as confidently as the right one.",
+      "Data check: manuals are usually fine to share. Serial numbers and site layouts are not."
+     ]
+    },
+    {
+     "id": "j3-result",
+     "type": "quiz",
+     "title": "Job 3 · What does your checklist say?",
+     "questions": [
+      {
+       "q": "What torque does the FX-250's nozzle collar need?",
+       "options": [
+        "12 Nm",
+        "9 Nm",
+        "15 Nm",
+        "6 Nm"
+       ],
+       "answer": 1,
+       "why": "9 Nm, from section 8 (page 8 or 9). 12 Nm is the FX-200's, from section 7; 15 Nm is the pump coupling.",
+       "secs": 900
+      },
+      {
+       "q": "Which step belongs to the other model, not the FX-250?",
+       "options": [
+        "Lock out the filler before you start",
+        "Hold RESET for 3 seconds",
+        "Fit new seal NS-250",
+        "Confirm 'Seal replaced' on the screen"
+       ],
+       "answer": 1,
+       "why": "Holding RESET for 3 seconds is the FX-200's reset. The FX-250 needs STOP, then RESET, then a confirmation on the touch screen.",
+       "secs": 60
+      }
+     ]
+    }
+   ],
+   "explain": [
+    "Job 3 is in Maintenance. Line 1's filler shows a fault after the evening changeover. The fix is in a 12-page manual that covers two models, and you turn it into a checklist for the night technician.",
+    "Same method, with the manual and the breakdown report. Then you ask Copilot where each step came from, and you open two of those pages yourself.",
+    "What to watch: which model each page is about. The person closest to maintenance leads."
    ]
   }
  ],
@@ -4259,17 +4259,17 @@ window.COURSE = {
    "title": "End of day one",
    "text": "See you on Thursday at 09:00."
   },
-  "after-s6": {
+  "after-j5": {
    "time": "11:00",
    "mins": 15,
    "title": "Break",
-   "text": "Fifteen minutes. Then your station."
+   "text": "Fifteen minutes. Then Round 6 and your station."
   },
   "after-j6": {
-   "time": "11:50",
+   "time": "12:00",
    "mins": 30,
    "title": "Dhuhr and lunch",
-   "text": "Thirty minutes. My card starts at 12:20."
+   "text": "Thirty minutes. My card starts at 12:30."
   }
  },
  "glossary": {

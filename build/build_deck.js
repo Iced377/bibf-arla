@@ -469,7 +469,7 @@ function build(edition) {
     },
     rules(b) { gridSlides(b.title, b.items.map((i) => ({ title: i.title, text: i.text })), 4, null, { minH: 2.4, bSize: 16, tSize: 19 }, beatNote(b)); },
     takeaways(b) {
-      if (b.section !== C0.sections[C0.sections.length - 1].id) return; // the opening takeaways slide already covers the earlier ones
+      if (b.section !== C0.sections.filter((x) => x.beats.some((y) => y.type === "takeaways")).pop().id) return; // the opening takeaways slide already covers the earlier ones
       const s = content(twoTone(b.title), beatNote(b));
       const gap = 0.3, cw = (CW - 2 * gap) / 3;
       C0.takeaways.forEach((t, i) => card(s, MX + i * (cw + gap), TOP + 0.2, cw, 3.2, (i + 1) + ". " + t.title, t.text, { tSize: 20, bSize: 16 }));

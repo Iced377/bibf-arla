@@ -7,7 +7,7 @@ window.NOTES = {
   {
    "time": "08:45",
    "mins": 15,
-   "item": "Room open. Desktops: Edge private window, Copilot Chat and ChatGPT in two tabs on BIBF's accounts. Phones: QR code and class login on the projector.",
+   "item": "Room open. Laptops: Copilot Chat on the Arla work account and the Files page in two tabs. Phones: QR code and class login on the projector.",
    "offDeck": true
   },
   {
@@ -171,10 +171,10 @@ window.NOTES = {
   "The person whose department a job belongs to leads it in their team.",
   "Move block by block with Page Down or the right arrow; a presenter clicker sends the same keys. The notes tab follows.",
   "The projector shows the presentation tab /instructor/ only. Keep the notes tab /instructor/?notes and the Dashboard on your laptop screen.",
-  "BIBF's accounts are for the course only: only Ghaima's made-up files go in, and at the end of each day everyone deletes their chats and signs out.",
+  "Only Ghaima's made-up files go in, and at the end of each day everyone deletes their practice chats.",
   "In the lab test, check which mode BIBF's Copilot opens in, so participants see what they'll have at work.",
   "Running late: shorten theory to the first line of each block, cut questions from the end of a game, skip the ChatGPT comparison. Never cut a job's time first.",
-  "A tool misbehaves on a desktop: two people share one. Phones on slow Wi-Fi: switch to mobile data.",
+  "A tool misbehaves on a laptop: two people share one. Phones on slow Wi-Fi: switch to mobile data.",
   "Each team keeps its case clinic chat open: the action plans continue in it."
  ],
  "sections": {
@@ -184,7 +184,7 @@ window.NOTES = {
     "k0-rules": "Read the four rules once. Teams are mixed on purpose: say that the person whose department a job belongs to leads it.",
     "k0-teaser": "No points: it checks every phone. Press Start once the Dashboard shows everyone joined. Anyone whose phone shows nothing: check they're signed in as student and have joined a team. Reveal, then one line: the tools spread fast; using them well takes practice.",
     "k0-shape": "Thirty seconds. Every round runs the same way, and the jobs sit between the rounds.",
-    "k0-signin": "Check every desktop is signed in before Round 1: Copilot Chat in one tab, ChatGPT in another, both on BIBF's accounts. Anyone stuck: share a desktop with a neighbour. Say it once: the accounts are BIBF's and for the course only, and everyone works on Ghaima's made-up files, so nothing real goes in.",
+    "k0-signin": "Check every laptop has Copilot Chat open on the Arla work account and the course site's Files page in another tab before Round 1. Anyone stuck: share a laptop with a neighbour. Say it once: everyone works on Ghaima's made-up files, so nothing confidential goes in.",
     "k0-out": "One minute. These are the four things they can do by Thursday at 14:00. Point at the last one: they take their own prompts home.",
     "k0-case": "Two minutes. Ghaima is made up, so every answer is known in advance and nothing confidential goes in. Open the case file once to show where everything is.",
     "k0-jobs": "Thirty seconds per day. Every job's files and packs are on the Files page; nobody needs to type a long prompt.",
@@ -264,7 +264,7 @@ window.NOTES = {
    "beats": {
     "c1-board": "Show the scores. Day one only: the game carries on tomorrow.",
     "c1-lessons": "Five minutes. One lesson from each team, one sentence each. Write them on the whiteboard for tomorrow.",
-    "c1-out": "Walk the room: chats deleted, signed out, private window closed."
+    "c1-out": "Remind everyone to delete today's practice chats."
    }
   },
   "d2": {
@@ -353,7 +353,7 @@ window.NOTES = {
     "f-board": "Show the final board on the phones and the projector. Read the podium from third to first.",
     "f-take": "Read the three takeaways one last time.",
     "f-built": "One minute. Name a team for each.",
-    "f-out": "Leave five minutes for the BIBF evaluation. Walk the room to check every desktop is cleaned up and signed out."
+    "f-out": "Leave five minutes for the BIBF evaluation. Remind everyone to delete their practice chats."
    }
   },
   "j3": {

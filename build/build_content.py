@@ -268,14 +268,13 @@ SECTIONS.append({
          "steps": [P("Theory", "The ideas, short, with examples from the dairy. Phones down."),
                    P("Exercises", "Quick questions on your phone, one after another."),
                    P("Jobs", "A department's real kind of work in Copilot Chat, then a question on your phone about what you found.")]},
-        {"id": note("k0-signin", "Check every desktop is signed in before Round 1: Copilot Chat in one tab, ChatGPT in another, both on BIBF's accounts. "
-                                 "Anyone stuck: share a desktop with a neighbour. Say it once: the accounts are BIBF's and for the course only, and everyone works "
-                                 "on Ghaima's made-up files, so nothing real goes in."),
-         "type": "points", "title": "On your desktop",
-         "items": [P("A private window.", "Open Edge and press Ctrl + Shift + N. Nothing you do in it stays on the computer."),
-                   P("Copilot Chat and ChatGPT.", "Copilot Chat in one tab, ChatGPT in another, each with the BIBF account on the card on your desk. Copilot does the work; ChatGPT is for comparison."),
-                   P("The course site.", "In a third tab, open bibf-arla.vercel.app/#/files and sign in as student. Every job's files and packs are there, with a Copy button for each."),
-                   P("At the end of each day.", "Delete the chats you made, sign out of both tools and close the private window.")]},
+        {"id": note("k0-signin", "Check every laptop has Copilot Chat open on the Arla work account and the course site's Files page in another tab before Round 1. "
+                                 "Anyone stuck: share a laptop with a neighbour. Say it once: everyone works on Ghaima's made-up files, so nothing confidential goes in."),
+         "type": "points", "title": "On your laptop",
+         "items": [P("Copilot Chat.", "Open it on your Arla work account. It does every job in the course."),
+                   P("ChatGPT, for comparison.", "Where you have it, a second tab with ChatGPT gives a second view. Never with company data."),
+                   P("The course site.", "In another tab, open bibf-arla.vercel.app/#/files and sign in as student. Every job's files and packs are there, with a Copy button for each."),
+                   P("At the end of each day.", "Delete the practice chats you made on Ghaima's files.")]},
         {"id": note("k0-out", "One minute. These are the four things they can do by Thursday at 14:00. Point at the last one: they take their own prompts home."),
          "type": "cards-static", "title": "What you can do after two days",
          "items": [P("See the bigger picture", "How data and digital tools change a dairy business, and where AI fits along the chain."),
@@ -695,10 +694,10 @@ SECTIONS.append({
          "items": [P("The pack works.", "Give it the goal, the material and what good looks like, and let it ask."),
                    P("The catch is in the detail.", "A time past midnight, a footnote, a page for another model."),
                    P("A second opinion is cheap.", "A fresh chat with the same files finds what the first one missed.")]},
-        {"id": note("c1-out", "Walk the room: chats deleted, signed out, private window closed."),
+        {"id": note("c1-out", "Remind everyone to delete today's practice chats."),
          "type": "points", "title": "Before you leave",
          "items": [P("Your take-home briefs.", "They are on the Files page under each job. You'll pick the ones to keep on Thursday."),
-                   P("Clean up.", "Delete today's chats in Copilot and ChatGPT, sign out of both and close the private window."),
+                   P("Clean up.", "Delete today's practice chats on Ghaima's files."),
                    P("Tomorrow.", "09:00 sharp, with a quick recap quiz.")]},
     ]})
 
@@ -1125,10 +1124,10 @@ SECTIONS.append({
                    P("Your station", "Finance, Regulatory or Lab, checked line by line."),
                    P("Your own work", "Your prompts and desk card, on your phone.")],
          "note": "The same method works on Sunday in Copilot Chat: let AI write the prompt, check it, run it, check the result."},
-        {"id": note("f-out", "Leave five minutes for the BIBF evaluation. Walk the room to check every desktop is cleaned up and signed out."),
+        {"id": note("f-out", "Leave five minutes for the BIBF evaluation. Remind everyone to delete their practice chats."),
          "type": "points", "title": "Before you leave",
          "items": [P("Your pack.", "Check it's on your phone: Files app, Notes or WhatsApp."),
-                   P("Clean up.", "Delete the chats you made in both tools, sign out and close the private window."),
+                   P("Clean up.", "Delete the practice chats you made on Ghaima's files."),
                    P("Tell BIBF.", "Fill in the BIBF evaluation.")]},
     ]})
 
@@ -1420,7 +1419,7 @@ COURSE = {
     "assessment": assessment,
     "card": CARD,
     "breaks": {
-        "after-j1": {"time": "11:05", "mins": 15, "title": "Break", "text": "Fifteen minutes. Leave your tools signed in; the private window stays open."},
+        "after-j1": {"time": "11:05", "mins": 15, "title": "Break", "text": "Fifteen minutes. Leave your tools signed in."},
         "after-s3": {"time": "11:40", "mins": 30, "title": "Dhuhr and lunch", "text": "Thirty minutes. Job 2 starts at 12:10."},
         "after-c1": {"time": "14:00", "mins": 0, "title": "End of day one", "text": "See you on Thursday at 09:00."},
         "after-j5": {"time": "11:00", "mins": 15, "title": "Break", "text": "Fifteen minutes. Then Round 6 and your station."},
@@ -1478,7 +1477,7 @@ SECTION_SAY = {
 NOTES_OUT = {
     "schedule": [
         {"day": "Day 1 · Wednesday 18 November 2026"},
-        {"time": "08:45", "mins": 15, "item": "Room open. Desktops: Edge private window, Copilot Chat and ChatGPT in two tabs on BIBF's accounts. Phones: QR code and class login on the projector.", "offDeck": True},
+        {"time": "08:45", "mins": 15, "item": "Room open. Laptops: Copilot Chat on the Arla work account and the Files page in two tabs. Phones: QR code and class login on the projector.", "offDeck": True},
         {"time": "09:00", "mins": 30, "item": "Kick-off: rules and teams, a warm-up question to check the phones, sign-in, outcomes, Ghaima Dairy, the jobs, pre-course check, quick win", "ref": "k0"},
         {"time": "09:30", "mins": 25, "item": "Round 1 · From digitisation to transformation: theory, the data-sources board, 6 quick questions", "ref": "s1"},
         {"time": "09:55", "mins": 35, "item": "Round 2 · Meet your assistant: theory, warm-up in both tools, 9 quick questions", "ref": "s2"},
@@ -1518,10 +1517,10 @@ NOTES_OUT = {
                 "The person whose department a job belongs to leads it in their team.",
                 "Move block by block with Page Down or the right arrow; a presenter clicker sends the same keys. The notes tab follows.",
                 "The projector shows the presentation tab /instructor/ only. Keep the notes tab /instructor/?notes and the Dashboard on your laptop screen.",
-                "BIBF's accounts are for the course only: only Ghaima's made-up files go in, and at the end of each day everyone deletes their chats and signs out.",
+                "Only Ghaima's made-up files go in, and at the end of each day everyone deletes their practice chats.",
                 "In the lab test, check which mode BIBF's Copilot opens in, so participants see what they'll have at work.",
                 "Running late: shorten theory to the first line of each block, cut questions from the end of a game, skip the ChatGPT comparison. Never cut a job's time first.",
-                "A tool misbehaves on a desktop: two people share one. Phones on slow Wi-Fi: switch to mobile data.",
+                "A tool misbehaves on a laptop: two people share one. Phones on slow Wi-Fi: switch to mobile data.",
                 "Each team keeps its case clinic chat open: the action plans continue in it."],
     "sections": {},
     "help": HELP,

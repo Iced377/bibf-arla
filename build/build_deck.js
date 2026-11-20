@@ -941,7 +941,7 @@ function build(edition) {
     const base = typeof title === "string" ? title : title.map((r) => r.text).join("");
     let s, y, ry, runs = [], n = 0;
     const flush = () => { if (runs.length) textBox(s, runs, MX, ry, CW, y - ry + 0.1, { fontSize: XS, color: C.text2 }); runs = []; };
-    const fresh = () => { s = content(n ? base + " (continued)" : base); y = TOP; if (!n) { chip(s, label, MX, y); y += 0.62; } ry = y; n++; };
+    const fresh = () => { s = content(n ? base + " (continued)" : base); y = TOP; ry = y; n++; };
     fresh();
     units.forEach((u) => {
       if (y + u.h - (u.k === "box" ? 0.15 : 0) > XBOTTOM && y > TOP + 0.7) { flush(); fresh(); }

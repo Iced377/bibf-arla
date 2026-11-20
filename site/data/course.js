@@ -120,7 +120,7 @@ window.COURSE = {
      "explain": [
       "Every round runs the same way, so you always know what comes next.",
       [
-       "**Theory.** The ideas, short, with examples from the dairy. Phones down. Each block on the site has an 'Explained in full' panel like this one, so you can read it again later.",
+       "**Theory.** The ideas, short, with examples from the dairy. Phones down. Each block on the site has a longer explanation like this one, so you can read it again later.",
        "**Exercises.** Quick questions on your phone, one after another. They check the idea made sense before you use it.",
        "**Jobs.** Between the rounds, a department's real kind of work in Copilot Chat. Then questions on your phone about what you found."
       ],
@@ -130,32 +130,32 @@ window.COURSE = {
     {
      "id": "k0-signin",
      "type": "points",
-     "title": "On your desktop",
+     "title": "On your laptop",
      "items": [
       {
-       "title": "A private window.",
-       "text": "Open Edge and press Ctrl + Shift + N. Nothing you do in it stays on the computer."
+       "title": "Copilot Chat.",
+       "text": "Open it on your Arla work account. It does every job in the course."
       },
       {
-       "title": "Copilot Chat and ChatGPT.",
-       "text": "Copilot Chat in one tab, ChatGPT in another, each with the BIBF account on the card on your desk. Copilot does the work; ChatGPT is for comparison."
+       "title": "ChatGPT, for comparison.",
+       "text": "Where you have it, a second tab with ChatGPT gives a second view. Never with company data."
       },
       {
        "title": "The course site.",
-       "text": "In a third tab, open bibf-arla.vercel.app/#/files and sign in as student. Every job's files and packs are there, with a Copy button for each."
+       "text": "In another tab, open bibf-arla.vercel.app/#/files and sign in as student. Every job's files and packs are there, with a Copy button for each."
       },
       {
        "title": "At the end of each day.",
-       "text": "Delete the chats you made, sign out of both tools and close the private window."
+       "text": "Delete the practice chats you made on Ghaima's files."
       }
      ],
      "explain": [
-      "**Why a private window?** The desktops are shared. A private window, which Edge calls InPrivate, forgets everything when you close it. In Edge, press Ctrl + Shift + N.",
-      "**Which accounts?** Copilot Chat in one tab and ChatGPT in another, on the BIBF accounts from the card on your desk. They're for the course only, and every file is Ghaima's, made up, so nothing real goes in.",
-      "**The Files page.** In a third tab, open bibf-arla.vercel.app/#/files and sign in as student. Every job's files and packs are there, each prompt with a Copy button, so you never type a long prompt.",
+      "**Your own laptop.** You work on your Arla laptop, in Copilot Chat on your work account: the tool you'll use after the course. Every file in the course is Ghaima's, made up, so nothing confidential goes in.",
+      "**ChatGPT, for comparison.** Where you have it, a second tab with ChatGPT gives a second view on the same prompt. At Arla, use it only if Arla approves it, and never with company data.",
+      "**The Files page.** In another tab, open bibf-arla.vercel.app/#/files and sign in as student. Every job's files and packs are there, each prompt with a Copy button, so you never type a long prompt.",
       {
        "box": "tip",
-       "text": "Ctrl + Tab moves between your tabs. At the end of each day, delete your chats, sign out of both tools and close the private window."
+       "text": "Ctrl + Tab moves between your tabs. At the end of each day, delete the practice chats you made on Ghaima's files."
       }
      ]
     },
@@ -355,7 +355,7 @@ window.COURSE = {
    "explain": [
     "Welcome. For two days your team visits the departments of Ghaima Dairy, a made-up dairy maker in Bahrain. In each one you do a real kind of job with Copilot Chat, check what comes back, and answer questions on your phone as you go.",
     "This kick-off sets everything up: the rules and your four teams, Cream, Butter, Cheese and Laban, a warm-up question on your phone that scores nothing and only checks your phone works, a sign-in check, what you'll be able to do by Thursday, Ghaima and its jobs, and a short pre-course check. It ends with a quick win: a ready-made prompt for your own role.",
-    "What to watch: be signed in to both tools before Round 1. Teams are mixed on purpose, so in each job the person closest to that department's work leads. If your desktop gives you trouble, share with a neighbour and keep going."
+    "What to watch: be signed in to both tools before Round 1. Teams are mixed on purpose, so in each job the person closest to that department's work leads. If your laptop gives you trouble, share with a neighbour and keep going."
    ]
   },
   {
@@ -1869,7 +1869,7 @@ window.COURSE = {
       },
       {
        "title": "Clean up.",
-       "text": "Delete today's chats in Copilot and ChatGPT, sign out of both and close the private window."
+       "text": "Delete today's practice chats on Ghaima's files."
       },
       {
        "title": "Tomorrow.",
@@ -1880,7 +1880,7 @@ window.COURSE = {
       "Three things before you go.",
       [
        "**Your take-home briefs.** They're on the Files page under each job: shift notes, supplier quotes, a manual. You'll pick the ones to keep on Thursday.",
-       "**Clean up.** Delete today's chats in Copilot and ChatGPT, sign out of both and close the private window. The accounts are BIBF's, and only for the course.",
+       "**Clean up.** Delete today's practice chats on Ghaima's files.",
        "**Tomorrow.** 09:00 sharp, with a quick recap quiz."
       ],
       "The take-home briefs use the same pack as today, written for your own work. In Copilot Chat on your Arla account they work the same way."
@@ -1890,7 +1890,7 @@ window.COURSE = {
    "explain": [
     "The end of day one. You see the team scores so far, each team gives one lesson from the day, and we clean up.",
     "The scores are for day one only. The game carries on tomorrow, and the final podium is on Thursday afternoon.",
-    "What to watch: the clean-up. BIBF's accounts are for the course only, so delete your chats in both tools, sign out and close the private window before you leave."
+    "What to watch: the clean-up. Delete the practice chats you made on Ghaima's files before you leave."
    ]
   },
   {
@@ -2031,7 +2031,7 @@ window.COURSE = {
    "explain": [
     "Welcome back to Ghaima Dairy. Day two starts with eight quick questions on yesterday, to wake the phones up. Then a look at today's plan.",
     "The morning keeps yesterday's rhythm: a round, then jobs, this time in Planning and Logistics. Before lunch your team chooses a station. After lunch the course turns to your own work.",
-    "What to watch: sign in again in a private window, and rejoin your team on your phone before the first question."
+    "What to watch: open Copilot Chat and the Files page again, and rejoin your team on your phone before the first question."
    ]
   },
   {
@@ -3517,7 +3517,7 @@ window.COURSE = {
       },
       {
        "title": "Clean up.",
-       "text": "Delete the chats you made in both tools, sign out and close the private window."
+       "text": "Delete the practice chats you made on Ghaima's files."
       },
       {
        "title": "Tell BIBF.",
@@ -3528,7 +3528,7 @@ window.COURSE = {
       "Three things before you go.",
       [
        "**Your pack.** Check it's on your phone, in the Files app, Notes or WhatsApp. That's what you open at work.",
-       "**Clean up.** BIBF's accounts are for the course only, so delete the chats you made in both tools, sign out and close the private window.",
+       "**Clean up.** Delete the practice chats you made on Ghaima's files.",
        "**Tell BIBF.** Fill in the BIBF evaluation before you leave."
       ],
       "Then you're done. The pack, the four-part brief and the checking list go home with you, ready for Copilot Chat at Arla."
@@ -3538,7 +3538,7 @@ window.COURSE = {
    "explain": [
     "The final round brings the two days together. You take the same fifteen questions as on Wednesday morning, and see your score at the start and your score now.",
     "Then a last quick-fire, the final podium, the takeaways and a look back at what your teams did.",
-    "Before you leave: check your pack is on your phone, delete your chats in both tools, sign out and close the private window. Then fill in the BIBF evaluation."
+    "Before you leave: check your pack is on your phone and delete your practice chats. Then fill in the BIBF evaluation."
    ]
   },
   {
@@ -4245,7 +4245,7 @@ window.COURSE = {
    "time": "11:05",
    "mins": 15,
    "title": "Break",
-   "text": "Fifteen minutes. Leave your tools signed in; the private window stays open."
+   "text": "Fifteen minutes. Leave your tools signed in."
   },
   "after-s3": {
    "time": "11:40",
